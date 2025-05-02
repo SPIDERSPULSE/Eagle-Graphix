@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Graphix | Premium Pricing</title>
+
+
+
+
+    <!-- CSS -->
+    
+    <link rel="stylesheet" href="pricing.css">
+</head>
+<body>
+    <!-- 1. Cinematic Hero Section -->
+    <section class="hero-section">
+        <div class="hero-video">
+            <video autoplay muted loop>
+                <source src="premium-background.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h1>Investment in Excellence</h1>
+            <p class="tagline">Tailored Pricing for Uncompromised Service</p>
+        </div>
+    </section>
+
+    <!-- 2. Tiered Pricing Cards -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Our Premium Packages</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card essence">
+                    <h3>Essence</h3>
+                    <div class="price">$1,499<span>/mo</span></div>
+                    <ul class="features">
+                        <li>Basic Brand Identity</li>
+                        <li>5 Design Concepts</li>
+                        <li>Standard Support</li>
+                    </ul>
+                    <button class="cta-button">Get Started</button>
+                </div>
+
+                <div class="pricing-card signature featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Signature</h3>
+                    <div class="price">$3,999<span>/mo</span></div>
+                    <ul class="features">
+                        <li>Complete Brand System</li>
+                        <li>Unlimited Concepts</li>
+                        <li>Priority Support</li>
+                        <li>Dedicated Designer</li>
+                    </ul>
+                    <button class="cta-button">Elevate My Brand</button>
+                </div>
+
+                <div class="pricing-card couture">
+                    <h3>Couture</h3>
+                    <div class="price">Custom</div>
+                    <ul class="features">
+                        <li>Fully Bespoke Solutions</li>
+                        <li>Executive Creative Director</li>
+                        <li>24/7 Concierge</li>
+                        <li>White Glove Service</li>
+                    </ul>
+                    <button class="cta-button">Request Consultation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Comparison Toggle -->
+    <section class="toggle-section">
+        <div class="container">
+            <div class="toggle-switch">
+                <span>Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="billing-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span>Yearly (Save 20%)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Custom Quote Button -->
+    <section class="quote-section">
+        <div class="container">
+            <button class="custom-quote-button" id="quote-modal-trigger">Tailor My Package</button>
+        </div>
+    </section>
+
+    <!-- 5. Interactive Price Calculator -->
+    <section class="calculator-section">
+        <div class="container">
+            <h2>Build Your Custom Solution</h2>
+            <form class="price-calculator">
+                <div class="calculator-field">
+                    <label for="service-type">Service Type</label>
+                    <select id="service-type">
+                        <option value="branding">Brand Identity</option>
+                        <option value="web">Web Design</option>
+                        <option value="package">Complete Package</option>
+                    </select>
+                </div>
+                <div class="calculator-field">
+                    <label for="project-duration">Project Duration</label>
+                    <input type="range" id="project-duration" min="1" max="12" value="3">
+                    <span id="duration-value">3 months</span>
+                </div>
+                <div class="calculator-result">
+                    <h3>Estimated Investment</h3>
+                    <div class="calculated-price">$0</div>
+                    <button type="button" class="calculator-cta">Get Exact Quote</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 6. Animated SVG Dividers -->
+    <div class="svg-divider">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+        </svg>
+    </div>
+
+    <!-- 7. Floating Price Info Tooltip -->
+    <section class="tooltip-section">
+        <div class="container">
+            <h2>What's Included</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Dedicated Designer <span class="tooltip-icon" data-tooltip="Your personal designer available during business hours">i</span></h3>
+                </div>
+                <div class="feature-item">
+                    <h3>Unlimited Revisions <span class="tooltip-icon" data-tooltip="Refine until perfect with no additional charges">i</span></h3>
+                </div>
+                <div class="feature-item">
+                    <h3>Priority Support <span class="tooltip-icon" data-tooltip="Guaranteed 2-hour response time">i</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Service Value Breakdown -->
+    <section class="breakdown-section">
+        <div class="container">
+            <div class="breakdown-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Essence Package Details</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Initial brand consultation</li>
+                            <li>3 logo concepts</li>
+                            <li>2 rounds of revisions</li>
+                            <li>Basic brand guidelines</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Signature Package Details</button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Comprehensive brand strategy</li>
+                            <li>Unlimited logo concepts</li>
+                            <li>Unlimited revisions</li>
+                            <li>Complete brand guidelines</li>
+                            <li>Stationery design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Featured Luxury Badge (Already in pricing cards) -->
+
+    <!-- 10. Before & After ROI Section -->
+    <section class="roi-section">
+        <div class="container">
+            <h2>Client Success Stories</h2>
+            <div class="roi-cards">
+                <div class="roi-card">
+                    <div class="before">
+                        <h4>Before</h4>
+                        <div class="amount">$2,500 Investment</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="after">
+                        <h4>After</h4>
+                        <div class="amount">32% Revenue Increase</div>
+                    </div>
+                </div>
+                <div class="roi-card">
+                    <div class="before">
+                        <h4>Before</h4>
+                        <div class="amount">$8,000 Investment</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="after">
+                        <h4>After</h4>
+                        <div class="amount">Featured in Forbes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Exclusive Add-ons Carousel -->
+    <section class="addons-section">
+        <div class="container">
+            <h2>Exclusive Add-ons</h2>
+            <div class="addons-carousel">
+                <div class="addon-card">
+                    <h3>White Glove Support</h3>
+                    <div class="price">+$1,499/mo</div>
+                    <p>24/7 priority access to our creative directors</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Dedicated Advisor</h3>
+                    <div class="price">+$2,999/mo</div>
+                    <p>Your personal branding strategist</p>
+                </div>
+                <div class="addon-card">
+                    <h3>Priority Booking</h3>
+                    <div class="price">+$999/mo</div>
+                    <p>Jump to the front of our project queue</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. Client Status Level -->
+    <section class="status-section">
+        <div class="container">
+            <h2>Client Status Levels</h2>
+            <div class="status-badges">
+                <div class="badge gold">
+                    <h3>Gold Client</h3>
+                    <p>Signature Package holders</p>
+                </div>
+                <div class="badge platinum">
+                    <h3>Platinum Concierge</h3>
+                    <p>Annual Couture clients</p>
+                </div>
+                <div class="badge black">
+                    <h3>Black Card Access</h3>
+                    <p>VIP enterprise clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. Limited Availability Note -->
+    <section class="availability-section">
+        <div class="container">
+            <div class="availability-banner">
+                <p>Only 3 VIP slots left this month</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. Embedded Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Client Experiences</h2>
+            <div class="package-testimonials">
+                <div class="testimonial" data-package="essence">
+                    <blockquote>"Eagle Graphix transformed our startup's identity."</blockquote>
+                    <cite>- Startup Founder</cite>
+                </div>
+                <div class="testimonial" data-package="signature">
+                    <blockquote>"The Signature package was worth every penny."</blockquote>
+                    <cite>- Fortune 500 CMO</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 15. Savings Highlight (Already in toggle section) -->
+
+    <!-- 16. Schedule a Consultation CTA -->
+    <section class="consultation-section">
+        <div class="container">
+            <div class="consultation-cta">
+                <h2>Not Ready to Commit?</h2>
+                <p>Let's discuss your needs first</p>
+                <button class="consultation-button">Schedule a Consultation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 17. Soft-Fade FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">What payment methods do you accept?</button>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards, wire transfers, and AMEX Black.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I upgrade my package later?</button>
+                    <div class="faq-answer">
+                        <p>Yes, you can upgrade at any time with prorated adjustments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18. VIP Payment Options -->
+    <section class="payment-section">
+        <div class="container">
+            <h2>VIP Payment Options</h2>
+            <div class="payment-methods">
+                <div class="payment-method">AMEX Black</div>
+                <div class="payment-method">Apple Pay</div>
+                <div class="payment-method">Bank Transfer</div>
+                <div class="payment-method">Crypto</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 19. Secure & Discreet Guarantee -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-card">
+                <div class="lock-icon">🔒</div>
+                <h3>Secure & Discreet Service</h3>
+                <p>All projects protected by strict NDAs and encrypted communications</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 20. Luxury Client Showcase -->
+    <section class="clients-section">
+        <div class="container">
+            <h2>Brands We've Served</h2>
+            <div class="client-logos">
+                <div class="client-logo">A*****</div>
+                <div class="client-logo">B*****</div>
+                <div class="client-logo">C*****</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 21. Animated Scrolling Ticker -->
+    <section class="ticker-section">
+        <div class="ticker-container">
+            <div class="ticker-content">
+                <span>Bespoke Packages Available</span>
+                <span>World-Class Service</span>
+                <span>Handled With Care</span>
+                <span>Discretion Guaranteed</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 22. Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button id="dark-mode-switch">Toggle Dark Mode</button>
+    </div>
+
+    <!-- 23. Why We Cost More Section -->
+    <section class="value-section">
+        <div class="container">
+            <h2>What Sets Eagle Graphix Apart</h2>
+            <div class="value-comparison">
+                <div class="comparison-column">
+                    <h3>Typical Agencies</h3>
+                    <ul>
+                        <li>Template-based solutions</li>
+                        <li>Junior designers</li>
+                        <li>Slow response times</li>
+                    </ul>
+                </div>
+                <div class="comparison-column">
+                    <h3>Eagle Graphix</h3>
+                    <ul>
+                        <li>Fully bespoke creations</li>
+                        <li>Senior creative directors</li>
+                        <li>24/7 concierge</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 24. Digital Brochure Download -->
+    <section class="brochure-section">
+        <div class="container">
+            <div class="brochure-cta">
+                <h2>Download Our Pricing Guide</h2>
+                <form class="brochure-form">
+                    <input type="email" placeholder="Your professional email" required>
+                    <button type="submit">Get Exclusive Access</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 25. Luxury Guarantee Statement -->
+    <section class="final-guarantee">
+        <div class="container">
+            <div class="signature-line">
+                <p>Every detail, meticulously delivered — guaranteed.</p>
+                <div class="signature">The Eagle Graphix Team</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Request Modal -->
+    <div class="modal" id="quote-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Tailor Your Package</h2>
+            <form class="quote-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="needs">Project Needs</label>
+                    <textarea id="needs" rows="5"></textarea>
+                </div>
+                <button type="submit" class="submit-quote">Request Custom Quote</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Consultation Modal -->
+    <div class="modal" id="consultation-modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2>Schedule Your Consultation</h2>
+            <!-- Consultation form would go here -->
+        </div>
+    </div>
+
+
+    <script src="pricing.js"></script>
+</body>
+</html>

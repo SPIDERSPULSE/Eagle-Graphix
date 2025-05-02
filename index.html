@@ -1,0 +1,3297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Graphix | Premium Digital Design Agency</title>
+    <meta name="description" content="Crafting elite digital experiences for luxury brands and industry leaders">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/elegant-icons@1.0.0/style.min.css">
+    <!-- CSS -->
+    
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Standard favicon -->
+<link rel="icon" href="/images/favicon (2).png" type="image/x-icon">
+
+<!-- Or for PNG -->
+<link rel="icon" href="/images/favicon (2).png" type="image/png">
+
+<!-- Optional for Apple and modern browsers -->
+<link rel="apple-touch-icon" href="/images/favicon (2).png">
+<meta name="theme-color" content="#ffffff">
+
+
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+
+
+
+
+  <div class="floating-contact">
+    <button class="floating-button">
+        <i class="fas fa-paper-plane"></i>
+        <span>Let's Connect</span>
+    </button>
+    <div class="floating-menu">
+        <a href="#contact-form"><i class="fas fa-envelope"></i> Send Message</a>
+        <a href="#appointment"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+        <a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> Call Now</a>
+    </div>
+</div>
+
+<style>
+/* ===== Floating Contact Button ===== */
+.floating-contact {
+    position: fixed;
+    bottom: 95px;
+    right: 30px;
+    z-index: 999;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gold-gradient);
+    color: var(--black);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: pulse 4s infinite, float-icon 2s ease-in-out infinite;
+}
+
+.floating-button::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(16, 185, 129, 0.8),
+        rgba(212, 175, 55, 0.8),
+        rgba(0, 0, 0, 0.8));
+    z-index: -1;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.floating-button:hover::before {
+    opacity: 1;
+}
+
+.floating-button span {
+    position: absolute;
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    bottom: -25px;
+    color: var(--black);
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: float-text 2s ease-in-out infinite;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+    animation: none;
+    box-shadow: var(--gold-glow), 0 0 20px rgba(16, 185, 129, 0.6);
+}
+
+.floating-button:hover span {
+    opacity: 1;
+    animation: none;
+}
+
+.floating-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 220px;
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    z-index: 1;
+    animation: float-menu 3s ease-in-out infinite;
+}
+
+.floating-contact:hover .floating-menu {
+    animation: none;
+}
+
+.floating-menu a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    color: var(--dark-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(212, 175, 55, 0.1), 
+        transparent);
+    transition: all 0.5s ease;
+}
+
+.floating-menu a:hover {
+    background: rgba(212, 175, 55, 0.05);
+    color: var(--black);
+    transform: translateX(5px);
+}
+
+.floating-menu a:hover::before {
+    left: 100%;
+}
+
+.floating-menu a i {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    color: var(--gold-primary);
+    transition: all 0.3s ease;
+}
+
+.floating-menu a:hover i {
+    transform: scale(1.2);
+    color: var(--gold-primary);
+}
+
+.floating-contact:hover .floating-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    33% {
+        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0.5);
+    }
+    66% {
+        box-shadow: 0 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes float-icon {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+@keyframes float-text {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-3px);
+    }
+}
+
+@keyframes float-menu {
+    0%, 100% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+/* Ripple Effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .floating-contact {
+        bottom: 80px;
+        right: 20px;
+        animation: float-mobile 3s ease-in-out infinite;
+    }
+    
+    @keyframes float-mobile {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    .floating-button {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+    
+    .floating-menu {
+        width: 200px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const floatingButton = document.querySelector('.floating-button');
+    const floatingMenu = document.querySelector('.floating-menu');
+    
+    // Toggle menu on click (for mobile)
+    floatingButton.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.stopPropagation();
+            const isVisible = floatingMenu.style.visibility === 'visible';
+            
+            if (isVisible) {
+                floatingMenu.style.opacity = '0';
+                floatingMenu.style.visibility = 'hidden';
+                floatingMenu.style.transform = 'translateY(20px)';
+            } else {
+                floatingMenu.style.opacity = '1';
+                floatingMenu.style.visibility = 'visible';
+                floatingMenu.style.transform = 'translateY(0)';
+            }
+        }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+            floatingMenu.style.opacity = '0';
+            floatingMenu.style.visibility = 'hidden';
+            floatingMenu.style.transform = 'translateY(20px)';
+        }
+    });
+    
+    // Prevent menu from closing when clicking inside
+    floatingMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Add ripple effect to button
+    floatingButton.addEventListener('click', function(e) {
+        // Remove previous ripples
+        document.querySelectorAll('.ripple').forEach(ripple => {
+            ripple.remove();
+        });
+        
+        // Create ripple element
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        
+        // Position ripple
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left - size/2}px`;
+        ripple.style.top = `${e.clientY - rect.top - size/2}px`;
+        
+        // Add ripple to button
+        this.appendChild(ripple);
+        
+        // Remove ripple after animation
+        setTimeout(() => {
+            ripple.remove();
+        }, 1000);
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+    /* Luxury Preloader Styles */
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a0a12;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        overflow: hidden;
+    }
+    
+    .logo-container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    
+    .logo-outline {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('logo-1.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.3;
+        filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+        animation: fadeInOutline 1s ease-out forwards;
+    }
+    
+    .logo-fill {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('logo-1.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0;
+        animation: fadeInFill 1.5s 1s ease-out forwards;
+        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.7));
+    }
+    
+    .logo-gold-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, 
+            rgba(212, 175, 55, 0.3), 
+            rgba(212, 175, 55, 0.7), 
+            rgba(212, 175, 55, 0.3));
+        -webkit-mask-image: url('logo-1.png');
+        mask-image: url('logo-1.png');
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        opacity: 0;
+        animation: goldPulse 2s 2s infinite alternate;
+    }
+    
+    .feather {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"><path d="M22 12s-7.5-2-10.5-5-5.5-7-5.5-7-1 2-1 5 1 8 1 8-3.5 3.5-6 5.5S2 22 2 22"/></svg>') no-repeat center;
+        opacity: 0;
+        filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.7));
+    }
+    
+    .spinner {
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border: 2px solid transparent;
+        border-top-color: #d4af37;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+        opacity: 0;
+        animation-delay: 1s;
+    }
+    
+    .tagline {
+        color: rgba(255, 255, 255, 0.7);
+        font-family: 'Arial', sans-serif;
+        font-size: 14px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 30px;
+        opacity: 0;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        animation: fadeInText 1s 2.5s ease-out forwards;
+    }
+    
+    .shimmer {
+        position: absolute;
+        top: -10%;
+        left: -100%;
+        width: 50%;
+        height: 120%;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(255, 255, 255, 0.2), 
+            transparent);
+        transform: rotate(30deg);
+        animation: shine 3s 2s ease-out infinite;
+    }
+    
+    @keyframes fadeInOutline {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 0.3; transform: scale(1); }
+    }
+    
+    @keyframes fadeInFill {
+        to { opacity: 1; }
+    }
+    
+    @keyframes goldPulse {
+        from { opacity: 0.5; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+    
+    @keyframes fadeInText {
+        to { opacity: 1; }
+    }
+    
+    @keyframes shine {
+        to { left: 150%; }
+    }
+    
+    @keyframes floatFeather {
+        0% {
+            transform: translate(0, 0) rotate(0deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        100% {
+            transform: translate(var(--end-x), var(--end-y)) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    /* Hide content initially */
+    body.loading {
+        overflow: hidden;
+        height: 100vh;
+    }
+    
+    body.loading .page-content {
+        opacity: 0;
+    }
+</style>
+
+<!-- Preloader -->
+<div class="preloader">
+    <div class="logo-container">
+        <div class="spinner"></div>
+        <div class="shimmer"></div>
+        <div class="logo-outline"></div>
+        <div class="logo-fill"></div>
+        <div class="logo-gold-overlay"></div>
+    </div>
+    
+    <div class="tagline">Eagle Graphix – Design Beyond Vision</div>
+</div>
+
+<!-- Page Content (hidden during loading) -->
+
+<script>
+    // Create floating feathers
+    function createFeathers() {
+        const container = document.querySelector('.logo-container');
+        const featherCount = 8;
+        
+        for (let i = 0; i < featherCount; i++) {
+            const feather = document.createElement('div');
+            feather.className = 'feather';
+            
+            // Random start position around the logo
+            const angle = (i / featherCount) * Math.PI * 2;
+            const radius = 120;
+            const startX = 100 + Math.cos(angle) * radius;
+            const startY = 100 + Math.sin(angle) * radius;
+            
+            // End position at logo center
+            feather.style.setProperty('--end-x', `${100 - startX}px`);
+            feather.style.setProperty('--end-y', `${100 - startY}px`);
+            
+            feather.style.left = `${startX}px`;
+            feather.style.top = `${startY}px`;
+            feather.style.animation = `floatFeather 2s ${i * 0.2}s ease-out forwards`;
+            
+            container.appendChild(feather);
+        }
+    }
+
+    // Complete loading animation
+    function completeLoading() {
+        const preloader = document.querySelector('.preloader');
+        const body = document.body;
+        
+        // Fade out preloader
+        preloader.style.opacity = '0';
+        
+        // Remove preloader after fade out
+        setTimeout(() => {
+            preloader.style.display = 'none';
+            body.classList.remove('loading');
+            
+            // Show page content
+            document.querySelector('.page-content').style.opacity = '1';
+        }, 800);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        createFeathers();
+        
+        // Start loading simulation
+        setTimeout(() => {
+            completeLoading();
+        }, 4000); // Adjust timing as needed
+    });
+
+    // Fallback in case something goes wrong
+    setTimeout(() => {
+        if (document.body.classList.contains('loading')) {
+            completeLoading();
+        }
+    }, 7000);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Premium Luxurious Header -->
+<header class="main-header">
+  <div class="header-container">
+      <!-- Logo with Luxurious Details -->
+      <div class="logo-container">
+          <a href="/" class="logo-link">
+              <img src="images/logo-1.png" alt="Eagle Graphix" class="main-logo">
+              
+              <div class="logo-ornament"></div>
+          </a>
+      </div>
+
+      <!-- Desktop Navigation with Elegant Effects -->
+      <nav class="main-navigation">
+          <ul class="nav-list">
+              <li class="nav-item">
+                  <a href="index.html" class="nav-link active">
+                      <span class="nav-text">Home</span>
+                      <span class="nav-underline"></span>
+                  </a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a href="services.html" class="nav-link">
+                      <span class="nav-text">Services</span>
+                      <span class="nav-underline"></span>
+                      <i class="dropdown-icon fas fa-chevron-down"></i>
+                  </a>
+                  <div class="dropdown-decorator"></div>
+                  <ul class="dropdown-menu">
+                      <li>
+                          <a href="services.html#brand-identity">
+                              <span>Brand Identity</span>
+                              <div class="dropdown-link-decoration"></div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="services.html#marketing-collateral">
+                              <span>Marketing Graphics</span>
+                              <div class="dropdown-link-decoration"></div>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="services.html#premium-web-design.html">
+                              <span>Premium Web Design</span>
+                              <div class="dropdown-link-decoration"></div>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                  <a href="portfolio.html" class="nav-link">
+                      <span class="nav-text">Portfolio</span>
+                      <span class="nav-underline"></span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="about.html" class="nav-link">
+                      <span class="nav-text">About</span>
+                      <span class="nav-underline"></span>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="contact.html" class="nav-link">
+                      <span class="nav-text">Contact</span>
+                      <span class="nav-underline"></span>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+
+      <!-- Social Icons with Luxe Effects -->
+      <div class="social-container">
+          <a href="#" class="social-icon" aria-label="Instagram">
+              <div class="social-icon-bg"></div>
+              <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Behance">
+              <div class="social-icon-bg"></div>
+              <i class="fab fa-behance"></i>
+          </a>
+          <div class="social-divider"></div>
+          <a href="#" class="cta-button">
+              <span>Get a Quote</span>
+              <div class="button-ornament"></div>
+          </a>
+      </div>
+
+      <!-- Mobile Menu Toggle with Animation -->
+      <button class="mobile-menu-toggle" aria-label="Menu">
+          <span class="menu-line top-line"></span>
+          <span class="menu-line middle-line"></span>
+          <span class="menu-line bottom-line"></span>
+          <div class="menu-toggle-bg"></div>
+      </button>
+  </div>
+
+  <!-- Mobile Menu with Luxurious Overlay -->
+  <div class="mobile-menu-overlay">
+      <div class="mobile-menu-background">
+          <div class="luxury-pattern"></div>
+          <div class="gold-gradient-overlay"></div>
+      </div>
+      <div class="mobile-menu-container">
+          <div class="mobile-menu-header">
+              <div class="mobile-logo-container">
+                  <img src="images/logo-1.png" alt="Eagle Graphix" class="mobile-logo">
+                  <div class="mobile-logo-highlight"></div>
+              </div>
+              <button class="mobile-menu-close" aria-label="Close menu">
+                  <div class="close-icon-bg"></div>
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                  </svg>
+              </button>
+          </div>
+          
+          <nav class="mobile-navigation">
+              <ul class="mobile-nav-list">
+                  <li>
+                      <a href="/" class="mobile-nav-link">
+                          <span>Home</span>
+                          <div class="mobile-link-decoration"></div>
+                      </a>
+                  </li>
+                  <li class="mobile-dropdown">
+                      <a href="index.html" class="mobile-nav-link">
+                          <span>Services</span>
+                          <div class="mobile-link-decoration"></div>
+                          <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8">
+                              <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" fill="none"/>
+                          </svg>
+                      </a>
+                      <ul class="mobile-dropdown-menu">
+                          <li>
+                              <a href="services.html">
+                                  <span>Brand Identity</span>
+                                  <div class="mobile-dropdown-decoration"></div>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="services.html">
+                                  <span>Luxury Packaging</span>
+                                  <div class="mobile-dropdown-decoration"></div>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="services.html">
+                                  <span>Premium Web Design</span>
+                                  <div class="mobile-dropdown-decoration"></div>
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="portfolio.html" class="mobile-nav-link">
+                          <span>Portfolio</span>
+                          <div class="mobile-link-decoration"></div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="about.html" class="mobile-nav-link">
+                          <span>About</span>
+                          <div class="mobile-link-decoration"></div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="contact.html" class="mobile-nav-link">
+                          <span>Contact</span>
+                          <div class="mobile-link-decoration"></div>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+          
+          <div class="mobile-cta-container">
+              <a href="#" class="mobile-cta-button">
+                  <span>Start Your Project</span>
+                  <div class="mobile-button-ornament"></div>
+              </a>
+          </div>
+          
+          <div class="mobile-social">
+              <div class="mobile-social-title">Connect With Us</div>
+              <div class="mobile-social-icons">
+                  <a href="#" class="mobile-social-icon" aria-label="Instagram">
+                      <div class="mobile-social-icon-bg"></div>
+                      <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="mobile-social-icon" aria-label="Behance">
+                      <div class="mobile-social-icon-bg"></div>
+                      <i class="fab fa-behance"></i>
+                  </a>
+                  <a href="#" class="mobile-social-icon" aria-label="Pinterest">
+                      <div class="mobile-social-icon-bg"></div>
+                      <i class="fab fa-pinterest-p"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Header Decorative Elements -->
+  <div class="header-ornament-left"></div>
+  <div class="header-ornament-right"></div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="hero">
+
+        <video class="hero-background-video" autoplay muted loop playsinline preload="auto"
+               poster="brand-poster-white.jpg"> <source src="hero.mp4" type="video/mp4">
+            <source src="vid-1.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="cosmic-canvas">
+             <div class="background-overlay"></div> <div class="white-overlay"></div>
+             <div class="emerald-lines"></div>
+            <div class="nebula-particles" id="nebula"></div>
+            <div class="stardust-field" id="stardust"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="celestial-badge">
+                    <span class="diamond-text">Our Artistic Vision</span>
+                     <div class="constellation-icon"></div> </div>
+
+                <h1 class="hero-title">
+                    <span class="title-line">Crafting Futures with</span>
+                    <span class="title-line emerald-glow">Visual Mastery</span>
+                     <div class="title-underline"></div> </h1>
+
+                <p class="hero-subtitle">We craft <span class="gold-text">digital experiences</span> that stand apart, blending artistry with innovation to define the future.</p>
+
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-emerald btn-primary">
+                        <span>Explore Projects</span>
+                        <div class="hover-effect"></div> </a>
+                    <a href="#contact" class="btn btn-gold btn-outline">
+                        <span>Get in Touch</span>
+                        <div class="hover-effect"></div> </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cosmic-cursor" id="cosmic-cursor"></div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Dynamic Client Showcase -->
+<section class="client-carousel section-padding bg-dark">
+    <div class="container">
+        <div class="section-header text-center text-light">
+            <p class="section-subtitle">TRUSTED BY INNOVATORS</p>
+            <h2 class="section-title">Brands That Soar With Us</h2>
+            <div class="title-decoration">
+                <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 4H60" stroke="#FFD700" stroke-width="2"/>
+                    <circle cx="30" cy="4" r="4" fill="#FFD700"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="client-marquee">
+            <div class="marquee-track">
+                <div class="client-item">
+                    <img src="images/portfolio-2.png" alt="Nike" loading="lazy">
+                </div>
+                <div class="client-item">
+                    <img src="images/portfolio-3.png" alt="Apple" loading="lazy">
+                </div>
+                <div class="client-item">
+                    <img src="images/portfolio-4.png" alt="Tesla" loading="lazy">
+                </div>
+                <div class="client-item">
+                    <img src="images/portfolio-5.png" alt="Spotify" loading="lazy">
+                </div>
+                <div class="client-item">
+                    <img src="images/portfolio-6.png" alt="Airbnb" loading="lazy">
+                </div>
+                <div class="client-item">
+                    <img src="images/portfolio-1.png" alt="Adobe" loading="lazy">
+                </div>
+                <!-- Duplicated for seamless loop -->
+                <div class="client-item">
+                    <img src="images/portfolio-2.png" alt="Nike" loading="lazy">
+                </div>
+                <div class="client-item">
+                    <img src="images/portfolio-4.png" alt="Apple" loading="lazy">
+                </div>
+                <div class="client-item">
+                    <img src="images/portfolio-5.png" alt="Tesla" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Showcase - Masonry Layout -->
+<section id="portfolio" class="portfolio-showcase section-padding">
+    <div class="container-fluid px-0">
+        <div class="section-header text-center">
+            <p class="section-subtitle">OUR CREATIVE PROCESS</p>
+            <h2 class="section-title">Design That Takes Flight</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Works</button>
+                <button class="filter-btn" data-filter="branding">Brand Identity</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="digital">Digital</button>
+            </div>
+        </div>
+
+        <div class="portfolio-masonry">
+            <!-- Branding Project -->
+            <div class="portfolio-item branding" data-category="branding">
+                <div class="portfolio-card">
+                    <div class="portfolio-media">
+                        <img src="images/client-4.png" alt="Luxury Brand Identity" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Horizon Watches</h3>
+                                <p>Complete brand identity for Swiss timepiece manufacturer</p>
+                                <a href="#" class="portfolio-link">Explore Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <span>Brand Strategy</span>
+                        <span>Visual Identity</span>
+                        <span>Packaging</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Marketing Project -->
+            <div class="portfolio-item marketing" data-category="marketing">
+                <div class="portfolio-card tall">
+                    <div class="portfolio-media">
+                        <img src="images/client-1.png" alt="Beverage Campaign" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Oceanic Brews</h3>
+                                <p>360° marketing campaign for craft beverage company</p>
+                                <a href="#" class="portfolio-link">Explore Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <span>Social Media</span>
+                        <span>Print Collateral</span>
+                        <span>Experiential</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digital Project -->
+            <div class="portfolio-item digital" data-category="digital">
+                <div class="portfolio-card wide">
+                    <div class="portfolio-media">
+                        <img src="images/client-1.png" alt="Tech Dashboard" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Nexus Analytics</h3>
+                                <p>Dashboard UI/UX for business intelligence platform</p>
+                                <a href="#" class="portfolio-link">Explore Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-meta">
+                        <span>UI/UX Design</span>
+                        <span>Web Development</span>
+                        <span>Data Visualization</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional portfolio items would go here -->
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="portfolio.html" class="btn btn-primary btn-lg">
+                View Full Portfolio
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ======= Ultimate Luxury Services Showcase ======= -->
+<section class="luxury-ultimate-showcase">
+  <style>
+    /* === Ultimate Luxury CSS === */
+    .luxury-ultimate-showcase {
+      background: linear-gradient(135deg, #f8f5f0 0%, #f0ebe5 100%);
+      color: #1a1a1a;
+      padding: 10rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .luxury-ultimate-container {
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: 0 4rem;
+      position: relative;
+    }
+
+    .luxury-ultimate-header {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .luxury-ultimate-title {
+      font-size: 4rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+    }
+
+    .luxury-ultimate-title::after {
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #D4AF37, rgba(212, 175, 55, 0.5));
+      z-index: -1;
+    }
+
+    .luxury-ultimate-subtitle {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: rgba(26, 26, 26, 0.7);
+      line-height: 1.8;
+      font-weight: 300;
+      font-family: 'Cormorant', serif;
+    }
+
+    .luxury-ultimate-track {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 5rem;
+      width: max-content;
+      animation: scrollServices 60s linear infinite;
+      padding-bottom: 30px;
+      will-change: transform;
+    }
+
+    @keyframes scrollServices {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-420px * 9 - 3rem * 8)); }
+    }
+
+    .luxury-ultimate-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 3rem;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.03);
+      backdrop-filter: blur(8px);
+      width: 420px;
+      flex-shrink: 0;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .luxury-ultimate-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.1);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .luxury-ultimate-card-header {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .luxury-ultimate-number {
+      font-size: 1rem;
+      color: #D4AF37;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .luxury-ultimate-card-title {
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.3;
+    }
+
+    .luxury-ultimate-description {
+      font-size: 1.1rem;
+      color: rgba(26, 26, 26, 0.8);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      flex-grow: 1;
+    }
+
+    .luxury-ultimate-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .luxury-ultimate-image::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.03) 100%);
+      transition: all 0.3s ease;
+    }
+
+    .luxury-ultimate-cta {
+      background: linear-gradient(135deg, #D4AF37 0%, #b9932c 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem 2.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    .luxury-ultimate-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .luxury-ultimate-footer {
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    .luxury-ultimate-footer-cta {
+      background: transparent;
+      color: #1a1a1a;
+      border: 1px solid #D4AF37;
+      padding: 1.5rem 4rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* Modal Styles */
+    .luxury-ultimate-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .luxury-ultimate-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .luxury-ultimate-modal-content {
+      background: white;
+      width: 80%;
+      max-width: 900px;
+      max-height: 90vh;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      transform: translateY(50px);
+      transition: all 0.4s ease;
+      opacity: 0;
+      padding: 4rem;
+      overflow-y: auto;
+    }
+
+    .luxury-ultimate-modal.active .luxury-ultimate-modal-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .luxury-ultimate-modal-close {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .luxury-ultimate-modal-close:hover {
+      background: rgba(212, 175, 55, 0.2);
+    }
+
+    .luxury-ultimate-modal-close::before,
+    .luxury-ultimate-modal-close::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: #1a1a1a;
+    }
+
+    .luxury-ultimate-modal-close::before {
+      transform: rotate(45deg);
+    }
+
+    .luxury-ultimate-modal-close::after {
+      transform: rotate(-45deg);
+    }
+
+    .luxury-ultimate-modal-image {
+      width: 100%;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .luxury-ultimate-modal-title {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      color: #D4AF37;
+    }
+
+    .luxury-ultimate-modal-description {
+      font-size: 1.2rem;
+      color: rgba(26, 26, 26, 0.8);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .luxury-ultimate-modal-features {
+      columns: 2;
+      column-gap: 3rem;
+      margin: 2rem 0;
+    }
+
+    .luxury-ultimate-modal-feature {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      break-inside: avoid;
+    }
+
+    .luxury-ultimate-modal-feature-icon {
+      color: #D4AF37;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+
+    .luxury-ultimate-modal-cta {
+      background: linear-gradient(135deg, #D4AF37 0%, #b9932c 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem 2.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .luxury-ultimate-modal-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Track Container */
+    .luxury-ultimate-track-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .luxury-ultimate-track-container:hover .luxury-ultimate-track {
+      animation-play-state: paused;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .luxury-ultimate-container {
+        padding: 0 3rem;
+      }
+      
+      .luxury-ultimate-card {
+        width: 380px;
+      }
+      
+      .luxury-ultimate-modal-content {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .luxury-ultimate-title {
+        font-size: 3rem;
+      }
+      
+      .luxury-ultimate-card {
+        width: 340px;
+        height: 480px;
+      }
+      
+      .luxury-ultimate-modal-content {
+        padding: 3rem;
+      }
+      
+      .luxury-ultimate-modal-image {
+        height: 300px;
+      }
+      
+      .luxury-ultimate-modal-features {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .luxury-ultimate-showcase {
+        padding: 8rem 0;
+      }
+      
+      .luxury-ultimate-container {
+        padding: 0 2rem;
+      }
+      
+      .luxury-ultimate-title {
+        font-size: 2.5rem;
+      }
+      
+      .luxury-ultimate-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .luxury-ultimate-card {
+        width: 300px;
+        height: 460px;
+        padding: 2.5rem;
+      }
+      
+      .luxury-ultimate-modal-content {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .luxury-ultimate-showcase {
+        padding: 6rem 0;
+      }
+      
+      .luxury-ultimate-title {
+        font-size: 2rem;
+      }
+      
+      .luxury-ultimate-card {
+        width: 280px;
+        height: 440px;
+        padding: 2rem;
+      }
+      
+      .luxury-ultimate-modal-content {
+        width: 95%;
+      }
+      
+      .luxury-ultimate-modal-image {
+        height: 200px;
+      }
+    }
+  </style>
+
+  <!-- Modal Overlay -->
+  <div class="luxury-ultimate-modal" id="ultimateModal">
+    <div class="luxury-ultimate-modal-content" id="ultimateModalContent">
+      <!-- Content will be inserted here by JavaScript -->
+    </div>
+    <div class="luxury-ultimate-modal-close" id="ultimateModalClose"></div>
+  </div>
+
+  <div class="luxury-ultimate-container">
+    <div class="luxury-ultimate-header">
+      <h1 class="luxury-ultimate-title">Our Signature Services</h1>
+      <p class="luxury-ultimate-subtitle">Click any service to explore our premium offerings in exquisite detail</p>
+    </div>
+    
+    <div class="luxury-ultimate-track-container">
+      <div class="luxury-ultimate-track">
+        <!-- Service Card 1 -->
+        <div class="luxury-ultimate-card" data-service="branding">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">01</span>
+            <h3 class="luxury-ultimate-card-title">Bespoke Brand Identity</h3>
+          </div>
+          <p class="luxury-ultimate-description">Complete visual and verbal identity system crafted to position your brand as an industry leader.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#branding" class="luxury-ultimate-cta">Begin Your Journey</a>
+        </div>
+        
+        <!-- Service Card 2 -->
+        <div class="luxury-ultimate-card" data-service="web">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">02</span>
+            <h3 class="luxury-ultimate-card-title">Premium Web Architecture</h3>
+          </div>
+          <p class="luxury-ultimate-description">Hand-coded digital experiences with meticulous attention to detail and performance.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#web" class="luxury-ultimate-cta">Discuss Vision</a>
+        </div>
+        
+        <!-- Service Card 3 -->
+        <div class="luxury-ultimate-card" data-service="strategy">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">03</span>
+            <h3 class="luxury-ultimate-card-title">Executive Digital Strategy</h3>
+          </div>
+          <p class="luxury-ultimate-description">Comprehensive digital transformation consulting for measurable results.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#strategy" class="luxury-ultimate-cta">Schedule Consultation</a>
+        </div>
+        
+        <!-- Service Card 4 -->
+        <div class="luxury-ultimate-card" data-service="ecommerce">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">04</span>
+            <h3 class="luxury-ultimate-card-title">Luxury E-Commerce</h3>
+          </div>
+          <p class="luxury-ultimate-description">Premium online shopping experiences that convert browsers into loyal customers.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#ecommerce" class="luxury-ultimate-cta">Explore Solutions</a>
+        </div>
+        
+        <!-- Service Card 5 -->
+        <div class="luxury-ultimate-card" data-service="content">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">05</span>
+            <h3 class="luxury-ultimate-card-title">Content Atelier</h3>
+          </div>
+          <p class="luxury-ultimate-description">Bespoke content creation that tells your brand story with sophistication.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#content" class="luxury-ultimate-cta">Create With Us</a>
+        </div>
+        
+        <!-- Service Card 6 -->
+        <div class="luxury-ultimate-card" data-service="management">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">06</span>
+            <h3 class="luxury-ultimate-card-title">Digital Presence Management</h3>
+          </div>
+          <p class="luxury-ultimate-description">Comprehensive management of your digital ecosystem for consistent excellence.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#management" class="luxury-ultimate-cta">Optimize Presence</a>
+        </div>
+        
+        <!-- Service Card 7 -->
+        <div class="luxury-ultimate-card" data-service="seo">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">07</span>
+            <h3 class="luxury-ultimate-card-title">Executive SEO</h3>
+          </div>
+          <p class="luxury-ultimate-description">Premium search optimization strategies for competitive industries.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#seo" class="luxury-ultimate-cta">Enhance Visibility</a>
+        </div>
+        
+        <!-- Service Card 8 -->
+        <div class="luxury-ultimate-card" data-service="hosting">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">08</span>
+            <h3 class="luxury-ultimate-card-title">Premium Hosting</h3>
+          </div>
+          <p class="luxury-ultimate-description">Dedicated infrastructure with enterprise-grade security and performance.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#hosting" class="luxury-ultimate-cta">Secure Infrastructure</a>
+        </div>
+        
+        <!-- Service Card 9 -->
+        <div class="luxury-ultimate-card" data-service="support">
+          <div class="luxury-ultimate-card-header">
+            <span class="luxury-ultimate-number">09</span>
+            <h3 class="luxury-ultimate-card-title">Concierge Support</h3>
+          </div>
+          <p class="luxury-ultimate-description">Priority support and maintenance with rapid response times.</p>
+          <div class="luxury-ultimate-image" style="background-image: url('images/img-1')"></div>
+          <a href="/services#support" class="luxury-ultimate-cta">Request Priority Access</a>
+        </div>
+        
+        <!-- Duplicates for seamless looping -->
+        <!-- [All 9 cards duplicated here] -->
+      </div>
+    </div>
+    
+    <div class="luxury-ultimate-footer">
+      <a href="/services" class="luxury-ultimate-footer-cta">View Complete Service Portfolio</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Clone items for seamless looping
+      const track = document.querySelector('.luxury-ultimate-track');
+      const items = document.querySelectorAll('.luxury-ultimate-card');
+      
+      items.forEach(item => {
+        const clone = item.cloneNode(true);
+        track.appendChild(clone);
+      });
+
+      // Modal functionality
+      const modal = document.getElementById('ultimateModal');
+      const modalContent = document.getElementById('ultimateModalContent');
+      const closeBtn = document.getElementById('ultimateModalClose');
+      const serviceCards = document.querySelectorAll('.luxury-ultimate-card');
+      
+      // Service details data
+      const serviceDetails = {
+        branding: {
+          title: "Bespoke Brand Identity",
+          description: "Our complete brand identity service delivers a distinctive visual and verbal identity system crafted to position your brand as an industry leader. We go beyond logos to create comprehensive brand ecosystems that communicate your unique value proposition through strategic design and messaging.",
+          features: [
+            "Logo & Visual Identity System",
+            "Brand Guidelines Documentation",
+            "Naming Strategy Development",
+            "Brand Architecture Framework",
+            "Visual Language & Design System",
+            "Messaging Framework & Tone of Voice",
+            "Brand Application Examples",
+            "Competitive Positioning Analysis"
+          ]
+        },
+        web: {
+          title: "Premium Web Architecture",
+          description: "We craft hand-coded digital experiences with meticulous attention to detail, performance, and user experience—the digital equivalent of haute couture. Each website is built as a unique digital flagship that reflects your brand's prestige while delivering exceptional functionality.",
+          features: [
+            "Custom Responsive Design",
+            "E-Commerce Solutions",
+            "Web Application Development",
+            "Technical SEO Implementation",
+            "Performance Optimization",
+            "Enterprise Security",
+            "Content Management Systems",
+            "Ongoing Maintenance Plans"
+          ]
+        },
+        strategy: {
+          title: "Executive Digital Strategy",
+          description: "Our comprehensive digital transformation consulting delivers measurable results for discerning clients. We analyze your digital ecosystem and create a strategic roadmap that aligns with your business objectives while anticipating future trends and opportunities.",
+          features: [
+            "Digital Transformation Roadmap",
+            "Competitive Landscape Analysis",
+            "Technology Stack Evaluation",
+            "Customer Journey Mapping",
+            "Conversion Optimization Strategy",
+            "Data-Driven Decision Framework",
+            "Innovation Implementation Plan",
+            "Executive Briefings & Reporting"
+          ]
+        },
+        ecommerce: {
+          title: "Luxury E-Commerce Solutions",
+          description: "We create premium online shopping experiences that convert browsers into loyal customers. Our e-commerce solutions combine elegant design with high-performance functionality to deliver seamless purchasing experiences that reflect your brand's exclusivity.",
+          features: [
+            "Luxury Storefront Design",
+            "High-Conversion Product Pages",
+            "Personalized Shopping Experiences",
+            "Secure Payment Gateways",
+            "Inventory Management Systems",
+            "CRM Integration",
+            "Abandoned Cart Recovery",
+            "VIP Customer Portals"
+          ]
+        },
+        content: {
+          title: "Content Atelier",
+          description: "Our bespoke content creation service tells your brand story with sophistication and impact. We craft premium content that engages your audience while maintaining the highest standards of quality and brand consistency across all touchpoints.",
+          features: [
+            "Brand Story Development",
+            "Editorial Strategy",
+            "Premium Copywriting",
+            "Photography Art Direction",
+            "Video Production",
+            "Interactive Content",
+            "Thought Leadership Pieces",
+            "Content Distribution Strategy"
+          ]
+        },
+        management: {
+          title: "Digital Presence Management",
+          description: "We provide comprehensive management of your digital ecosystem to ensure consistent excellence across all platforms. Our team becomes an extension of yours, handling the day-to-day while you focus on business growth.",
+          features: [
+            "Website Performance Monitoring",
+            "Content Updates & Refreshes",
+            "Platform Upgrades",
+            "Security Patches",
+            "Analytics Reporting",
+            "A/B Testing Implementation",
+            "Multilingual Support",
+            "24/7 Emergency Support"
+          ]
+        },
+        seo: {
+          title: "Executive SEO Services",
+          description: "Our premium search optimization strategies are designed for competitive industries and discerning clients. We go beyond basic SEO to create sustainable organic growth strategies that deliver qualified traffic and conversions.",
+          features: [
+            "Technical SEO Audit",
+            "Keyword Strategy Development",
+            "Content Optimization",
+            "Link Building Campaigns",
+            "Local SEO Enhancement",
+            "International SEO",
+            "Algorithm Update Protection",
+            "Executive Reporting Dashboard"
+          ]
+        },
+        hosting: {
+          title: "Premium Hosting Infrastructure",
+          description: "We provide dedicated infrastructure with enterprise-grade security and performance. Our hosting solutions are optimized for speed, reliability, and scalability to ensure your digital presence performs flawlessly at all times.",
+          features: [
+            "Dedicated Server Environments",
+            "Global CDN Integration",
+            "Enterprise Security Protocols",
+            "Automated Backups",
+            "24/7 Monitoring",
+            "Disaster Recovery Plans",
+            "Scalable Resource Allocation",
+            "White-Glove Migration Services"
+          ]
+        },
+        support: {
+          title: "Concierge Support Services",
+          description: "Our priority support and maintenance service offers rapid response times and white-glove treatment. We provide peace of mind knowing your digital assets are in expert hands with immediate access to our senior technical team.",
+          features: [
+            "Dedicated Account Manager",
+            "15-Minute Response Guarantee",
+            "Priority Ticket Routing",
+            "Preventative Maintenance",
+            "Emergency Support 24/7",
+            "Change Request Management",
+            "Quarterly Strategy Reviews",
+            "Executive Briefings"
+          ]
+        }
+      };
+
+      // Open modal when card is clicked
+      serviceCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          // Don't open modal if clicking on CTA button
+          if (e.target.closest('.luxury-ultimate-cta')) return;
+          
+          const service = this.getAttribute('data-service');
+          const details = serviceDetails[service];
+          
+          // Build modal content
+          let featuresHTML = '';
+          details.features.forEach(feature => {
+            featuresHTML += `
+              <div class="luxury-ultimate-modal-feature">
+                <span class="luxury-ultimate-modal-feature-icon">✓</span>
+                <span>${feature}</span>
+              </div>
+            `;
+          });
+          
+          modalContent.innerHTML = `
+            <div class="luxury-ultimate-modal-image" style="background-image: url('images/img-1')"></div>
+            <h2 class="luxury-ultimate-modal-title">${details.title}</h2>
+            <p class="luxury-ultimate-modal-description">${details.description}</p>
+            <div class="luxury-ultimate-modal-features">
+              ${featuresHTML}
+            </div>
+            <a href="/services#${service}" class="luxury-ultimate-modal-cta">Learn More About This Service</a>
+          `;
+          
+          // Show modal
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close modal
+      closeBtn.addEventListener('click', function() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      // Close modal when clicking outside content
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Pause animation when hovering over track
+      const trackContainer = document.querySelector('.luxury-ultimate-track-container');
+      const scrollTrack = document.querySelector('.luxury-ultimate-track');
+      
+      trackContainer.addEventListener('mouseenter', function() {
+        scrollTrack.style.animationPlayState = 'paused';
+      });
+      
+      trackContainer.addEventListener('mouseleave', function() {
+        scrollTrack.style.animationPlayState = 'running';
+      });
+    });
+  </script>
+</section>
+<!-- ======= End Ultimate Luxury Services Showcase ======= -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Premium About Section -->
+<section id="about" class="luxury-about-section section-padding" style="background: linear-gradient(135deg, rgba(18, 18, 18, 0.95) 0%, rgba(30, 30, 30, 0.97) 100%); border-bottom: 1px solid var(--gold);">
+  <div class="container">
+      <div class="luxury-about-grid">
+          <div class="luxury-about-content animate__animated animate__fadeInLeft">
+              <p class="luxury-section-subtitle" style="color: var(--gold); font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem;">Who We Are</p>
+              <h2 class="luxury-section-title" style="font-size: 3rem; background: linear-gradient(to right, var(--gold), var(--emerald)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1.5rem; position: relative; display: inline-block;">
+                  Crafting Digital Masterpieces Since 2012
+                  <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 3px; background: linear-gradient(to right, var(--gold), var(--emerald));"></span>
+              </h2>
+              <p style="font-size: 1.2rem; line-height: 1.8; color: rgba(248, 248, 248, 0.85); max-width: 600px; margin-bottom: 2.5rem;">
+                  Eagle Graphix is an elite digital atelier where cutting-edge technology meets artistic vision. We craft bespoke digital experiences for discerning clients who demand nothing less than perfection. Our collective of visionary strategists, award-winning designers, and master developers creates work that defines industries.
+              </p>
+              
+              <div class="luxury-stats-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 3rem;">
+                  <div class="luxury-stat-item" style="background: rgba(80, 200, 120, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--gold);">
+                      <div class="luxury-stat-number" style="font-size: 2.5rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;" data-count="250">0</div>
+                      <div class="luxury-stat-label" style="color: var(--white); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Premium Projects</div>
+                  </div>
+                  <div class="luxury-stat-item" style="background: rgba(80, 200, 120, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--gold);">
+                      <div class="luxury-stat-number" style="font-size: 2.5rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;" data-count="98">0</div>
+                      <div class="luxury-stat-label" style="color: var(--white); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Client Satisfaction %</div>
+                  </div>
+                  <div class="luxury-stat-item" style="background: rgba(80, 200, 120, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--gold);">
+                      <div class="luxury-stat-number" style="font-size: 2.5rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;" data-count="12">0</div>
+                      <div class="luxury-stat-label" style="color: var(--white); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Industry Awards</div>
+                  </div>
+                  <div class="luxury-stat-item" style="background: rgba(80, 200, 120, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--gold);">
+                      <div class="luxury-stat-number" style="font-size: 2.5rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem;" data-count="15">0</div>
+                      <div class="luxury-stat-label" style="color: var(--white); text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;">Years of Excellence</div>
+                  </div>
+              </div>
+              
+              <a href="about.html" class="luxury-btn" style="display: inline-block; padding: 1rem 2.5rem; background: linear-gradient(45deg, var(--emerald), var(--dark-emerald)); color: var(--white); border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(80, 200, 120, 0.3); position: relative; overflow: hidden; z-index: 1; text-decoration: none;">
+                  <span style="position: relative; z-index: 2;">Discover Our Legacy</span>
+                  <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(45deg, var(--gold), var(--emerald)); transition: all 0.4s ease; z-index: -1;"></span>
+              </a>
+          </div>
+          
+          <div class="luxury-about-image animate__animated animate__fadeInRight" style="position: relative;">
+              <img src="images/team-1.png" alt="Our Elite Team" loading="lazy" style="border-radius: 12px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); border: 2px solid rgba(255, 215, 0, 0.3);">
+              <div style="position: absolute; bottom: -20px; right: -20px; width: 150px; height: 150px; background: linear-gradient(45deg, var(--gold), var(--emerald)); border-radius: 12px; z-index: -1;"></div>
+              <div style="position: absolute; top: -20px; left: -20px; width: 100px; height: 100px; background: linear-gradient(45deg, var(--emerald), var(--gold)); border-radius: 8px; z-index: -1;"></div>
+          </div>
+      </div>
+  </div>
+
+  <script>
+      // Count-up animation for stats
+      document.addEventListener('DOMContentLoaded', function() {
+          const statNumbers = document.querySelectorAll('.luxury-stat-number');
+          const options = {
+              threshold: 0.5
+          };
+          
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      const target = +entry.target.getAttribute('data-count');
+                      const count = +entry.target.innerText;
+                      const increment = target / 100;
+                      
+                      if (count < target) {
+                          entry.target.innerText = Math.ceil(count + increment);
+                          setTimeout(updateCount, 20);
+                      } else {
+                          entry.target.innerText = target;
+                      }
+                      
+                      function updateCount() {
+                          const count = +entry.target.innerText;
+                          const increment = target / 100;
+                          
+                          if (count < target) {
+                              entry.target.innerText = Math.ceil(count + increment);
+                              setTimeout(updateCount, 20);
+                          } else {
+                              entry.target.innerText = target;
+                          }
+                      }
+                      
+                      observer.unobserve(entry.target);
+                  }
+              });
+          }, options);
+          
+          statNumbers.forEach(number => {
+              observer.observe(number);
+          });
+          
+          // Button hover effect
+          const luxuryBtn = document.querySelector('.luxury-btn');
+          if (luxuryBtn) {
+              luxuryBtn.addEventListener('mouseenter', function() {
+                  this.querySelector('span:last-child').style.left = '0';
+                  this.style.transform = 'translateY(-3px)';
+                  this.style.boxShadow = '0 15px 30px rgba(80, 200, 120, 0.4)';
+              });
+              
+              luxuryBtn.addEventListener('mouseleave', function() {
+                  this.querySelector('span:last-child').style.left = '-100%';
+                  this.style.transform = 'translateY(0)';
+                  this.style.boxShadow = '0 10px 20px rgba(80, 200, 120, 0.3)';
+              });
+          }
+      });
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="artistic-skills-gallery">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+    
+    .artistic-skills-gallery {
+      --gold: #D4AF37;
+      --onyx: #222222;
+      --ivory: #FFFFFF;
+      --parchment: #F9F7F0;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      background: linear-gradient(135deg, var(--parchment) 0%, #f5f3ed 100%);
+      padding: 8rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skills-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 3;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: var(--onyx);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s 0.3s forwards;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--gold);
+    }
+    
+    .section-subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s 0.5s forwards;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    
+    .skill-category {
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s 0.7s forwards;
+    }
+    
+    .skill-category:nth-child(2) {
+      animation-delay: 0.8s;
+    }
+    
+    .category-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--onyx);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+      display: flex;
+      align-items: center;
+    }
+    
+    .category-title:before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: var(--gold);
+      margin-right: 12px;
+      transform: rotate(45deg);
+    }
+    
+    .skill-item {
+      margin-bottom: 2rem;
+      position: relative;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: fadeInRight 0.8s forwards;
+    }
+    
+    .skill-item:nth-child(1) { animation-delay: 0.9s; }
+    .skill-item:nth-child(2) { animation-delay: 1.0s; }
+    .skill-item:nth-child(3) { animation-delay: 1.1s; }
+    .skill-item:nth-child(4) { animation-delay: 1.2s; }
+    .skill-item:nth-child(5) { animation-delay: 1.3s; }
+    .skill-item:nth-child(6) { animation-delay: 1.4s; }
+    .skill-item:nth-child(7) { animation-delay: 1.5s; }
+    .skill-item:nth-child(8) { animation-delay: 1.6s; }
+    
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .skill-name {
+      font-weight: 500;
+      color: var(--onyx);
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-name i {
+      margin-right: 10px;
+      color: var(--gold);
+      font-size: 1.1rem;
+      width: 20px;
+      text-align: center;
+    }
+    
+    .skill-percent {
+      font-weight: 400;
+      color: #777;
+    }
+    
+    .skill-bar-container {
+      width: 100%;
+      height: 8px;
+      background: rgba(34, 34, 34, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold) 0%, #e4c96b 100%);
+      border-radius: 4px;
+      position: relative;
+      width: 0;
+      transition: width 1.5s ease-out;
+    }
+    
+    .skill-bar:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 20px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 1.1rem 2.4rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ivory);
+      background: var(--onyx);
+      border: 2px solid var(--onyx);
+      border-radius: 2px;
+      transition: var(--transition);
+      text-decoration: none;
+      margin: 2rem auto 0;
+      text-align: center;
+      max-width: 300px;
+      display: block;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s 1.8s forwards;
+    }
+    
+    .cta-button:hover {
+      background: transparent;
+      color: var(--onyx);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    /* Decorative Elements */
+    .floating-shape {
+      position: absolute;
+      opacity: 0.08;
+      z-index: 1;
+    }
+    
+    .shape-1 {
+      top: 10%;
+      left: 5%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .shape-2 {
+      bottom: 15%;
+      right: 10%;
+      width: 100px;
+      height: 100px;
+      background: var(--gold);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      animation: float 12s ease-in-out infinite reverse, pulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .artistic-skills-gallery {
+        padding: 5rem 1.5rem;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .skill-item {
+        animation: fadeInUp 0.8s forwards !important;
+      }
+    }
+  </style>
+  
+  <!-- Decorative Shapes -->
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+  
+  <div class="skills-container">
+    <div class="section-header">
+      <h2 class="section-title">Artisan Expertise</h2>
+      <p class="section-subtitle">Precision-crafted skills that transform visions into visual masterpieces</p>
+    </div>
+    
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3 class="category-title">Graphic Design Mastery</h3>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fas fa-palette"></i> Brand Identity Design</span>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="95%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fas fa-font"></i> Typography Systems</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="90%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fab fa-adobe"></i> Adobe Creative Suite</span>
+            <span class="skill-percent">92%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="92%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fas fa-print"></i> Print Design</span>
+            <span class="skill-percent">88%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="88%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fas fa-mobile-alt"></i> UI/UX Principles</span>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="85%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fas fa-film"></i> Motion Graphics</span>
+            <span class="skill-percent">80%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="80%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fas fa-box-open"></i> Packaging Design</span>
+            <span class="skill-percent">87%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="87%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fas fa-paint-brush"></i> Art Direction</span>
+            <span class="skill-percent">83%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="83%"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skill-category">
+        <h3 class="category-title">Web Development</h3>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fab fa-html5"></i> Responsive HTML/CSS</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="90%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fab fa-js"></i> JavaScript Fundamentals</span>
+            <span class="skill-percent">75%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="75%"></div>
+          </div>
+        </div>
+        
+        <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name"><i class="fab fa-wordpress"></i> WordPress Development</span>
+            <span class="skill-percent">82%</span>
+          </div>
+          <div class="skill-bar-container">
+            <div class="skill-bar" data-width="82%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <a href="/portfolio" class="cta-button">
+      <i class="fas fa-arrow-right" style="margin-right: 8px;"></i> View My Portfolio
+    </a>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate skill bars on scroll
+      const skillBars = document.querySelectorAll('.skill-bar');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const width = entry.target.getAttribute('data-width');
+            entry.target.style.width = width;
+            
+            // Add pulse animation to icon when skill bar fills
+            const icon = entry.target.closest('.skill-item').querySelector('i');
+            if (icon) {
+              icon.style.animation = 'pulse 0.5s 1.5s';
+              setTimeout(() => {
+                icon.style.animation = '';
+              }, 2000);
+            }
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      skillBars.forEach(bar => {
+        observer.observe(bar);
+      });
+      
+      // Add hover effect to icons
+      const icons = document.querySelectorAll('.skill-name i');
+      icons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+          icon.style.transform = 'scale(1.2)';
+          icon.style.transition = 'transform 0.3s ease';
+        });
+        
+        icon.addEventListener('mouseleave', () => {
+          icon.style.transform = 'scale(1)';
+        });
+      });
+    });
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="elite-testimonials-light" style="background-color: #f9f9f7; padding: 8rem 0; position: relative; overflow: hidden;">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500&display=swap');
+    
+    .elite-testimonials-light {
+      --gold: #D4AF37;
+      --emerald: #0c3b2e;
+      --onyx: #2a2a2a;
+      --ivory: #FFFFFF;
+      --parchment: #f9f9f7;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    /* Scrolling Animation */
+    @keyframes scrollTestimonials {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-100% - 2rem)); }
+    }
+    
+    /* Structural Elements */
+    .elite-container-light {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 3;
+    }
+    
+    /* Header Styling */
+    .elite-header-light {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    
+    .elite-title-light {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--onyx);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .elite-subtitle-light {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    
+    /* Testimonial Track */
+    .elite-track-light {
+      display: flex;
+      gap: 2rem;
+      width: max-content;
+      animation: scrollTestimonials 40s linear infinite;
+      padding: 2rem 0;
+    }
+    
+    .elite-card-light {
+      background: var(--ivory);
+      border-radius: 12px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      width: 350px;
+      flex-shrink: 0;
+    }
+    
+    .elite-card-light:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      border-color: rgba(212, 175, 55, 0.3);
+    }
+    
+    /* Testimonial Content */
+    .elite-quote-light {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: var(--onyx);
+      font-style: italic;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .elite-client-light {
+      display: flex;
+      align-items: center;
+    }
+    
+    .elite-avatar-light {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+      position: relative;
+    }
+    
+    .elite-avatar-light:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    
+    .elite-card-light:hover .elite-avatar-light:before {
+      opacity: 0.6;
+    }
+    
+    .elite-avatar-light img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .elite-client-info-light h4 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--onyx);
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    
+    .elite-client-info-light p {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--gold);
+      margin: 0;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    
+    .elite-rating-light {
+      margin-top: 1rem;
+      display: flex;
+    }
+    
+    .elite-rating-light span {
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin-right: 3px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .elite-title-light {
+        font-size: 3rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .elite-testimonials-light {
+        padding: 6rem 0;
+      }
+      
+      .elite-title-light {
+        font-size: 2.5rem;
+      }
+      
+      .elite-subtitle-light {
+        font-size: 1rem;
+      }
+      
+      .elite-card-light {
+        width: 280px;
+      }
+      
+      .elite-quote-light {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+
+  <div class="elite-container-light">
+    <div class="elite-header-light">
+      <h2 class="elite-title-light">Voices of Distinction</h2>
+      <p class="elite-subtitle-light">Trusted by Visionaries, Built for Legends</p>
+    </div>
+    
+    <div class="elite-track-light">
+      <!-- Testimonial 1 -->
+      <div class="elite-card-light">
+        <p class="elite-quote-light">"Working with Eagle Graphix was a masterpiece in motion. Their attention to detail is unparalleled in the industry."</p>
+        <div class="elite-client-light">
+          <div class="elite-avatar-light">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Isabella Laurent">
+          </div>
+          <div class="elite-client-info-light">
+            <h4>Isabella Laurent</h4>
+            <p>CEO, Laurent Capital</p>
+          </div>
+        </div>
+        <div class="elite-rating-light">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="elite-card-light">
+        <p class="elite-quote-light">"The definition of white-glove service. Every interaction exceeded our already high expectations for excellence."</p>
+        <div class="elite-client-light">
+          <div class="elite-avatar-light">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alexander von Hammersmith">
+          </div>
+          <div class="elite-client-info-light">
+            <h4>Alexander von Hammersmith</h4>
+            <p>Managing Partner, Blackstone Atelier</p>
+          </div>
+        </div>
+        <div class="elite-rating-light">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="elite-card-light">
+        <p class="elite-quote-light">"A rare combination of artistic vision and technical precision. They transformed our brand into something extraordinary."</p>
+        <div class="elite-client-light">
+          <div class="elite-avatar-light">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Gabrielle Windsor">
+          </div>
+          <div class="elite-client-info-light">
+            <h4>Gabrielle Windsor</h4>
+            <p>Creative Director, Windsor & Co</p>
+          </div>
+        </div>
+        <div class="elite-rating-light">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+      
+      <!-- Testimonial 4 -->
+      <div class="elite-card-light">
+        <p class="elite-quote-light">"Their work speaks the language of luxury fluently. We've seen a 40% increase in premium client acquisition since our rebrand."</p>
+        <div class="elite-client-light">
+          <div class="elite-avatar-light">
+            <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Sebastian Rothschild">
+          </div>
+          <div class="elite-client-info-light">
+            <h4>Sebastian Rothschild</h4>
+            <p>Founder, Rothschild Ventures</p>
+          </div>
+        </div>
+        <div class="elite-rating-light">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+      
+      <!-- Testimonial 5 -->
+      <div class="elite-card-light">
+        <p class="elite-quote-light">"The investment in their premium package was worth every cent. Our brand perception has never been stronger."</p>
+        <div class="elite-client-light">
+          <div class="elite-avatar-light">
+            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Victoria Kensington">
+          </div>
+          <div class="elite-client-info-light">
+            <h4>Victoria Kensington</h4>
+            <p>CMO, Kensington Group</p>
+          </div>
+        </div>
+        <div class="elite-rating-light">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+      
+      <!-- Testimonial 6 -->
+      <div class="elite-card-light">
+        <p class="elite-quote-light">"Precision meets passion. Their team delivered not just a service, but a transformative brand experience."</p>
+        <div class="elite-client-light">
+          <div class="elite-avatar-light">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Jonathan Whitmore">
+          </div>
+          <div class="elite-client-info-light">
+            <h4>Jonathan Whitmore</h4>
+            <p>CEO, Whitmore & Partners</p>
+          </div>
+        </div>
+        <div class="elite-rating-light">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+      
+      <!-- Duplicate testimonials for seamless looping -->
+      <div class="elite-card-light">
+        <p class="elite-quote-light">"Working with Eagle Graphix was a masterpiece in motion. Their attention to detail is unparalleled in the industry."</p>
+        <div class="elite-client-light">
+          <div class="elite-avatar-light">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Isabella Laurent">
+          </div>
+          <div class="elite-client-info-light">
+            <h4>Isabella Laurent</h4>
+            <p>CEO, Laurent Capital</p>
+          </div>
+        </div>
+        <div class="elite-rating-light">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+      
+      <div class="elite-card-light">
+        <p class="elite-quote-light">"The definition of white-glove service. Every interaction exceeded our already high expectations for excellence."</p>
+        <div class="elite-client-light">
+          <div class="elite-avatar-light">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alexander von Hammersmith">
+          </div>
+          <div class="elite-client-info-light">
+            <h4>Alexander von Hammersmith</h4>
+            <p>Managing Partner, Blackstone Atelier</p>
+          </div>
+        </div>
+        <div class="elite-rating-light">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Pause animation on hover
+      const track = document.querySelector('.elite-track-light');
+      
+      track.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+      });
+      
+      track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+      });
+      
+      // Infinite loop technique
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Reset position when out of view for seamless loop
+            if (entry.boundingClientRect.left < -entry.boundingClientRect.width) {
+              track.style.animation = 'none';
+              track.offsetHeight; // Trigger reflow
+              track.style.animation = 'scrollTestimonials 40s linear infinite';
+            }
+          }
+        });
+      }, { threshold: 0 });
+      
+      observer.observe(track);
+    });
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="luxury-cta">
+  <style>
+    /* === LUXURY CTA STYLES === */
+    .luxury-cta {
+      position: relative;
+      background: linear-gradient(135deg, #0a1f0a 0%, #000 100%);
+      color: #fff;
+      padding: 5rem 2rem;
+      text-align: center;
+      overflow: hidden;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      transform: translateY(50px) scale(0.95);
+      transition: all 1s ease-out;
+    }
+    .luxury-cta.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .cta-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      z-index: 2;
+      transition: transform 0.5s ease;
+    }
+    .cta-headline {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin: 0;
+      line-height: 1.2;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+    .cta-subtext {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+    .gold-button {
+      background: linear-gradient(145deg, #d4af37, #f9e07e);
+      color: #000;
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .gold-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6);
+    }
+    .gold-button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 45%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 55%
+      );
+      transform: rotate(30deg);
+      animation: shine 3s infinite;
+      z-index: -1;
+    }
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      100% { transform: translateX(100%) rotate(30deg); }
+    }
+    .vector-feather {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      width: 100px;
+      height: 100px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M10,50 Q30,20 50,50 Q70,80 90,50" stroke="%23d4af37" fill="none" stroke-width="1" opacity="0.3"/></svg>');
+      opacity: 0.1;
+    }
+    .vector-diamond {
+      position: absolute;
+      bottom: 15%;
+      right: 10%;
+      width: 80px;
+      height: 80px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,0 100,50 50,100 0,50" stroke="%23d4af37" fill="none" stroke-width="1" opacity="0.3"/></svg>');
+      opacity: 0.1;
+    }
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%23d4af37" opacity="0.3"/><circle cx="30" cy="70" r="0.8" fill="%23d4af37" opacity="0.2"/><circle cx="80" cy="20" r="0.5" fill="%23d4af37" opacity="0.2"/></svg>');
+      background-size: 200px 200px;
+      animation: particlesMove 20s linear infinite;
+    }
+    @keyframes particlesMove {
+      from { background-position: 0 0; }
+      to { background-position: 200px 200px; }
+    }
+    @media (min-width: 768px) {
+      .cta-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+  </style>
+
+  <div class="cta-container">
+    <div class="cta-content">
+      <h1 class="cta-headline">Elevate Your Vision. Create Without Limits.</h1>
+      <p class="cta-subtext">Partner with Eagle Graphix — where creativity meets timeless excellence.</p>
+    </div>
+    <button class="gold-button">Start Your Journey</button>
+  </div>
+  <div class="vector-feather"></div>
+  <div class="vector-diamond"></div>
+  <div class="particles"></div>
+
+  <script>
+    // Scroll-triggered animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctaSection = document.querySelector('.luxury-cta');
+      
+      // Intersection Observer for fade-in
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('visible'));
+      }, { threshold: 0.1 });
+      observer.observe(ctaSection);
+
+      // Parallax tilt effect
+      ctaSection.addEventListener('mousemove', (e) => {
+        const { left, top, width, height } = ctaSection.getBoundingClientRect();
+        const x = (e.clientX - left) / width - 0.5;
+        const y = (e.clientY - top) / height - 0.5;
+        ctaSection.querySelector('.cta-container').style.transform = 
+          `perspective(1000px) rotateX(${y * 2}deg) rotateY(${x * 2}deg)`;
+      });
+
+      ctaSection.addEventListener('mouseleave', () => {
+        ctaSection.querySelector('.cta-container').style.transform = '';
+      });
+    });
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<footer class="luxury-footer">
+  <!-- Premium Top Section with Diagonal Layout -->
+  <div class="luxury-footer-top">
+    <div class="branding-panel">
+      <div class="logo-container">
+        <a href="index.html" class="logo-marquee">
+          <img src="images/logo-1.png" alt="Eagle Graphix" class="luxury-logo">
+          <div class="logo-glow"></div>
+          <div class="logo-reflection"></div>
+        </a>
+      </div>
+      <p class="brand-statement">Crafting <span class="emerald-gradient">digital excellence</span> for <span class="gold-underline">premium brands</span> worldwide</p>
+      
+      <div class="awards-section">
+        <div class="award-badge">
+          <i class="fas fa-award"></i>
+          <span>Design Excellence 2024</span>
+        </div>
+        <div class="award-badge">
+          <i class="fas fa-trophy"></i>
+          <span>Top Agency</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="newsletter-panel">
+      <div class="newsletter-card">
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
+        
+        <div class="envelope-icon">
+          <i class="fas fa-envelope-open-text fa-2x"></i>
+          <div class="icon-pulse"></div>
+        </div>
+        <h3 class="newsletter-title">Join Our <span class="gold-text">Creative Circle</span></h3>
+        <p class="newsletter-subtitle">Receive exclusive content and early access to new features</p>
+        
+        <form class="luxury-form">
+          <div class="input-group">
+            <i class="fas fa-at input-icon"></i>
+            <input type="email" placeholder="Your professional email" required>
+            <div class="input-highlight"></div>
+          </div>
+          <button type="submit" class="luxury-button">
+            <span>Subscribe</span>
+            <i class="fas fa-arrow-right button-icon"></i>
+            <div class="button-shine"></div>
+          </button>
+        </form>
+        
+        <div class="privacy-note">
+          <i class="fas fa-lock"></i>
+          <span>We respect your privacy. Unsubscribe anytime.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asymmetrical Navigation Grid -->
+  <div class="luxury-nav-grid">
+    <div class="nav-column services-column">
+      <div class="nav-header">
+        <h3 class="nav-title">
+          <i class="fas fa-crown nav-icon"></i>
+          <span>Our Services</span>
+        </h3>
+        <div class="nav-divider"></div>
+      </div>
+      <ul class="staggered-links">
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Brand Strategy</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Web Design</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> UI/UX Design</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Motion Graphics</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Digital Marketing</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-column resources-column">
+      <div class="nav-header">
+        <h3 class="nav-title">
+          <i class="fas fa-gem nav-icon"></i>
+          <span>Resources</span>
+        </h3>
+        <div class="nav-divider"></div>
+      </div>
+      <ul class="staggered-links">
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Design Blog</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Case Studies</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Style Guides</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Webinars</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right link-icon"></i> Design Tools</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-column contact-column">
+      <div class="nav-header">
+        <h3 class="nav-title">
+          <i class="fas fa-mobile-alt nav-icon"></i>
+          <span>Connect</span>
+        </h3>
+        <div class="nav-divider"></div>
+      </div>
+      <address class="luxury-address">
+        <p><i class="fas fa-map-marker-alt"></i> <span>Zimmermann , Roysambu</span></p>
+        <p><i class="fas fa-phone"></i> <span>+254732072356</span></p>
+        <p><i class="fas fa-envelope"></i> <span>eaglegraphix24@gmai.com</span></p>
+        <p><i class="fas fa-clock"></i> <span>Mon-Fri: 9AM-6PM EAT</span></p>
+      </address>
+      <div class="social-links">
+        <a href="#" class="social-icon" aria-label="Behance"><i class="fab fa-behance"></i></a>
+        <a href="#" class="social-icon" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Luxury Footer Bottom with Ornamental Border -->
+  <div class="luxury-footer-bottom">
+    <div class="footer-bottom-content">
+      <p class="copyright">&copy; 2025 Eagle Graphix. All rights reserved.</p>
+      
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Accessibility</a>
+      </div>
+      
+      <div class="payment-methods">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-amex"></i>
+        <i class="fab fa-cc-paypal"></i>
+      </div>
+    </div>
+  </div>
+
+  
+</footer>
+
+
+
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@icon/elegant-icons@1.0.0/index.min.js"></script>
+</body>
+</html>

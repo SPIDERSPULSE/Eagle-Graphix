@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Graphics | The Journal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- CSS will be added later -->
+
+
+
+    
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <!-- 1. Editorial Hero Section -->
+    <section class="hero-section">
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-image" style="background-image: url('assets/images/hero-1.jpg')"></div>
+                <div class="slide-content">
+                    <span class="category-tag">FEATURED STORY</span>
+                    <h1>The Art of Luxury Branding in the Digital Age</h1>
+                    <p class="excerpt">Exploring how traditional craftsmanship meets modern technology in today's premium brand landscape</p>
+                    <a href="#" class="read-more">Read Story <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('assets/images/hero-2.jpg')"></div>
+                <div class="slide-content">
+                    <span class="category-tag">DESIGN INSIGHTS</span>
+                    <h1>Minimalism vs. Opulence: The New Design Paradigm</h1>
+                    <p class="excerpt">How luxury brands are redefining visual identity in 2023</p>
+                    <a href="#" class="read-more">Read Story <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-image" style="background-image: url('assets/images/hero-3.jpg')"></div>
+                <div class="slide-content">
+                    <span class="category-tag">EXCLUSIVE INTERVIEW</span>
+                    <h1>Conversation with Creative Director Alexandra Montclair</h1>
+                    <p class="excerpt">The visionary behind Eagle Graphics shares her philosophy on design excellence</p>
+                    <a href="#" class="read-more">Read Story <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 15. Scrolling Article Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-label">Latest from the Atelier:</div>
+        <div class="ticker-content">
+            <a href="#">New Insights on Luxury Packaging Trends</a>
+            <a href="#">VIP Access: Behind Our Latest Campaign</a>
+            <a href="#">The Psychology of Premium Color Palettes</a>
+            <a href="#">Upcoming Event: Design Symposium 2023</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 3. Category Filter -->
+    <div class="category-filter">
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">All Stories</button>
+            <button class="filter-btn" data-category="lifestyle">Luxury Lifestyle</button>
+            <button class="filter-btn" data-category="innovation">Innovation</button>
+            <button class="filter-btn" data-category="brand">Behind the Brand</button>
+            <button class="filter-btn" data-category="design">Design Philosophy</button>
+            <button class="filter-btn" data-category="interviews">Interviews</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- 2. Magazine-Style Grid Layout -->
+    <section class="blog-grid">
+        <!-- 9. Custom Featured Post Layout -->
+        <article class="blog-card featured" data-category="brand">
+            <div class="card-image" style="background-image: url('assets/images/featured-post.jpg')"></div>
+            <div class="card-content">
+                <div class="meta-info">
+                    <span class="read-time">⏱ 8-min read</span>
+                    <span class="post-type">FEATURED STORY</span>
+                </div>
+                <h2>The Evolution of Eagle Graphics: A Design Legacy</h2>
+                <p class="excerpt">From our first studio to becoming a global design authority, explore the journey that defined our aesthetic vision.</p>
+                <div class="author-info">
+                    <img src="assets/images/author-1.jpg" alt="Marcus Devereux" class="author-portrait">
+                    <div class="author-details">
+                        <span class="author-name">Marcus Devereux</span>
+                        <span class="author-title">Senior Brand Historian</span>
+                    </div>
+                </div>
+                <div class="overlay-quote">
+                    <blockquote>
+                        "True design excellence stands the test of time while embracing the future."
+                    </blockquote>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="lifestyle">
+            <div class="card-image" style="background-image: url('assets/images/post-1.jpg')"></div>
+            <div class="card-content">
+                <div class="meta-info">
+                    <span class="read-time">⏱ 5-min read</span>
+                    <span class="post-type">LUXURY LIFESTYLE</span>
+                </div>
+                <h2>The Psychology of Luxury Packaging</h2>
+                <p class="excerpt">How premium brands use tactile design elements to create emotional connections with consumers.</p>
+                <div class="author-info">
+                    <img src="assets/images/author-2.jpg" alt="Isabelle Chen" class="author-portrait">
+                    <div class="author-details">
+                        <span class="author-name">Isabelle Chen</span>
+                        <span class="author-title">Packaging Specialist</span>
+                    </div>
+                </div>
+                <!-- 16. Premium Tags -->
+                <div class="premium-tags">
+                    <span class="tag">💎 Insider</span>
+                    <span class="tag">🖌 Design</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="innovation">
+            <div class="card-image" style="background-image: url('assets/images/post-2.jpg')"></div>
+            <div class="card-content">
+                <div class="meta-info">
+                    <span class="read-time">⏱ 6-min read</span>
+                    <span class="post-type">INNOVATION</span>
+                </div>
+                <h2>Augmented Reality in Luxury Retail</h2>
+                <p class="excerpt">How high-end brands are blending digital and physical experiences to elevate customer engagement.</p>
+                <div class="author-info">
+                    <img src="assets/images/author-3.jpg" alt="Sebastian Wright" class="author-portrait">
+                    <div class="author-details">
+                        <span class="author-name">Sebastian Wright</span>
+                        <span class="author-title">Digital Experience Lead</span>
+                    </div>
+                </div>
+                <div class="premium-tags">
+                    <span class="tag">🚀 Future</span>
+                    <span class="tag">📱 Tech</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="design">
+            <div class="card-image" style="background-image: url('assets/images/post-3.jpg')"></div>
+            <div class="card-content">
+                <div class="meta-info">
+                    <span class="read-time">⏱ 4-min read</span>
+                    <span class="post-type">DESIGN PHILOSOPHY</span>
+                </div>
+                <h2>The Return of Art Deco in Modern Branding</h2>
+                <p class="excerpt">Why 1920s design principles are making a comeback in contemporary luxury visual identities.</p>
+                <div class="author-info">
+                    <img src="assets/images/author-4.jpg" alt="Alexandra Montclair" class="author-portrait">
+                    <div class="author-details">
+                        <span class="author-name">Alexandra Montclair</span>
+                        <span class="author-title">Creative Director</span>
+                    </div>
+                </div>
+                <div class="premium-tags">
+                    <span class="tag">🎨 Style</span>
+                    <span class="tag">💎 Insider</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="interviews">
+            <div class="card-image" style="background-image: url('assets/images/post-4.jpg')"></div>
+            <div class="card-content">
+                <div class="meta-info">
+                    <span class="read-time">⏱ 7-min read</span>
+                    <span class="post-type">INTERVIEW</span>
+                </div>
+                <h2>In Conversation with Perfume Master Jacques Laurent</h2>
+                <p class="excerpt">The art of scent design and how fragrance branding tells a story without words.</p>
+                <div class="author-info">
+                    <img src="assets/images/author-1.jpg" alt="Marcus Devereux" class="author-portrait">
+                    <div class="author-details">
+                        <span class="author-name">Marcus Devereux</span>
+                        <span class="author-title">Senior Brand Historian</span>
+                    </div>
+                </div>
+                <div class="premium-tags">
+                    <span class="tag">🔐 Private</span>
+                    <span class="tag">👃 Senses</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="blog-card" data-category="lifestyle">
+            <div class="card-image" style="background-image: url('assets/images/post-5.jpg')"></div>
+            <div class="card-content">
+                <div class="meta-info">
+                    <span class="read-time">⏱ 3-min read</span>
+                    <span class="post-type">LUXURY LIFESTYLE</span>
+                </div>
+                <h2>The Rise of Quiet Luxury in Visual Branding</h2>
+                <p class="excerpt">How understated elegance is replacing overt opulence in premium brand design.</p>
+                <div class="author-info">
+                    <img src="assets/images/author-2.jpg" alt="Isabelle Chen" class="author-portrait">
+                    <div class="author-details">
+                        <span class="author-name">Isabelle Chen</span>
+                        <span class="author-title">Packaging Specialist</span>
+                    </div>
+                </div>
+                <div class="premium-tags">
+                    <span class="tag">🕊 Wellness</span>
+                    <span class="tag">🎩 Elegance</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- 5. Editor's Picks Carousel -->
+    <section class="editors-picks">
+        <div class="section-header">
+            <h2>Editor's Picks</h2>
+            <p class="subtitle">Curated selections from our creative director</p>
+        </div>
+        <div class="picks-carousel">
+            <div class="pick-card">
+                <div class="pick-image" style="background-image: url('assets/images/pick-1.jpg')"></div>
+                <div class="pick-content">
+                    <h3>The Golden Ratio in Luxury Logo Design</h3>
+                    <p class="excerpt">Mathematical perfection meets aesthetic brilliance</p>
+                    <a href="#" class="read-more">Read Now</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <div class="pick-image" style="background-image: url('assets/images/pick-2.jpg')"></div>
+                <div class="pick-content">
+                    <h3>Typography That Speaks Luxury</h3>
+                    <p class="excerpt">How font selection defines brand perception</p>
+                    <a href="#" class="read-more">Read Now</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <div class="pick-image" style="background-image: url('assets/images/pick-3.jpg')"></div>
+                <div class="pick-content">
+                    <h3>The Future of Sustainable Luxury Packaging</h3>
+                    <p class="excerpt">Eco-conscious materials without compromising elegance</p>
+                    <a href="#" class="read-more">Read Now</a>
+                </div>
+            </div>
+            <div class="pick-card">
+                <div class="pick-image" style="background-image: url('assets/images/pick-4.jpg')"></div>
+                <div class="pick-content">
+                    <h3>Color Psychology for High-End Brands</h3>
+                    <p class="excerpt">What your palette says about your brand values</p>
+                    <a href="#" class="read-more">Read Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- 14. Newsletter Signup -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Get Our Exclusive Journal in Your Inbox</h2>
+                <p>Subscribe to receive curated design insights, behind-the-scenes stories, and invitations to private events.</p>
+            </div>
+            <form class="newsletter-form">
+                <div class="input-group">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="signature-button">
+                        <span>Subscribe</span>
+                        <img src="assets/images/signature.png" alt="Signature" class="signature">
+                    </button>
+                </div>
+                <div class="privacy-note">
+                    <input type="checkbox" id="privacy-check" required>
+                    <label for="privacy-check">I agree to the privacy policy and receiving occasional updates</label>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sample Article (for TOC and other features demonstration) -->
+    <article class="full-article">
+        <div class="article-header">
+            <div class="header-content">
+                <span class="category-tag">FEATURED STORY</span>
+                <h1>The Art of Luxury Branding in the Digital Age</h1>
+                <div class="meta-info">
+                    <span class="author">By Alexandra Montclair</span>
+                    <span class="date">June 15, 2023</span>
+                    <span class="read-time">⏱ 8-min read</span>
+                </div>
+            </div>
+            <div class="header-image" style="background-image: url('assets/images/article-hero.jpg')"></div>
+        </div>
+
+        <!-- 6. Floating Table of Contents -->
+        <aside class="article-toc">
+            <div class="toc-header">
+                <h4>Contents</h4>
+                <button class="toc-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+            <ul class="toc-list">
+                <li><a href="#section1">The Digital Luxury Paradox</a></li>
+                <li><a href="#section2">Crafting Exclusivity Online</a></li>
+                <li><a href="#section3">Case Study: Maison de Luxe</a></li>
+                <li><a href="#section4">Future Trends</a></li>
+                <li><a href="#section5">Key Takeaways</a></li>
+            </ul>
+        </aside>
+
+        <div class="article-content">
+            <!-- 17. Story Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
+            <section id="section1">
+                <h2>The Digital Luxury Paradox</h2>
+                <p>In an era where digital accessibility is the norm, luxury brands face a unique challenge: how to maintain an aura of exclusivity while embracing the democratizing power of the internet...</p>
+                
+                <!-- 10. Quote Pull Sections -->
+                <blockquote class="pull-quote">
+                    "The true test of luxury in the digital space isn't about limiting access—it's about creating experiences that feel personally crafted for each individual."
+                </blockquote>
+                
+                <p>This philosophy represents a fundamental shift from traditional luxury marketing approaches...</p>
+            </section>
+
+            <section id="section2">
+                <h2>Crafting Exclusivity Online</h2>
+                <p>Digital platforms offer unprecedented opportunities for storytelling and brand experience creation...</p>
+                
+                <div class="image-gallery">
+                    <figure>
+                        <img src="assets/images/gallery-1.jpg" alt="Luxury brand website example">
+                        <figcaption>Maison de Luxe's interactive virtual showroom</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/gallery-2.jpg" alt="Augmented reality example">
+                        <figcaption>AR try-on feature for high-end watches</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- 12. Cinematic Scroll Animations -->
+            <section id="section3" class="scroll-animation-section">
+                <div class="animation-content">
+                    <h2>Case Study: Maison de Luxe</h2>
+                    <p>When this heritage fashion house approached us for their digital transformation, we knew we needed to create something that honored their 120-year history while positioning them for the next century...</p>
+                </div>
+                <div class="animation-image" style="background-image: url('assets/images/case-study.jpg')"></div>
+            </section>
+
+            <section id="section4">
+                <h2>Future Trends</h2>
+                <p>As we look ahead, several key trends are emerging in the luxury digital space...</p>
+                
+                <!-- 19. Related Reads (AI suggestions) -->
+                <div class="related-reads">
+                    <h3>Readers who loved this also enjoyed:</h3>
+                    <div class="related-cards">
+                        <a href="#" class="related-card">
+                            <img src="assets/images/related-1.jpg" alt="Related article">
+                            <span>The Psychology of Luxury Pricing</span>
+                        </a>
+                        <a href="#" class="related-card">
+                            <img src="assets/images/related-2.jpg" alt="Related article">
+                            <span>NFTs and High-End Collectibles</span>
+                        </a>
+                        <a href="#" class="related-card">
+                            <img src="assets/images/related-3.jpg" alt="Related article">
+                            <span>Sustainable Luxury: Oxymoron or Opportunity?</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section5">
+                <h2>Key Takeaways</h2>
+                <ul class="key-takeaways">
+                    <li>Digital luxury isn't about scarcity—it's about meaningful, personalized experiences</li>
+                    <li>Technology should enhance craftsmanship, not replace it</li>
+                    <li>The most successful brands balance heritage with innovation</li>
+                    <li>Every digital touchpoint should reflect the brand's physical quality standards</li>
+                </ul>
+            </section>
+
+            <!-- 20. Share Buttons -->
+            <div class="share-section">
+                <h3>Share This Elegance</h3>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="share-btn twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="share-btn pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+
+            <!-- 18. Interactive Comment Section -->
+            <div class="comments-section">
+                <h3>Join the Conversation</h3>
+                <div class="comment-form">
+                    <div class="user-avatar">
+                        <img src="assets/images/user-avatar.jpg" alt="Your avatar">
+                    </div>
+                    <div class="form-content">
+                        <textarea placeholder="Add to the discussion..."></textarea>
+                        <div class="form-actions">
+                            <div class="emoji-reactions">
+                                <button class="emoji-btn">👍</button>
+                                <button class="emoji-btn">❤️</button>
+                                <button class="emoji-btn">👏</button>
+                                <button class="emoji-btn">🔥</button>
+                            </div>
+                            <button class="submit-comment">Post Comment</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-list">
+                    <div class="comment">
+                        <div class="comment-avatar">
+                            <img src="assets/images/commenter-1.jpg" alt="Commenter avatar">
+                        </div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="commenter-name">James Vanderbilt</span>
+                                <span class="comment-date">2 days ago</span>
+                                <div class="comment-likes">
+                                    <button class="like-btn">❤️ 12</button>
+                                </div>
+                            </div>
+                            <p class="comment-text">Fascinating perspective on balancing digital accessibility with exclusivity. The Maison de Luxe case study was particularly illuminating.</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <div class="comment-avatar">
+                            <img src="assets/images/commenter-2.jpg" alt="Commenter avatar">
+                        </div>
+                        <div class="comment-content">
+                            <div class="comment-header">
+                                <span class="commenter-name">Sophia Laurent</span>
+                                <span class="comment-date">1 week ago</span>
+                                <div class="comment-likes">
+                                    <button class="like-btn">❤️ 24</button>
+                                </div>
+                            </div>
+                            <p class="comment-text">As someone who works in luxury retail, I can confirm that the digital experience is becoming just as important as the in-store experience. Great article!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 25. Signature Closing Section -->
+            <div class="article-footer">
+                <div class="signature-block">
+                    <img src="assets/images/author-signature.png" alt="Author signature" class="author-signature">
+                    <p class="author-name">Alexandra Montclair</p>
+                    <p class="author-title">Creative Director, Eagle Graphics</p>
+                </div>
+                <div class="cta-block">
+                    <p>Let's continue the conversation about luxury in the digital space.</p>
+                    <a href="#" class="cta-button">Contact Our Studio</a>
+                </div>
+            </div>
+
+            <!-- 21. Print/PDF Option -->
+            <div class="article-actions">
+                <button class="print-btn"><i class="fas fa-print"></i> Print This Article</button>
+                <button class="pdf-btn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                <!-- 22. Audio Narration -->
+                <button class="audio-btn"><i class="fas fa-headphones"></i> Listen to Article</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- 13. Dark/Light Mode Toggle -->
+    <div class="theme-switcher">
+        <button class="theme-btn light-mode"><i class="fas fa-sun"></i></button>
+        <button class="theme-btn dark-mode active"><i class="fas fa-moon"></i></button>
+    </div>
+
+    <!-- 23. Return to Top Button -->
+    <button class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 24. Magazine Archive Dropdown -->
+    <div class="archive-widget">
+        <button class="archive-toggle">
+            <i class="fas fa-archive"></i>
+            <span>Journal Archive</span>
+        </button>
+        <div class="archive-dropdown">
+            <div class="archive-years">
+                <button class="year-btn">2023</button>
+                <button class="year-btn">2022</button>
+                <button class="year-btn">2021</button>
+                <button class="year-btn">2020</button>
+            </div>
+            <div class="archive-months">
+                <div class="month-group" data-year="2023">
+                    <a href="#">January</a>
+                    <a href="#">February</a>
+                    <a href="#">March</a>
+                    <a href="#">April</a>
+                    <a href="#">May</a>
+                    <a href="#">June</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 11. Ambient Soundtrack (Optional) -->
+    <div class="audio-player">
+        <button class="audio-toggle">
+            <i class="fas fa-music"></i>
+            <span>Ambient Mode</span>
+        </button>
+        <audio loop>
+            <source src="assets/audio/ambient.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <footer class="luxury-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="assets/images/logo-white.png" alt="Eagle Graphics" class="footer-logo">
+                <p>Crafting exceptional design experiences for discerning clients worldwide.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Luxury Lifestyle</a></li>
+                    <li><a href="#">Design Innovation</a></li>
+                    <li><a href="#">Behind the Brand</a></li>
+                    <li><a href="#">Industry Insights</a></li>
+                    <li><a href="#">Creative Interviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>About</h4>
+                <ul>
+                    <li><a href="#">Our Studio</a></li>
+                    <li><a href="#">The Team</a></li>
+                    <li><a href="#">Design Philosophy</a></li>
+                    <li><a href="#">Client Stories</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Connect</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Design Avenue, Creative District</li>
+                    <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                    <li><i class="fas fa-envelope"></i> journal@eaglegraphics.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Eagle Graphics. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript will be added later -->
+
+
+    <script src="blog.js"></script>
+</body>
+</html>

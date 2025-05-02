@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Eagle Graphics - Premium Design Solutions</title>
+    <meta name="description" content="Begin your elevated experience with Eagle Graphics. Connect with our premium design team for exceptional creative solutions.">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <!-- Floating Contact Button (Feature 15) -->
+    <div class="floating-contact-btn">
+        <span>Let's Connect</span>
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Hero Section with Cinematic Background (Feature 1) -->
+    <section class="hero-section">
+        <div class="cinematic-background">
+            <video autoplay loop muted playsinline>
+                <source src="assets/videos/luxury-showcase.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Let's Begin Your <span>Elevated Experience</span></h1>
+            <p class="subtitle">Where visionary design meets exceptional craftsmanship</p>
+            <div class="scroll-indicator">
+                <span>Explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold-Trimmed Divider (Feature 9) -->
+    <div class="gold-divider">
+        <svg viewBox="0 0 1200 50" preserveAspectRatio="none">
+            <path d="M0,25 C150,40 350,10 600,25 C850,40 1050,10 1200,25 L1200,50 L0,50 Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <!-- Video Message from Founder (Feature 19) -->
+    <section class="founder-message">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Personal Invitation</h2>
+                <p class="section-subtitle">From our founder to you</p>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video controls poster="assets/images/founder-poster.jpg">
+                        <source src="assets/videos/founder-message.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-caption">
+                    <h3>Alexander Eagle</h3>
+                    <p>Founder & Creative Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Whisper Animation Transition (Feature 6) -->
+    <div class="whisper-transition">
+        <div class="particles"></div>
+    </div>
+
+    <!-- Contact Options Grid (Feature 14) -->
+    <section class="contact-options">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Preferred Connection</h2>
+                <p class="section-subtitle">Select how you'd like to engage with us</p>
+            </div>
+            <div class="options-grid">
+                <div class="option-card" data-modal="designer">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3>Speak with Designer</h3>
+                    <p>Direct access to our creative team for your project</p>
+                    <span class="hover-effect"></span>
+                </div>
+                
+                <div class="option-card" data-modal="callback">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Request Callback</h3>
+                    <p>We'll call you at your preferred time</p>
+                    <span class="hover-effect"></span>
+                </div>
+                
+                <div class="option-card" data-modal="experience">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-calendar-star"></i>
+                    </div>
+                    <h3>Book Experience</h3>
+                    <p>Schedule a premium consultation session</p>
+                    <span class="hover-effect"></span>
+                </div>
+                
+                <div class="option-card" data-modal="vip">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>VIP Access</h3>
+                    <p>Exclusive services for our elite clients</p>
+                    <span class="hover-effect"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold-Trimmed Divider (Feature 9) -->
+    <div class="gold-divider reverse">
+        <svg viewBox="0 0 1200 50" preserveAspectRatio="none">
+            <path d="M0,25 C150,10 350,40 600,25 C850,10 1050,40 1200,25 L1200,0 L0,0 Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <!-- Multi-Step Smart Contact Form (Feature 3) -->
+    <section class="smart-contact-form">
+        <div class="container">
+            <div class="form-header">
+                <h2>Begin Your Journey</h2>
+                <p class="subtitle">Our team is ready to bring your vision to life</p>
+            </div>
+            
+            <form id="luxuryContactForm" class="multi-step-form">
+                <!-- Step 1 -->
+                <div class="form-step active" data-step="1">
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                        <h3>What brings you to Eagle Graphics today?</h3>
+                    </div>
+                    <div class="form-group radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="purpose-branding" name="contactPurpose" value="Branding" checked>
+                            <label for="purpose-branding">
+                                <i class="fas fa-palette"></i>
+                                <span>Branding & Identity</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="purpose-web" name="contactPurpose" value="Web Design">
+                            <label for="purpose-web">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Web & Digital</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="purpose-packaging" name="contactPurpose" value="Packaging">
+                            <label for="purpose-packaging">
+                                <i class="fas fa-box-open"></i>
+                                <span>Packaging Design</span>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="purpose-other" name="contactPurpose" value="Other">
+                            <label for="purpose-other">
+                                <i class="fas fa-ellipsis-h"></i>
+                                <span>Other Services</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn-next">Continue <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="form-step" data-step="2">
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                        <h3>Tell us about yourself</h3>
+                    </div>
+                    <div class="form-group dual-inputs">
+                        <div class="input-wrapper">
+                            <input type="text" id="firstName" name="firstName" required>
+                            <label for="firstName">First Name</label>
+                            <span class="highlight"></span>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" id="lastName" name="lastName" required>
+                            <label for="lastName">Last Name</label>
+                            <span class="highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                            <span class="highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <span class="highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev"><i class="fas fa-chevron-left"></i> Back</button>
+                        <button type="button" class="btn-next">Continue <i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="form-step" data-step="3">
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                        <h3>Share your vision with us</h3>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="company" name="company">
+                            <label for="company">Company/Organization (Optional)</label>
+                            <span class="highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <select id="budget" name="budget" required>
+                                <option value="" disabled selected></option>
+                                <option value="5k-10k">$5,000 - $10,000</option>
+                                <option value="10k-25k">$10,000 - $25,000</option>
+                                <option value="25k-50k">$25,000 - $50,000</option>
+                                <option value="50k+">$50,000+</option>
+                                <option value="undecided">Budget not determined</option>
+                            </select>
+                            <label for="budget">Project Budget</label>
+                            <span class="highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                            <label for="message">Your Project Details</label>
+                            <span class="highlight"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper file-upload">
+                            <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.png,.psd,.ai">
+                            <label for="attachment">
+                                <i class="fas fa-paperclip"></i>
+                                <span>Attach Files (Optional)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn-prev"><i class="fas fa-chevron-left"></i> Back</button>
+                        <button type="submit" class="btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Success Message -->
+                <div class="form-success" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Thank You for Reaching Out</h3>
+                    <p>Your message has been received by our team. We'll be in touch within 24 hours to begin crafting your exceptional experience.</p>
+                    <div class="signature-panel">
+                        <img src="assets/images/ceo-signature.png" alt="CEO Signature">
+                        <p>Alexander Eagle<br>Founder & Creative Director</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Whisper Animation Transition (Feature 6) -->
+    <div class="whisper-transition particles-right">
+        <div class="particles"></div>
+    </div>
+
+    <!-- 3D Interactive Map Embed (Feature 2) -->
+    <section class="interactive-map">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Global Ateliers</h2>
+                <p class="section-subtitle">Visit us in these prestigious locations</p>
+            </div>
+            <div class="map-container">
+                <div class="map-wrapper">
+                    <!-- This would be replaced with actual 3D map implementation -->
+                    <div class="custom-3d-map">
+                        <div class="map-location" data-location="new-york" style="top: 30%; left: 25%;">
+                            <div class="location-pin"></div>
+                            <div class="location-info">
+                                <h4>New York</h4>
+                                <p>5th Avenue, Suite 1200</p>
+                            </div>
+                        </div>
+                        <div class="map-location" data-location="london" style="top: 25%; left: 48%;">
+                            <div class="location-pin"></div>
+                            <div class="location-info">
+                                <h4>London</h4>
+                                <p>Mayfair, Berkeley Square</p>
+                            </div>
+                        </div>
+                        <div class="map-location" data-location="dubai" style="top: 45%; left: 65%;">
+                            <div class="location-pin"></div>
+                            <div class="location-info">
+                                <h4>Dubai</h4>
+                                <p>DIFC, Gate Village</p>
+                            </div>
+                        </div>
+                        <div class="map-location" data-location="tokyo" style="top: 40%; left: 85%;">
+                            <div class="location-pin"></div>
+                            <div class="location-info">
+                                <h4>Tokyo</h4>
+                                <p>Ginza, Chuo-ku</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-sidebar">
+                    <div class="location-details" data-location="new-york">
+                        <h3>New York Atelier</h3>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> 725 5th Avenue, Suite 1200<br>New York, NY 10022</p>
+                            <p><i class="fas fa-phone"></i> +1 212-555-0100</p>
+                            <p><i class="fas fa-envelope"></i> ny@eaglegraphics.com</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 7PM EST</p>
+                        </address>
+                        <button class="btn-directions">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </button>
+                    </div>
+                    <div class="location-details" data-location="london" style="display: none;">
+                        <h3>London Studio</h3>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> 25 Berkeley Square<br>Mayfair, London W1J 6HE</p>
+                            <p><i class="fas fa-phone"></i> +44 20 5555 0100</p>
+                            <p><i class="fas fa-envelope"></i> london@eaglegraphics.com</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM GMT</p>
+                        </address>
+                        <button class="btn-directions">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </button>
+                    </div>
+                    <div class="location-details" data-location="dubai" style="display: none;">
+                        <h3>Dubai Creative Hub</h3>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> Gate Village 8, DIFC<br>Dubai, UAE</p>
+                            <p><i class="fas fa-phone"></i> +971 4 555 0100</p>
+                            <p><i class="fas fa-envelope"></i> dubai@eaglegraphics.com</p>
+                            <p><i class="fas fa-clock"></i> Sun-Thu: 10AM - 7PM GST</p>
+                        </address>
+                        <button class="btn-directions">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </button>
+                    </div>
+                    <div class="location-details" data-location="tokyo" style="display: none;">
+                        <h3>Tokyo Design House</h3>
+                        <address>
+                            <p><i class="fas fa-map-marker-alt"></i> 5-7-4 Ginza, Chuo-ku<br>Tokyo 104-0061</p>
+                            <p><i class="fas fa-phone"></i> +81 3-5555-0100</p>
+                            <p><i class="fas fa-envelope"></i> tokyo@eaglegraphics.com</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 10AM - 7PM JST</p>
+                        </address>
+                        <button class="btn-directions">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold-Trimmed Divider (Feature 9) -->
+    <div class="gold-divider">
+        <svg viewBox="0 0 1200 50" preserveAspectRatio="none">
+            <path d="M0,25 C150,40 350,10 600,25 C850,40 1050,10 1200,25 L1200,50 L0,50 Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <!-- Virtual Appointment Scheduler (Feature 5) -->
+    <section class="appointment-scheduler">
+        <div class="container">
+            <div class="section-header">
+                <h2>Schedule Your Consultation</h2>
+                <p class="section-subtitle">Reserve a private session with our creative directors</p>
+            </div>
+            <div class="scheduler-wrapper">
+                <div class="scheduler-intro">
+                    <h3>Personalized Creative Sessions</h3>
+                    <p>Book a private consultation with our award-winning design team to discuss your project in detail. Our virtual studio sessions provide:</p>
+                    <ul class="luxury-list">
+                        <li><i class="fas fa-check-circle"></i> One-on-one time with senior creatives</li>
+                        <li><i class="fas fa-check-circle"></i> Preliminary concept sketches</li>
+                        <li><i class="fas fa-check-circle"></i> Competitive project analysis</li>
+                        <li><i class="fas fa-check-circle"></i> Tailored recommendations</li>
+                    </ul>
+                    <div class="timezone-info">
+                        <i class="fas fa-globe"></i>
+                        <span>Your current timezone: <span id="userTimezone">Detecting...</span></span>
+                    </div>
+                </div>
+                <div class="scheduler-embed">
+                    <!-- This would be replaced with actual Calendly embed or custom scheduler -->
+                    <div class="custom-scheduler">
+                        <div class="scheduler-header">
+                            <h4>Select Appointment Type</h4>
+                        </div>
+                        <div class="appointment-types">
+                            <div class="type-option active" data-duration="30">
+                                <h5>Initial Consultation</h5>
+                                <p>30 min • Free</p>
+                            </div>
+                            <div class="type-option" data-duration="60">
+                                <h5>Creative Strategy</h5>
+                                <p>60 min • $500</p>
+                            </div>
+                            <div class="type-option" data-duration="120">
+                                <h5>VIP Design Session</h5>
+                                <p>2 hours • $2,000</p>
+                            </div>
+                        </div>
+                        <div class="calendar-view">
+                            <div class="calendar-header">
+                                <button class="nav-button"><i class="fas fa-chevron-left"></i></button>
+                                <h5>June 2023</h5>
+                                <button class="nav-button"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+                            <div class="calendar-grid">
+                                <!-- Calendar days would be generated dynamically -->
+                                <div class="day-header">Sun</div>
+                                <div class="day-header">Mon</div>
+                                <div class="day-header">Tue</div>
+                                <div class="day-header">Wed</div>
+                                <div class="day-header">Thu</div>
+                                <div class="day-header">Fri</div>
+                                <div class="day-header">Sat</div>
+                                
+                                <!-- Example calendar days -->
+                                <div class="day disabled">28</div>
+                                <div class="day disabled">29</div>
+                                <div class="day disabled">30</div>
+                                <div class="day disabled">31</div>
+                                <div class="day">1</div>
+                                <div class="day">2</div>
+                                <div class="day">3</div>
+                                <div class="day">4</div>
+                                <div class="day">5</div>
+                                <div class="day available">6</div>
+                                <div class="day available">7</div>
+                                <div class="day available">8</div>
+                                <div class="day available">9</div>
+                                <div class="day available">10</div>
+                                <div class="day available">11</div>
+                                <div class="day available">12</div>
+                                <div class="day available">13</div>
+                                <div class="day available">14</div>
+                                <div class="day available">15</div>
+                                <div class="day available">16</div>
+                                <div class="day available">17</div>
+                                <div class="day available">18</div>
+                                <div class="day available">19</div>
+                                <div class="day available">20</div>
+                                <div class="day available">21</div>
+                                <div class="day available">22</div>
+                                <div class="day available">23</div>
+                                <div class="day available">24</div>
+                                <div class="day available">25</div>
+                                <div class="day available">26</div>
+                                <div class="day available">27</div>
+                                <div class="day available">28</div>
+                                <div class="day available">29</div>
+                                <div class="day available">30</div>
+                                <div class="day disabled">1</div>
+                            </div>
+                        </div>
+                        <div class="time-slots">
+                            <h5>Available Times</h5>
+                            <div class="slot-grid">
+                                <div class="time-slot">9:00 AM</div>
+                                <div class="time-slot">10:00 AM</div>
+                                <div class="time-slot">11:00 AM</div>
+                                <div class="time-slot">1:00 PM</div>
+                                <div class="time-slot">2:00 PM</div>
+                                <div class="time-slot">3:00 PM</div>
+                                <div class="time-slot">4:00 PM</div>
+                            </div>
+                        </div>
+                        <div class="scheduler-actions">
+                            <button class="btn-confirm">Confirm Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Gallery with Hover Reveal (Feature 12) -->
+    <section class="location-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Creative Sanctuaries</h2>
+                <p class="section-subtitle">Explore our design ateliers around the world</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="assets/images/locations/new-york.jpg" alt="New York Atelier">
+                        <div class="hover-reveal">
+                            <h4>New York</h4>
+                            <p>Our flagship studio overlooking Central Park</p>
+                            <button class="btn-view">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="assets/images/locations/london.jpg" alt="London Studio">
+                        <div class="hover-reveal">
+                            <h4>London</h4>
+                            <p>Heritage building in Mayfair's design district</p>
+                            <button class="btn-view">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="assets/images/locations/dubai.jpg" alt="Dubai Creative Hub">
+                        <div class="hover-reveal">
+                            <h4>Dubai</h4>
+                            <p>Ultra-modern space in the DIFC</p>
+                            <button class="btn-view">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="image-wrapper">
+                        <img src="assets/images/locations/tokyo.jpg" alt="Tokyo Design House">
+                        <div class="hover-reveal">
+                            <h4>Tokyo</h4>
+                            <p>Minimalist retreat in Ginza</p>
+                            <button class="btn-view">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Whisper Animation Transition (Feature 6) -->
+    <div class="whisper-transition particles-dark">
+        <div class="particles"></div>
+    </div>
+
+    <!-- Live Concierge Chat (Feature 4) -->
+    <section class="concierge-chat">
+        <div class="container">
+            <div class="chat-wrapper">
+                <div class="chat-header">
+                    <div class="concierge-avatar">
+                        <img src="assets/images/concierge-avatar.jpg" alt="Your Private Assistant">
+                        <span class="online-status"></span>
+                    </div>
+                    <div class="concierge-info">
+                        <h3>Your Private Assistant</h3>
+                        <p class="status">Online • Ready to assist you</p>
+                    </div>
+                    <div class="chat-controls">
+                        <button class="btn-voice"><i class="fas fa-microphone"></i></button>
+                        <button class="btn-minimize"><i class="fas fa-minus"></i></button>
+                    </div>
+                </div>
+                <div class="chat-messages">
+                    <div class="message concierge">
+                        <div class="message-content">
+                            <p>Welcome to Eagle Graphics. I'm Sophia, your dedicated concierge. How may I assist you today?</p>
+                            <span class="message-time">10:02 AM</span>
+                        </div>
+                    </div>
+                    <div class="message concierge">
+                        <div class="message-content">
+                            <p>Would you like help with:</p>
+                            <div class="quick-replies">
+                                <button class="quick-reply">Booking a consultation</button>
+                                <button class="quick-reply">Learning about services</button>
+                                <button class="quick-reply">Checking project status</button>
+                            </div>
+                            <span class="message-time">10:02 AM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Type your message...">
+                    <button class="btn-send"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+            <div class="concierge-description">
+                <h2>Premium Concierge Service</h2>
+                <p>Our private assistants are available 24/7 to handle all your requests with the utmost discretion and attention. Whether you need project updates, scheduling assistance, or creative recommendations, we're here to serve.</p>
+                <div class="concierge-features">
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <h4>24/7 Availability</h4>
+                        <p>Round-the-clock access to our team</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Dedicated Expert</h4>
+                        <p>Your personal point of contact</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-lock"></i>
+                        <h4>Complete Privacy</h4>
+                        <p>Discretion guaranteed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold-Trimmed Divider (Feature 9) -->
+    <div class="gold-divider reverse">
+        <svg viewBox="0 0 1200 50" preserveAspectRatio="none">
+            <path d="M0,25 C150,10 350,40 600,25 C850,10 1050,40 1200,25 L1200,0 L0,0 Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <!-- Testimonial Carousel with Video Clips (Feature 7) -->
+    <section class="video-testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Voices of Distinction</h2>
+                <p class="section-subtitle">What our clients say about us</p>
+            </div>
+            <div class="testimonial-carousel">
+                <div class="carousel-track">
+                    <div class="testimonial-slide active">
+                        <div class="video-testimonial">
+                            <video controls poster="assets/images/testimonial-1-poster.jpg">
+                                <source src="assets/videos/testimonial-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="client-info">
+                                <img src="assets/images/client-1.jpg" alt="Sarah Johnson">
+                                <div>
+                                    <h4>Sarah Johnson</h4>
+                                    <p>CEO, Lumière Cosmetics</p>
+                                </div>
+                            </div>
+                            <blockquote>
+                                <p>"Eagle Graphics transformed our brand identity with such sophistication. Their attention to detail and creative vision exceeded all our expectations. The packaging designs they created increased our shelf appeal by 40%."</p>
+                            </blockquote>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="video-testimonial">
+                            <video controls poster="assets/images/testimonial-2-poster.jpg">
+                                <source src="assets/videos/testimonial-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="client-info">
+                                <img src="assets/images/client-2.jpg" alt="Michael Chen">
+                                <div>
+                                    <h4>Michael Chen</h4>
+                                    <p>Founder, Aureate Watches</p>
+                                </div>
+                            </div>
+                            <blockquote>
+                                <p>"The website Eagle Graphics designed for our luxury watch brand is a masterpiece. They perfectly captured our brand essence and created an online experience that reflects the quality of our timepieces."</p>
+                            </blockquote>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="video-testimonial">
+                            <video controls poster="assets/images/testimonial-3-poster.jpg">
+                                <source src="assets/videos/testimonial-3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-button">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="client-info">
+                                <img src="assets/images/client-3.jpg" alt="Elena Rodriguez">
+                                <div>
+                                    <h4>Elena Rodriguez</h4>
+                                    <p>Marketing Director, Opulent Resorts</p>
+                                </div>
+                            </div>
+                            <blockquote>
+                                <p>"From the initial concept to final execution, working with Eagle Graphics was seamless. Their team understood our luxury positioning immediately and delivered materials that have elevated our marketing to new heights."</p>
+                            </blockquote>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- "Seen In" or "Trusted By" Media Logos (Feature 13) -->
+    <section class="press-logos">
+        <div class="container">
+            <div class="section-header">
+                <h2>As Featured In</h2>
+                <p class="section-subtitle">Recognized by the world's leading publications</p>
+            </div>
+            <div class="logo-carousel">
+                <div class="logo-slide">
+                    <img src="assets/images/logos/vogue.png" alt="Vogue" class="grayscale">
+                </div>
+                <div class="logo-slide">
+                    <img src="assets/images/logos/forbes.png" alt="Forbes" class="grayscale">
+                </div>
+                <div class="logo-slide">
+                    <img src="assets/images/logos/gq.png" alt="GQ" class="grayscale">
+                </div>
+                <div class="logo-slide">
+                    <img src="assets/images/logos/archdigest.png" alt="Architectural Digest" class="grayscale">
+                </div>
+                <div class="logo-slide">
+                    <img src="assets/images/logos/wallstreetjournal.png" alt="Wall Street Journal" class="grayscale">
+                </div>
+                <div class="logo-slide">
+                    <img src="assets/images/logos/designweek.png" alt="Design Week" class="grayscale">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold-Trimmed Divider (Feature 9) -->
+    <div class="gold-divider">
+        <svg viewBox="0 0 1200 50" preserveAspectRatio="none">
+            <path d="M0,25 C150,40 350,10 600,25 C850,40 1050,10 1200,25 L1200,50 L0,50 Z" fill="currentColor"></path>
+        </svg>
+    </div>
+
+    <!-- High-Resolution Portrait of the Team (Feature 18) -->
+    <section class="team-portraits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Your Creative Team</h2>
+                <p class="section-subtitle">The visionaries behind Eagle Graphics</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="portrait-wrapper">
+                        <img src="assets/images/team/alexander.jpg" alt="Alexander Eagle" class="bw-portrait">
+                        <img src="assets/images/team/alexander-color.jpg" alt="Alexander Eagle" class="color-portrait">
+                    </div>
+                    <div class="member-info">
+                        <h4>Alexander Eagle</h4>
+                        <p>Founder & Creative Director</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="portrait-wrapper">
+                        <img src="assets/images/team/isabella.jpg" alt="Isabella Montclair" class="bw-portrait">
+                        <img src="assets/images/team/isabella-color.jpg" alt="Isabella Montclair" class="color-portrait">
+                    </div>
+                    <div class="member-info">
+                        <h4>Isabella Montclair</h4>
+                        <p>Senior Art Director</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="portrait-wrapper">
+                        <img src="assets/images/team/jonathan.jpg" alt="Jonathan Pierce" class="bw-portrait">
+                        <img src="assets/images/team/jonathan-color.jpg" alt="Jonathan Pierce" class="color-portrait">
+                    </div>
+                    <div class="member-info">
+                        <h4>Jonathan Pierce</h4>
+                        <p>Lead Brand Strategist</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="portrait-wrapper">
+                        <img src="assets/images/team/sophia.jpg" alt="Sophia Laurent" class="bw-portrait">
+                        <img src="assets/images/team/sophia-color.jpg" alt="Sophia Laurent" class="color-portrait">
+                    </div>
+                    <div class="member-info">
+                        <h4>Sophia Laurent</h4>
+                        <p>Client Experience Director</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Whisper Animation Transition (Feature 6) -->
+    <div class="whisper-transition particles-dark">
+        <div class="particles"></div>
+    </div>
+
+    <!-- VIP Access Form (Feature 23) -->
+    <section class="vip-access">
+        <div class="container">
+            <div class="vip-wrapper">
+                <div class="vip-intro">
+                    <div class="vip-badge">
+                        <i class="fas fa-crown"></i>
+                        <span>Exclusive Access</span>
+                    </div>
+                    <h2>VIP Client Portal</h2>
+                    <p>Our most valued clients enjoy privileged access to enhanced services, priority scheduling, and dedicated creative teams. Enter your VIP code below to unlock your personalized portal.</p>
+                    <div class="vip-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-star"></i>
+                            <p>Priority project scheduling</p>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-user-shield"></i>
+                            <p>Dedicated account manager</p>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-lock-open"></i>
+                            <p>Exclusive content and previews</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="vip-form">
+                    <form id="vipAccessForm">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="vipCode" name="vipCode" required>
+                                <label for="vipCode">VIP Access Code</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="email" id="vipEmail" name="vipEmail" required>
+                                <label for="vipEmail">Registered Email</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-vip-submit">
+                            <i class="fas fa-unlock-alt"></i> Unlock VIP Portal
+                        </button>
+                        <div class="vip-help">
+                            <p>Having trouble accessing your portal? <a href="#">Contact VIP Support</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Brochure Download (Feature 24) -->
+    <section class="digital-brochure">
+        <div class="container">
+            <div class="brochure-wrapper">
+                <div class="brochure-image">
+                    <img src="assets/images/luxury-brochure.jpg" alt="Eagle Graphics Brochure">
+                    <div class="brochure-overlay">
+                        <i class="fas fa-download"></i>
+                        <span>Download</span>
+                    </div>
+                </div>
+                <div class="brochure-content">
+                    <h2>Our Luxury Portfolio</h2>
+                    <p>Request our exclusive digital brochure showcasing our finest work for the world's most discerning brands. This curated collection represents the pinnacle of our design excellence.</p>
+                    <form id="brochureForm">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="brochureName" name="brochureName" required>
+                                <label for="brochureName">Your Name</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="email" id="brochureEmail" name="brochureEmail" required>
+                                <label for="brochureEmail">Email Address</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="brochureCompany" name="brochureCompany">
+                                <label for="brochureCompany">Company (Optional)</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-brochure">
+                            <i class="fas fa-arrow-down"></i> Request Brochure
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Code Generator (Feature 17) -->
+    <section class="qr-generator">
+        <div class="container">
+            <div class="qr-wrapper">
+                <div class="qr-content">
+                    <h2>Instant Access On The Go</h2>
+                    <p>Scan this QR code to save our contact information directly to your device or download our luxury brand presentation.</p>
+                    <div class="qr-options">
+                        <button class="qr-option active" data-type="vcard">
+                            <i class="fas fa-address-card"></i> Save Contact
+                        </button>
+                        <button class="qr-option" data-type="brochure">
+                            <i class="fas fa-book-open"></i> Download Brochure
+                        </button>
+                        <button class="qr-option" data-type="portfolio">
+                            <i class="fas fa-briefcase"></i> View Portfolio
+                        </button>
+                    </div>
+                </div>
+                <div class="qr-code-container">
+                    <div class="qr-code-wrapper">
+                        <img src="assets/images/qr-code.png" alt="QR Code" id="qrCodeImage">
+                        <div class="qr-code-overlay">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                    </div>
+                    <div class="qr-instructions">
+                        <p>Point your camera at the QR code to connect</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct WhatsApp/Telegram Integration (Feature 8) -->
+    <section class="messaging-integration">
+        <div class="container">
+            <div class="messaging-wrapper">
+                <div class="messaging-header">
+                    <h2>Instant Messaging</h2>
+                    <p class="subtitle">Connect with us directly through your preferred platform</p>
+                </div>
+                <div class="messaging-options">
+                    <a href="https://wa.me/12125551234" class="messaging-option whatsapp">
+                        <div class="icon-wrapper">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="option-content">
+                            <h3>WhatsApp</h3>
+                            <p>Message our concierge team directly</p>
+                            <span class="action-text">Start Chat</span>
+                        </div>
+                    </a>
+                    <a href="https://t.me/eaglegraphics" class="messaging-option telegram">
+                        <div class="icon-wrapper">
+                            <i class="fab fa-telegram-plane"></i>
+                        </div>
+                        <div class="option-content">
+                            <h3>Telegram</h3>
+                            <p>Secure messaging with our team</p>
+                            <span class="action-text">Connect Now</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="messaging-note">
+                    <p><i class="fas fa-clock"></i> Average response time: 12 minutes during business hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Callback Section (Feature 20) -->
+    <section class="callback-request">
+        <div class="container">
+            <div class="callback-wrapper">
+                <div class="callback-content">
+                    <h2>We'll Call You</h2>
+                    <p class="subtitle">At your preferred time for a personalized consultation</p>
+                    <ul class="callback-benefits">
+                        <li><i class="fas fa-check-circle"></i> No waiting on hold</li>
+                        <li><i class="fas fa-check-circle"></i> Scheduled at your convenience</li>
+                        <li><i class="fas fa-check-circle"></i> Direct line to our senior team</li>
+                    </ul>
+                    <div class="callback-availability">
+                        <i class="fas fa-clock"></i>
+                        <p>Available Monday to Friday, 9AM - 8PM in your timezone</p>
+                    </div>
+                </div>
+                <div class="callback-form">
+                    <form id="callbackForm">
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="callbackName" name="callbackName" required>
+                                <label for="callbackName">Your Name</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="tel" id="callbackPhone" name="callbackPhone" required>
+                                <label for="callbackPhone">Phone Number</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <select id="callbackTime" name="callbackTime" required>
+                                    <option value="" disabled selected></option>
+                                    <option value="morning">Morning (9AM - 12PM)</option>
+                                    <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                                    <option value="evening">Evening (5PM - 8PM)</option>
+                                </select>
+                                <label for="callbackTime">Preferred Time</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-wrapper">
+                                <input type="text" id="callbackTopic" name="callbackTopic">
+                                <label for="callbackTopic">Topic (Optional)</label>
+                                <span class="highlight"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-callback">
+                            <i class="fas fa-phone-alt"></i> Request Callback
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Language Selector (Feature 22) -->
+    <section class="language-selector-section">
+        <div class="container">
+            <div class="language-wrapper">
+                <div class="language-content">
+                    <h2>Global Communication</h2>
+                    <p>We serve clients in their preferred language across all timezones.</p>
+                </div>
+                <div class="language-selector">
+                    <div class="current-language">
+                        <span class="flag-icon"><i class="fas fa-globe"></i></span>
+                        <span class="language-name">English</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="language-dropdown">
+                        <li data-lang="en">
+                            <span class="flag-icon"><i class="fas fa-globe"></i></span>
+                            <span>English</span>
+                        </li>
+                        <li data-lang="fr">
+                            <span class="flag-icon">🇫🇷</span>
+                            <span>Français</span>
+                        </li>
+                        <li data-lang="es">
+                            <span class="flag-icon">🇪🇸</span>
+                            <span>Español</span>
+                        </li>
+                        <li data-lang="de">
+                            <span class="flag-icon">🇩🇪</span>
+                            <span>Deutsch</span>
+                        </li>
+                        <li data-lang="ar">
+                            <span class="flag-icon">🇦🇪</span>
+                            <span>العربية</span>
+                        </li>
+                        <li data-lang="ja">
+                            <span class="flag-icon">🇯🇵</span>
+                            <span>日本語</span>
+                        </li>
+                        <li data-lang="zh">
+                            <span class="flag-icon">🇨🇳</span>
+                            <span>中文</span>
+                        </li>
+                        <li data-lang="ru">
+                            <span class="flag-icon">🇷🇺</span>
+                            <span>Русский</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Stylist or Recommender (Feature 25) -->
+    <section class="ai-recommender">
+        <div class="container">
+            <div class="ai-wrapper">
+                <div class="ai-intro">
+                    <div class="ai-badge">
+                        <i class="fas fa-robot"></i>
+                        <span>AI-Powered</span>
+                    </div>
+                    <h2>Design Direction Assistant</h2>
+                    <p>Our AI stylist will help identify the perfect design direction for your brand by understanding your aesthetic preferences and business objectives.</p>
+                    <div class="ai-features">
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <p>Personalized recommendations</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-palette"></i>
+                            <p>Style analysis</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Market insights</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ai-form">
+                    <form id="aiRecommenderForm">
+                        <div class="form-step active" data-step="1">
+                            <h3>What best describes your brand's personality?</h3>
+                            <div class="form-group radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="personality-modern" name="brandPersonality" value="modern" checked>
+                                    <label for="personality-modern">
+                                        <i class="fas fa-building"></i>
+                                        <span>Modern & Minimalist</span>
+                                    </label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="personality-luxury" name="brandPersonality" value="luxury">
+                                    <label for="personality-luxury">
+                                        <i class="fas fa-gem"></i>
+                                        <span>Luxury & Elegant</span>
+                                    </label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="personality-bold" name="brandPersonality" value="bold">
+                                    <label for="personality-bold">
+                                        <i class="fas fa-fire"></i>
+                                        <span>Bold & Expressive</span>
+                                    </label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="personality-heritage" name="brandPersonality" value="heritage">
+                                    <label for="personality-heritage">
+                                        <i class="fas fa-landmark"></i>
+                                        <span>Heritage & Timeless</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-next">Next <i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-step" data-step="2">
+                            <h3>Who is your primary target audience?</h3>
+                            <div class="form-group checkbox-group">
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="audience-millennials" name="targetAudience" value="millennials">
+                                    <label for="audience-millennials">
+                                        <span>Millennials (25-40)</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="audience-genx" name="targetAudience" value="genx">
+                                    <label for="audience-genx">
+                                        <span>Generation X (41-56)</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="audience-boomers" name="targetAudience" value="boomers">
+                                    <label for="audience-boomers">
+                                        <span>Baby Boomers (57-75)</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="audience-genz" name="targetAudience" value="genz">
+                                    <label for="audience-genz">
+                                        <span>Generation Z (18-24)</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="checkbox" id="audience-affluent" name="targetAudience" value="affluent">
+                                    <label for="audience-affluent">
+                                        <span>High Net Worth Individuals</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-prev"><i class="fas fa-chevron-left"></i> Back</button>
+                                <button type="button" class="btn-next">Next <i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-step" data-step="3">
+                            <h3>What emotions should your design evoke?</h3>
+                            <div class="form-group emotion-selector">
+                                <div class="emotion-option">
+                                    <input type="checkbox" id="emotion-trust" name="designEmotions" value="trust">
+                                    <label for="emotion-trust">
+                                        <div class="emotion-icon">
+                                            <i class="fas fa-handshake"></i>
+                                        </div>
+                                        <span>Trust</span>
+                                    </label>
+                                </div>
+                                <div class="emotion-option">
+                                    <input type="checkbox" id="emotion-desire" name="designEmotions" value="desire">
+                                    <label for="emotion-desire">
+                                        <div class="emotion-icon">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <span>Desire</span>
+                                    </label>
+                                </div>
+                                <div class="emotion-option">
+                                    <input type="checkbox" id="emotion-excitement" name="designEmotions" value="excitement">
+                                    <label for="emotion-excitement">
+                                        <div class="emotion-icon">
+                                            <i class="fas fa-bolt"></i>
+                                        </div>
+                                        <span>Excitement</span>
+                                    </label>
+                                </div>
+                                <div class="emotion-option">
+                                    <input type="checkbox" id="emotion-sophistication" name="designEmotions" value="sophistication">
+                                    <label for="emotion-sophistication">
+                                        <div class="emotion-icon">
+                                            <i class="fas fa-crown"></i>
+                                        </div>
+                                        <span>Sophistication</span>
+                                    </label>
+                                </div>
+                                <div class="emotion-option">
+                                    <input type="checkbox" id="emotion-innovation" name="designEmotions" value="innovation">
+                                    <label for="emotion-innovation">
+                                        <div class="emotion-icon">
+                                            <i class="fas fa-lightbulb"></i>
+                                        </div>
+                                        <span>Innovation</span>
+                                    </label>
+                                </div>
+                                <div class="emotion-option">
+                                    <input type="checkbox" id="emotion-exclusivity" name="designEmotions" value="exclusivity">
+                                    <label for="emotion-exclusivity">
+                                        <div class="emotion-icon">
+                                            <i class="fas fa-lock"></i>
+                                        </div>
+                                        <span>Exclusivity</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn-prev"><i class="fas fa-chevron-left"></i> Back</button>
+                                <button type="submit" class="btn-submit">Get Recommendations <i class="fas fa-magic"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Signature Panel (Feature 10) -->
+    <section class="signature-panel">
+        <div class="container">
+            <div class="signature-wrapper">
+                <img src="assets/images/ceo-signature.png" alt="CEO Signature">
+                <div class="signature-content">
+                    <h3>Personally Awaiting Your Message</h3>
+                    <p>Every client relationship at Eagle Graphics begins with a personal connection. I look forward to the opportunity to discuss how we can bring your creative vision to life with the excellence and attention to detail your brand deserves.</p>
+                    <p class="signature-name">Alexander Eagle<br><span>Founder & Creative Director</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Parallax Icons (Feature 21) -->
+    <div class="floating-parallax-icons">
+        <div class="icon feather" data-depth="0.2"><img src="assets/icons/feather.svg" alt="Feather"></div>
+        <div class="icon gold-particle" data-depth="0.3"><img src="assets/icons/gold-particle.svg" alt="Gold Particle"></div>
+        <div class="icon leaf" data-depth="0.4"><img src="assets/icons/leaf.svg" alt="Leaf"></div>
+        <div class="icon crown" data-depth="0.1"><img src="assets/icons/crown.svg" alt="Crown"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo-wrapper">
+                        <img src="assets/images/logo-white.png" alt="Eagle Graphics">
+                    </div>
+                    <p class="tagline">Elevating brands through exceptional design</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Brand Identity</a></li>
+                            <li><a href="#">Luxury Packaging</a></li>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Art Direction</a></li>
+                            <li><a href="#">Creative Strategy</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Approach</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Ateliers</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Journal</a></li>
+                            <li><a href="#">Insights</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-cta">
+                    <h4>Begin Your Journey</h4>
+                    <p>Ready to elevate your brand with exceptional design?</p>
+                    <a href="#" class="btn-footer-cta">
+                        <i class="fas fa-paper-plane"></i> Start a Conversation
+                    </a>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> contact@eaglegraphics.com</p>
+                        <p><i class="fas fa-phone-alt"></i> +1 (212) 555-0100</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Eagle Graphics. All rights reserved.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Preferences</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Speak with Designer Modal -->
+    <div class="modal" id="designerModal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h3>Speak with a Designer</h3>
+                <p>Connect directly with our creative team to discuss your project</p>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="modalDesignerName" name="modalDesignerName" required>
+                        <label for="modalDesignerName">Your Name</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="email" id="modalDesignerEmail" name="modalDesignerEmail" required>
+                        <label for="modalDesignerEmail">Email Address</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="tel" id="modalDesignerPhone" name="modalDesignerPhone">
+                        <label for="modalDesignerPhone">Phone Number (Optional)</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <select id="modalDesignerService" name="modalDesignerService" required>
+                            <option value="" disabled selected></option>
+                            <option value="branding">Branding & Identity</option>
+                            <option value="packaging">Packaging Design</option>
+                            <option value="web">Web & Digital Design</option>
+                            <option value="print">Print & Collateral</option>
+                            <option value="other">Other Design Service</option>
+                        </select>
+                        <label for="modalDesignerService">Service Interest</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <textarea id="modalDesignerMessage" name="modalDesignerMessage" rows="3" required></textarea>
+                        <label for="modalDesignerMessage">Project Details</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-modal-submit">
+                    <i class="fas fa-paper-plane"></i> Send Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Request Callback Modal -->
+    <div class="modal" id="callbackModal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h3>Request a Callback</h3>
+                <p>We'll call you at your preferred time</p>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="modalCallbackName" name="modalCallbackName" required>
+                        <label for="modalCallbackName">Your Name</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="tel" id="modalCallbackPhone" name="modalCallbackPhone" required>
+                        <label for="modalCallbackPhone">Phone Number</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <select id="modalCallbackTime" name="modalCallbackTime" required>
+                            <option value="" disabled selected></option>
+                            <option value="morning">Morning (9AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                            <option value="evening">Evening (5PM - 8PM)</option>
+                        </select>
+                        <label for="modalCallbackTime">Preferred Time</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <textarea id="modalCallbackMessage" name="modalCallbackMessage" rows="2"></textarea>
+                        <label for="modalCallbackMessage">What would you like to discuss? (Optional)</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-modal-submit">
+                    <i class="fas fa-phone-alt"></i> Request Callback
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Book Experience Modal -->
+    <div class="modal" id="experienceModal">
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h3>Book a Premium Experience</h3>
+                <p>Schedule a private consultation with our creative directors</p>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="modalExperienceName" name="modalExperienceName" required>
+                        <label for="modalExperienceName">Your Name</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="email" id="modalExperienceEmail" name="modalExperienceEmail" required>
+                        <label for="modalExperienceEmail">Email Address</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="tel" id="modalExperiencePhone" name="modalExperiencePhone">
+                        <label for="modalExperiencePhone">Phone Number (Optional)</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <select id="modalExperienceType" name="modalExperienceType" required>
+                            <option value="" disabled selected></option>
+                            <option value="virtual">Virtual Consultation (60 min)</option>
+                            <option value="studio">Studio Visit (90 min)</option>
+                            <option value="vip">VIP Creative Session (Half Day)</option>
+                        </select>
+                        <label for="modalExperienceType">Experience Type</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="modalExperienceDate" name="modalExperienceDate" class="datepicker" required>
+                        <label for="modalExperienceDate">Preferred Date</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <textarea id="modalExperienceMessage" name="modalExperienceMessage" rows="2"></textarea>
+                        <label for="modalExperienceMessage">Anything we should know? (Optional)</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn-modal-submit">
+                    <i class="fas fa-calendar-check"></i> Book Experience
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- VIP Access Modal -->
+    <div class="modal" id="vipModal">
+        <div class="modal-content vip-modal">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <div class="vip-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>VIP Access</span>
+                </div>
+                <h3>Exclusive Client Portal</h3>
+                <p>Enter your VIP credentials to access premium services</p>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="text" id="modalVipCode" name="modalVipCode" required>
+                        <label for="modalVipCode">VIP Access Code</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <input type="email" id="modalVipEmail" name="modalVipEmail" required>
+                        <label for="modalVipEmail">Registered Email</label>
+                        <span class="highlight"></span>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-modal-submit">
+                        <i class="fas fa-unlock-alt"></i> Access Portal
+                    </button>
+                    <div class="vip-help-link">
+                        <a href="#"><i class="fas fa-question-circle"></i> Need help accessing your account?</a>
+                    </div>
+                </div>
+            </form>
+            <div class="vip-benefits">
+                <h4>VIP Benefits Include:</h4>
+                <ul>
+                    <li><i class="fas fa-star"></i> Dedicated account manager</li>
+                    <li><i class="fas fa-clock"></i> Priority scheduling</li>
+                    <li><i class="fas fa-lock-open"></i> Exclusive content access</li>
+                    <li><i class="fas fa-gem"></i> Complimentary consultations</li>
+                    <li><i class="fas fa-phone-volume"></i> 24/7 support line</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Details Modal -->
+    <div class="modal location-modal" id="locationModal">
+        <div class="modal-content location-modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="location-modal-header">
+                <h3 id="locationModalTitle">New York Atelier</h3>
+                <p class="location-address" id="locationModalAddress">725 5th Avenue, Suite 1200, New York, NY 10022</p>
+            </div>
+            <div class="location-modal-body">
+                <div class="location-gallery">
+                    <div class="main-image">
+                        <img id="locationMainImage" src="assets/images/locations/new-york-interior.jpg" alt="New York Atelier Interior">
+                    </div>
+                    <div class="thumbnail-grid">
+                        <div class="thumbnail active">
+                            <img src="assets/images/locations/new-york-interior.jpg" alt="New York Atelier Interior">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="assets/images/locations/new-york-view.jpg" alt="New York Atelier View">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="assets/images/locations/new-york-team.jpg" alt="New York Team">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="assets/images/locations/new-york-work.jpg" alt="New York Work Area">
+                        </div>
+                    </div>
+                </div>
+                <div class="location-details">
+                    <div class="detail-section">
+                        <h4>Atelier Features</h4>
+                        <ul class="features-list">
+                            <li><i class="fas fa-wifi"></i> Private client lounge</li>
+                            <li><i class="fas fa-coffee"></i> Concierge service</li>
+                            <li><i class="fas fa-palette"></i> Creative showcase area</li>
+                            <li><i class="fas fa-print"></i> On-site prototyping</li>
+                            <li><i class="fas fa-utensils"></i> Catering available</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Hours</h4>
+                        <ul class="hours-list">
+                            <li>Monday - Friday <span>9:00 AM - 7:00 PM</span></li>
+                            <li>Saturday <span>10:00 AM - 4:00 PM</span></li>
+                            <li>Sunday <span>Closed</span></li>
+                            <li>VIP Access <span>24/7 by appointment</span></li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Contact</h4>
+                        <ul class="contact-list">
+                            <li><i class="fas fa-phone"></i> +1 212-555-0100</li>
+                            <li><i class="fas fa-envelope"></i> ny@eaglegraphics.com</li>
+                            <li><i class="fas fa-user-tie"></i> Studio Manager: Sarah Wilkins</li>
+                        </ul>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn-direction">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </button>
+                        <button class="btn-appointment">
+                            <i class="fas fa-calendar-alt"></i> Book Appointment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts will be added later -->
+    <script src="contact-us.js"></script>
+</body>
+</html>

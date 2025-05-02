@@ -1,0 +1,415 @@
+/* styles.css */
+
+/* Basic Reset and Body Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Use a modern, clean font */
+    background-color: #FFFFFF; /* Default background if video not loaded */
+    color: #1a1a1a; /* Dark grey text default */
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+/* ==================== */
+/* HERO SECTION (VIDEO BACKGROUND) */
+/* ==================== */
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 150px 0; /* Padding to give space above/below content */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left; /* Align text left by default */
+     /* No background color here, video is the background */
+}
+
+/* Styles for the video as a background */
+.hero-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the entire section */
+    z-index: 0; /* Place video at the lowest layer */
+    pointer-events: none; /* Allow clicks to pass through the video */
+}
+
+/* Overlays and Cosmic Elements (layered above video) */
+.cosmic-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Above the video background */
+    pointer-events: none; /* Ensure these don't block interaction */
+}
+
+/* Semi-transparent overlay to ensure text readability over video */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 2; /* Above base cosmic canvas, below other elements */
+}
+
+
+/* Background elements fitting the white theme (layered above dark overlay) */
+.white-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+     /* Blend Mode can make these interact interestingly with the video/dark overlay */
+    mix-blend-mode: screen; /* Or 'lighten', 'color-dodge', etc. Experiment! */
+    background: radial-gradient(circle at 85% 15%, rgba(0, 255, 127, 0.2) 0%, transparent 30%), /* Subtle green highlight */
+                radial-gradient(circle at 15% 85%, rgba(255, 215, 0, 0.2) 0%, transparent 30%); /* Subtle gold highlight */
+    filter: blur(40px); /* Adjusted blur */
+    opacity: 0.7;
+    z-index: 3; /* Above background-overlay */
+}
+
+.emerald-lines {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: repeating-linear-gradient(
+         45deg,
+         transparent,
+         transparent 25px,
+         rgba(0, 255, 127, 0.08) 25px,
+         rgba(0, 255, 127, 0.08) 50px
+     ); /* Subtle repeating green lines */
+     opacity: 0.4; /* Adjusted opacity */
+     z-index: 4; /* Above white-overlay */
+}
+
+
+.stardust-field {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 5; /* Above emerald lines */
+     pointer-events: none;
+}
+
+.nebula-particles {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 6; /* Above stardust field */
+     pointer-events: none;
+}
+
+
+/* Container to constrain content width and manage layout */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Adjusted max-width */
+    margin: 0 auto;
+    position: relative;
+    z-index: 10; /* HIGHEST z-index for foreground content */
+    display: flex;
+    justify-content: flex-start; /* Align content to the start (left) */
+    align-items: center; /* Vertically align items */
+    min-height: calc(100vh - 300px); /* Ensure container has height in case content is short */
+}
+
+.hero-content {
+    flex: none; /* Prevent flex-grow */
+    max-width: 600px;
+    text-align: left;
+     /* Color will be inherited from body or set explicitly for text elements */
+}
+
+
+/* ================ */
+/* TYPOGRAPHY */
+/* ==================== */
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #FFFFFF; /* White text over dark video background */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
+}
+
+.hero-title .title-line {
+    display: block;
+}
+
+.emerald-glow {
+     color: #00ff7f; /* Emerald Green */
+     text-shadow: 0 0 15px rgba(0, 255, 127, 0.8), 0 0 20px rgba(0, 255, 127, 0.6); /* More intense glow shadow */
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #00ff7f; /* Emerald underline */
+    margin: 15px 0 0 0;
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add shadow for readability */
+}
+
+.gold-text {
+    color: #FFD700; /* Gold */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.6); /* Gold glow shadow */
+}
+
+
+/* ==================== */
+/* INTERACTIVE ELEMENTS */
+/* ==================== */
+.nebula-particles {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 6; /* Layered above stardust */
+     pointer-events: none;
+}
+
+.nebula-particle {
+    position: absolute;
+    background: rgba(0, 255, 127, 0.6); /* Emerald Green particles */
+    border-radius: 50%;
+    animation: nebula-pulse 8s infinite alternate ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 255, 127, 0.4);
+}
+
+@keyframes nebula-pulse {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+.stardust-field {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 5; /* Layered above emerald lines/white overlay */
+     pointer-events: none;
+}
+
+.stardust-particle {
+    position: absolute;
+    background: rgba(255, 215, 0, 0.5); /* Gold particles */
+    border-radius: 50%;
+    animation: stardust-float 20s infinite linear;
+    opacity: 0.7;
+    box-shadow: 0 0 3px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes stardust-float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(150px, -150px) rotate(360deg); }
+}
+
+.cosmic-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999; /* Highest layer */
+}
+
+.cursor-star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #FFD700; /* Gold cursor stars */
+    border-radius: 50%;
+    animation: star-fade 1.5s forwards ease-out;
+    box-shadow: 0 0 12px #FFD700;
+}
+
+@keyframes star-fade {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.3); }
+}
+
+
+/* ==================== */
+/* COMPONENTS */
+/* ==================== */
+.celestial-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2); /* Darker background for contrast on video */
+    backdrop-filter: blur(6px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.3); /* Gold border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    animation: celestial-appear 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes celestial-appear {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.celestial-badge .diamond-text {
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #FFFFFF; /* White text on badge */
+}
+
+.celestial-badge .constellation-icon {
+    width: 16px;
+    height: 16px;
+    background-color: #FFD700; /* Gold color for icon */
+    mask: url('constellation-icon.svg') center/contain no-repeat; /* Replace with your SVG icon */
+    margin-right: 6px;
+}
+
+/* CTA Button Styling */
+.hero-cta {
+    display: flex;
+    gap: 20px;
+     /* Kept text-align: left for hero-content, so buttons align left */
+}
+
+.btn-celestial {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.btn-celestial .hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: transform 0.4s ease;
+    transform-origin: center;
+}
+
+.btn-emerald.btn-primary {
+    background: linear-gradient(45deg, #00e676, #00c853); /* Emerald gradient */
+    color: white;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 255, 127, 0.4);
+}
+
+.btn-gold.btn-outline {
+    background: transparent;
+    color: #FFD700; /* Gold text */
+    border: 1.5px solid #FFD700; /* Gold border */
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.btn-emerald.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 255, 127, 0.6);
+}
+
+.btn-emerald.btn-primary:hover .hover-effect {
+    transform: scale(1.2);
+    background: rgba(255, 255, 255, 0.15); /* Subtle white overlay effect */
+}
+
+
+.btn-gold.btn-outline:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+    background-color: rgba(255, 215, 0, 0.1); /* Subtle gold background */
+}
+
+.btn-gold.btn-outline:hover .hover-effect {
+     transform: scale(1.2);
+     background: rgba(0, 0, 0, 0.1); /* Subtle black overlay effect */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero {
+        padding: 80px 0;
+    }
+
+     .container {
+         justify-content: center; /* Center content when stacked */
+     }
+
+    .hero-content {
+         text-align: center; /* Center text when stacked */
+         max-width: 90%;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adjust shadow for smaller size */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+         max-width: 90%;
+         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Adjust shadow */
+    }
+
+    .hero-cta {
+        flex-direction: column; /* Stack buttons */
+        gap: 15px;
+         align-items: center; /* Center buttons when stacked */
+    }
+
+    /* Hide some background elements on smaller screens for performance */
+    .white-overlay, .emerald-lines {
+        display: none;
+    }
+
+     .background-overlay {
+          background-color: rgba(0, 0, 0, 0.6); /* Make overlay darker on mobile */
+     }
+}
+
+@media (max-width: 576px) {
+     .hero-title {
+        font-size: 2.5rem;
+     }
+
+     .celestial-badge {
+         padding: 6px 15px;
+     }
+
+     .celestial-badge .diamond-text {
+         font-size: 0.75rem;
+     }
+}

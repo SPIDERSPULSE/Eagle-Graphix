@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eagle Graphix Preloader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #111;
+      color: white;
+      overflow: hidden;
+    }
+
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #000;
+      width: 100vw;
+      height: 100vh;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .letters span {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 800;
+      color: gold;
+      opacity: 0;
+      transform: translateY(-100px);
+      animation: drop 0.6s forwards;
+    }
+
+    .letters span:nth-child(1) { animation-delay: 0.1s; }
+    .letters span:nth-child(2) { animation-delay: 0.2s; }
+    .letters span:nth-child(3) { animation-delay: 0.3s; }
+    .letters span:nth-child(4) { animation-delay: 0.4s; }
+    .letters span:nth-child(5) { animation-delay: 0.5s; }
+    .letters span:nth-child(6) { animation-delay: 0.6s; }
+    .letters span:nth-child(7) { animation-delay: 0.7s; }
+    .letters span:nth-child(8) { animation-delay: 0.8s; }
+    .letters span:nth-child(9) { animation-delay: 0.9s; }
+    .letters span:nth-child(10) { animation-delay: 1s; }
+    .letters span:nth-child(11) { animation-delay: 1.1s; }
+    .letters span:nth-child(12) { animation-delay: 1.2s; }
+
+    @keyframes drop {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .progress-bar {
+      width: 80%;
+      height: 6px;
+      background: #333;
+      margin-top: 30px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: gold;
+      animation: fill 2s forwards ease-out 1.4s;
+    }
+
+    @keyframes fill {
+      to {
+        width: 100%;
+      }
+    }
+
+    #main-content {
+      display: none;
+      padding: 100px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="letters">
+      <span>E</span><span>A</span><span>G</span><span>L</span><span>E</span>
+      <span>&nbsp;</span>
+      <span>G</span><span>R</span><span>A</span><span>P</span><span>H</span><span>I</span><span>X</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        document.body.style.overflow = 'auto';
+      }, 3500); // Duration to hide preloader after animation
+    });
+  </script>
+
+</body>
+</html>
