@@ -3,455 +3,2483 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eagle Graphix | Premium Pricing</title>
+    <title>Premium Plans | Eagle Graphics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo-1.png" type="image/png">
 
 
-
-
-    <!-- CSS -->
-    
     <link rel="stylesheet" href="pricing.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+
+
+
+
 </head>
 <body>
-    <!-- 1. Cinematic Hero Section -->
-    <section class="hero-section">
-        <div class="hero-video">
-            <video autoplay muted loop>
-                <source src="premium-background.mp4" type="video/mp4">
-            </video>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        /* Luxury Preloader Styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a12;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            overflow: hidden;
+        }
+        
+        .logo-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .logo-outline {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('logo-1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.3;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            animation: fadeInOutline 1s ease-out forwards;
+        }
+        
+        .logo-fill {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('logo-1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0;
+            animation: fadeInFill 1.5s 1s ease-out forwards;
+            filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.7));
+        }
+        
+        .logo-gold-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(212, 175, 55, 0.3), 
+                rgba(212, 175, 55, 0.7), 
+                rgba(212, 175, 55, 0.3));
+            -webkit-mask-image: url('logo-1.png');
+            mask-image: url('logo-1.png');
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+            opacity: 0;
+            animation: goldPulse 2s 2s infinite alternate;
+        }
+        
+        .feather {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"><path d="M22 12s-7.5-2-10.5-5-5.5-7-5.5-7-1 2-1 5 1 8 1 8-3.5 3.5-6 5.5S2 22 2 22"/></svg>') no-repeat center;
+            opacity: 0;
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.7));
+        }
+        
+        .spinner {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border: 2px solid transparent;
+            border-top-color: #d4af37;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+            opacity: 0;
+            animation-delay: 1s;
+        }
+        
+        .tagline {
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 30px;
+            opacity: 0;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            animation: fadeInText 1s 2.5s ease-out forwards;
+        }
+        
+        .shimmer {
+            position: absolute;
+            top: -10%;
+            left: -100%;
+            width: 50%;
+            height: 120%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transform: rotate(30deg);
+            animation: shine 3s 2s ease-out infinite;
+        }
+        
+        @keyframes fadeInOutline {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 0.3; transform: scale(1); }
+        }
+        
+        @keyframes fadeInFill {
+            to { opacity: 1; }
+        }
+        
+        @keyframes goldPulse {
+            from { opacity: 0.5; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInText {
+            to { opacity: 1; }
+        }
+        
+        @keyframes shine {
+            to { left: 150%; }
+        }
+        
+        @keyframes floatFeather {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--end-x), var(--end-y)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Hide content initially */
+        body.loading {
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        body.loading .page-content {
+            opacity: 0;
+        }
+    </style>
+    
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="logo-container">
+            <div class="spinner"></div>
+            <div class="shimmer"></div>
+            <div class="logo-outline"></div>
+            <div class="logo-fill"></div>
+            <div class="logo-gold-overlay"></div>
         </div>
+        
+        <div class="tagline">Eagle Graphix – Design Beyond Vision</div>
+    </div>
+    
+    <!-- Page Content (hidden during loading) -->
+    
+    <script>
+        // Create floating feathers
+        function createFeathers() {
+            const container = document.querySelector('.logo-container');
+            const featherCount = 8;
+            
+            for (let i = 0; i < featherCount; i++) {
+                const feather = document.createElement('div');
+                feather.className = 'feather';
+                
+                // Random start position around the logo
+                const angle = (i / featherCount) * Math.PI * 2;
+                const radius = 120;
+                const startX = 100 + Math.cos(angle) * radius;
+                const startY = 100 + Math.sin(angle) * radius;
+                
+                // End position at logo center
+                feather.style.setProperty('--end-x', `${100 - startX}px`);
+                feather.style.setProperty('--end-y', `${100 - startY}px`);
+                
+                feather.style.left = `${startX}px`;
+                feather.style.top = `${startY}px`;
+                feather.style.animation = `floatFeather 2s ${i * 0.2}s ease-out forwards`;
+                
+                container.appendChild(feather);
+            }
+        }
+    
+        // Complete loading animation
+        function completeLoading() {
+            const preloader = document.querySelector('.preloader');
+            const body = document.body;
+            
+            // Fade out preloader
+            preloader.style.opacity = '0';
+            
+            // Remove preloader after fade out
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                body.classList.remove('loading');
+                
+                // Show page content
+                document.querySelector('.page-content').style.opacity = '1';
+            }, 800);
+        }
+    
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            createFeathers();
+            
+            // Start loading simulation
+            setTimeout(() => {
+                completeLoading();
+            }, 4000); // Adjust timing as needed
+        });
+    
+        // Fallback in case something goes wrong
+        setTimeout(() => {
+            if (document.body.classList.contains('loading')) {
+                completeLoading();
+            }
+        }, 7000);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Premium Luxurious Header -->
+<header class="main-header">
+    <div class="header-container">
+        <!-- Logo with Luxurious Details -->
+        <div class="logo-container">
+            <a href="/" class="logo-link">
+                <img src="images/logo-1.png" alt="Eagle Graphix" class="main-logo">
+                
+                <div class="logo-ornament"></div>
+            </a>
+        </div>
+  
+        <!-- Desktop Navigation with Elegant Effects -->
+        <nav class="main-navigation">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <span class="nav-text">Home</span>
+                        <span class="nav-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link">
+                        <span class="nav-text">Services</span>
+                        <span class="nav-underline"></span>
+                        <i class="dropdown-icon fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-decorator"></div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="services.html#brand-identity">
+                                <span>Brand Identity</span>
+                                <div class="dropdown-link-decoration"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="services.html#marketing-collateral">
+                                <span>Marketing Graphics</span>
+                                <div class="dropdown-link-decoration"></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="services.html#premium-web-design.html">
+                                <span>Premium Web Design</span>
+                                <div class="dropdown-link-decoration"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">
+                        <span class="nav-text">Portfolio</span>
+                        <span class="nav-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        <span class="nav-text">About</span>
+                        <span class="nav-underline"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        <span class="nav-text">Contact</span>
+                        <span class="nav-underline"></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+  
+        <!-- Social Icons with Luxe Effects -->
+        <div class="social-container">
+            <a href="#" class="social-icon" aria-label="Instagram">
+                <div class="social-icon-bg"></div>
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Behance">
+                <div class="social-icon-bg"></div>
+                <i class="fab fa-behance"></i>
+            </a>
+            <div class="social-divider"></div>
+            <a href="#" class="cta-button">
+                <span>Get a Quote</span>
+                <div class="button-ornament"></div>
+            </a>
+        </div>
+  
+        <!-- Mobile Menu Toggle with Animation -->
+        <button class="mobile-menu-toggle" aria-label="Menu">
+            <span class="menu-line top-line"></span>
+            <span class="menu-line middle-line"></span>
+            <span class="menu-line bottom-line"></span>
+            <div class="menu-toggle-bg"></div>
+        </button>
+    </div>
+  
+    <!-- Mobile Menu with Luxurious Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-background">
+            <div class="luxury-pattern"></div>
+            <div class="gold-gradient-overlay"></div>
+        </div>
+        <div class="mobile-menu-container">
+            <div class="mobile-menu-header">
+                <div class="mobile-logo-container">
+                    <img src="images/logo-1.png" alt="Eagle Graphix" class="mobile-logo">
+                    <div class="mobile-logo-highlight"></div>
+                </div>
+                <button class="mobile-menu-close" aria-label="Close menu">
+                    <div class="close-icon-bg"></div>
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <nav class="mobile-navigation">
+                <ul class="mobile-nav-list">
+                    <li>
+                        <a href="/" class="mobile-nav-link">
+                            <span>Home</span>
+                            <div class="mobile-link-decoration"></div>
+                        </a>
+                    </li>
+                    <li class="mobile-dropdown">
+                        <a href="index.html" class="mobile-nav-link">
+                            <span>Services</span>
+                            <div class="mobile-link-decoration"></div>
+                            <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8">
+                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </a>
+                        <ul class="mobile-dropdown-menu">
+                            <li>
+                                <a href="services.html">
+                                    <span>Brand Identity</span>
+                                    <div class="mobile-dropdown-decoration"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="services.html">
+                                    <span>Luxury Packaging</span>
+                                    <div class="mobile-dropdown-decoration"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="services.html">
+                                    <span>Premium Web Design</span>
+                                    <div class="mobile-dropdown-decoration"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="portfolio.html" class="mobile-nav-link">
+                            <span>Portfolio</span>
+                            <div class="mobile-link-decoration"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="mobile-nav-link">
+                            <span>About</span>
+                            <div class="mobile-link-decoration"></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="mobile-nav-link">
+                            <span>Contact</span>
+                            <div class="mobile-link-decoration"></div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-cta-container">
+                <a href="#" class="mobile-cta-button">
+                    <span>Start Your Project</span>
+                    <div class="mobile-button-ornament"></div>
+                </a>
+            </div>
+            
+            <div class="mobile-social">
+                <div class="mobile-social-title">Connect With Us</div>
+                <div class="mobile-social-icons">
+                    <a href="#" class="mobile-social-icon" aria-label="Instagram">
+                        <div class="mobile-social-icon-bg"></div>
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="mobile-social-icon" aria-label="Behance">
+                        <div class="mobile-social-icon-bg"></div>
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="#" class="mobile-social-icon" aria-label="Pinterest">
+                        <div class="mobile-social-icon-bg"></div>
+                        <i class="fab fa-pinterest-p"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header Decorative Elements -->
+    <div class="header-ornament-left"></div>
+    <div class="header-ornament-right"></div>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <header class="eagle-hero">
         <div class="hero-content">
-            <h1>Investment in Excellence</h1>
-            <p class="tagline">Tailored Pricing for Uncompromised Service</p>
+            <h1 class="hero-title">Soar Higher with <span class="gold-text">Premium</span> Graphics</h1>
+            <p class="hero-subtitle">Choose the perfect plan for your visual masterpiece needs</p>
+            <div class="hero-scroll">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <!-- Pricing Toggle -->
+    <section class="pricing-toggle-section">
+        <div class="toggle-container">
+            <span class="toggle-label">Monthly Billing</span>
+            <label class="eagle-toggle">
+                <input type="checkbox" id="billingToggle">
+                <span class="slider"></span>
+                <span class="toggle-bg"></span>
+            </label>
+            <span class="toggle-label active">Annual Billing <span class="discount-badge">Save 25%</span></span>
         </div>
     </section>
 
-    <!-- 2. Tiered Pricing Cards -->
-    <section class="pricing-section">
-        <div class="container">
-            <h2>Our Premium Packages</h2>
-            <div class="pricing-cards">
-                <div class="pricing-card essence">
-                    <h3>Essence</h3>
-                    <div class="price">$1,499<span>/mo</span></div>
-                    <ul class="features">
-                        <li>Basic Brand Identity</li>
-                        <li>5 Design Concepts</li>
-                        <li>Standard Support</li>
-                    </ul>
-                    <button class="cta-button">Get Started</button>
+    <!-- Main Pricing Tiers -->
+    <section class="pricing-tiers-main">
+        <div class="pricing-card">
+            <div class="card-header">
+                <h3 class="tier-name">Starter</h3>
+                <div class="price-container">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount" data-monthly="49" data-yearly="37">37</span>
+                    <span class="price-period">/mo</span>
                 </div>
+                <p class="tier-description">Perfect for individuals and small projects</p>
+            </div>
+            <div class="card-features">
+                <ul>
+                    <li><i class="fas fa-check"></i> 2 Design Concepts</li>
+                    <li><i class="fas fa-check"></i> 3 Revisions</li>
+                    <li><i class="fas fa-check"></i> Standard File Formats</li>
+                    <li><i class="fas fa-check"></i> 48-Hour Turnaround</li>
+                    <li><i class="fas fa-check"></i> Email Support</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="tier-cta">Get Started</button>
+            </div>
+        </div>
 
-                <div class="pricing-card signature featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <h3>Signature</h3>
-                    <div class="price">$3,999<span>/mo</span></div>
-                    <ul class="features">
-                        <li>Complete Brand System</li>
-                        <li>Unlimited Concepts</li>
-                        <li>Priority Support</li>
-                        <li>Dedicated Designer</li>
-                    </ul>
-                    <button class="cta-button">Elevate My Brand</button>
+        <div class="pricing-card featured">
+            <div class="featured-badge">Most Popular</div>
+            <div class="card-header">
+                <h3 class="tier-name">Professional</h3>
+                <div class="price-container">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount" data-monthly="149" data-yearly="112">112</span>
+                    <span class="price-period">/mo</span>
                 </div>
+                <p class="tier-description">For growing businesses and serious creators</p>
+            </div>
+            <div class="card-features">
+                <ul>
+                    <li><i class="fas fa-check"></i> 5 Design Concepts</li>
+                    <li><i class="fas fa-check"></i> Unlimited Revisions</li>
+                    <li><i class="fas fa-check"></i> Premium File Formats</li>
+                    <li><i class="fas fa-check"></i> 24-Hour Turnaround</li>
+                    <li><i class="fas fa-check"></i> Priority Support</li>
+                    <li><i class="fas fa-check"></i> Brand Style Guide</li>
+                    <li><i class="fas fa-check"></i> Social Media Kit</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="tier-cta featured-cta">Choose Professional</button>
+            </div>
+        </div>
 
-                <div class="pricing-card couture">
-                    <h3>Couture</h3>
-                    <div class="price">Custom</div>
-                    <ul class="features">
-                        <li>Fully Bespoke Solutions</li>
-                        <li>Executive Creative Director</li>
-                        <li>24/7 Concierge</li>
-                        <li>White Glove Service</li>
-                    </ul>
-                    <button class="cta-button">Request Consultation</button>
+        <div class="pricing-card">
+            <div class="card-header">
+                <h3 class="tier-name">Enterprise</h3>
+                <div class="price-container">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount" data-monthly="349" data-yearly="262">262</span>
+                    <span class="price-period">/mo</span>
                 </div>
+                <p class="tier-description">For agencies and large-scale projects</p>
+            </div>
+            <div class="card-features">
+                <ul>
+                    <li><i class="fas fa-check"></i> Unlimited Design Concepts</li>
+                    <li><i class="fas fa-check"></i> Unlimited Revisions</li>
+                    <li><i class="fas fa-check"></i> All File Formats + Source Files</li>
+                    <li><i class="fas fa-check"></i> 12-Hour Turnaround</li>
+                    <li><i class="fas fa-check"></i> 24/7 VIP Support</li>
+                    <li><i class="fas fa-check"></i> Comprehensive Brand Package</li>
+                    <li><i class="fas fa-check"></i> Dedicated Designer</li>
+                    <li><i class="fas fa-check"></i> Monthly Strategy Sessions</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <button class="tier-cta">Go Enterprise</button>
             </div>
         </div>
     </section>
 
-    <!-- 3. Comparison Toggle -->
-    <section class="toggle-section">
-        <div class="container">
-            <div class="toggle-switch">
-                <span>Monthly</span>
-                <label class="switch">
-                    <input type="checkbox" id="billing-toggle">
-                    <span class="slider"></span>
-                </label>
-                <span>Yearly (Save 20%)</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Additional Pricing Cards (Specialized Services) -->
+    <section class="specialized-services">
+        <div class="section-header">
+            <h2>Specialized <span class="gold-text">Services</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Tailored solutions for your specific needs</p>
+        </div>
+        
+        <div class="pricing-grid">
+            <!-- Logo Design -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <h3 class="service-name">Logo Design</h3>
+                <div class="service-pricing">
+                    <span class="price-from">From</span>
+                    <span class="service-price">$30</span>
+                    <span class="price-note">one-time fee</span>
+                </div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> 3 Unique Concepts</li>
+                    <li><i class="fas fa-check"></i> 5 Revisions</li>
+                    <li><i class="fas fa-check"></i> Vector Files</li>
+                    <li><i class="fas fa-check"></i> Brand Guidelines</li>
+                </ul>
+                <button class="service-cta" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
+            
+            <!-- Branding Package -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="service-name">Complete Branding</h3>
+                <div class="service-pricing">
+                    <span class="price-from">From</span>
+                    <span class="service-price">$199</span>
+                    <span class="price-note">one-time fee</span>
+                </div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Logo Design</li>
+                    <li><i class="fas fa-check"></i> Color Palette</li>
+                    <li><i class="fas fa-check"></i> Typography System</li>
+                    <li><i class="fas fa-check"></i> Brand Guidelines</li>
+                    <li><i class="fas fa-check"></i> Business Card Design</li>
+                </ul>
+                <button class="service-cta" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
+            
+            <!-- Social Media Kit -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <h3 class="service-name">Social Media Kit</h3>
+                <div class="service-pricing">
+                    <span class="price-from">From</span>
+                    <span class="service-price">$99</span>
+                    <span class="price-note">monthly</span>
+                </div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> 15 Custom Posts</li>
+                    <li><i class="fas fa-check"></i> Stories Templates</li>
+                    <li><i class="fas fa-check"></i> Profile Optimization</li>
+                    <li><i class="fas fa-check"></i> Content Calendar</li>
+                </ul>
+                <button class="service-cta" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
+            
+            <!-- Website Design -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="service-name">Website Design</h3>
+                <div class="service-pricing">
+                    <span class="price-from">From</span>
+                    <span class="service-price">$500</span>
+                    <span class="price-note">one-time fee</span>
+                </div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Custom UI/UX Design</li>
+                    <li><i class="fas fa-check"></i> 5 Page Website</li>
+                    <li><i class="fas fa-check"></i> Mobile Responsive</li>
+                    <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                </ul>
+                <button class="service-cta" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
+            
+            <!-- Packaging Design -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <h3 class="service-name">Packaging Design</h3>
+                <div class="service-pricing">
+                    <span class="price-from">From</span>
+                    <span class="service-price">$99</span>
+                    <span class="price-note">per product</span>
+                </div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> 3D Mockups</li>
+                    <li><i class="fas fa-check"></i> Print-Ready Files</li>
+                    <li><i class="fas fa-check"></i> Material Consultation</li>
+                    <li><i class="fas fa-check"></i> Vendor Coordination</li>
+                </ul>
+                <button class="service-cta" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
+            
+            <!-- Illustration -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="service-name">Custom Illustration</h3>
+                <div class="service-pricing">
+                    <span class="price-from">From</span>
+                    <span class="service-price">$99</span>
+                    <span class="price-note">per illustration</span>
+                </div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Hand-Drawn Style</li>
+                    <li><i class="fas fa-check"></i> 3 Concepts</li>
+                    <li><i class="fas fa-check"></i> Digital Files</li>
+                    <li><i class="fas fa-check"></i> Commercial License</li>
+                </ul>
+                <button class="service-cta" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
+            
+            <!-- Motion Graphics -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <h3 class="service-name">Motion Graphics</h3>
+                <div class="service-pricing">
+                    <span class="price-from">From</span>
+                    <span class="service-price">$199</span>
+                    <span class="price-note">per minute</span>
+                </div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> 2D/3D Animation</li>
+                    <li><i class="fas fa-check"></i> Sound Design</li>
+                    <li><i class="fas fa-check"></i> Storyboard</li>
+                    <li><i class="fas fa-check"></i> Multiple Formats</li>
+                </ul>
+                <button class="service-cta" onclick="window.location.href='contact.html'">Get Quote</button>
+            </div>
+            
+            <!-- Print Design -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-print"></i>
+                </div>
+                <h3 class="service-name">Print Design</h3>
+                <div class="service-pricing">
+                    <span class="price-from">From</span>
+                    <span class="service-price">$35</span>
+                    <span class="price-note">per project</span>
+                </div>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Brochures</li>
+                    <li><i class="fas fa-check"></i> Flyers</li>
+                    <li><i class="fas fa-check"></i> Business Cards</li>
+                    <li><i class="fas fa-check"></i> Print-Ready Files</li>
+                </ul>
+                <button class="service-cta" onclick="window.location.href='contact.html'">Get Quote</button>
+               
             </div>
         </div>
     </section>
 
-    <!-- 4. Custom Quote Button -->
-    <section class="quote-section">
-        <div class="container">
-            <button class="custom-quote-button" id="quote-modal-trigger">Tailor My Package</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Add-On Services -->
+    <section class="addon-services">
+        <div class="section-header">
+            <h2>Premium <span class="gold-text">Add-Ons</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Enhance your chosen plan with these exclusive options</p>
         </div>
-    </section>
-
-    <!-- 5. Interactive Price Calculator -->
-    <section class="calculator-section">
-        <div class="container">
-            <h2>Build Your Custom Solution</h2>
-            <form class="price-calculator">
-                <div class="calculator-field">
-                    <label for="service-type">Service Type</label>
-                    <select id="service-type">
-                        <option value="branding">Brand Identity</option>
-                        <option value="web">Web Design</option>
-                        <option value="package">Complete Package</option>
-                    </select>
+        
+        <div class="addon-grid">
+            <div class="addon-card">
+                <div class="addon-header">
+                    <h3 class="addon-name">Express Delivery</h3>
+                    <div class="addon-price">+$99</div>
                 </div>
-                <div class="calculator-field">
-                    <label for="project-duration">Project Duration</label>
-                    <input type="range" id="project-duration" min="1" max="12" value="3">
-                    <span id="duration-value">3 months</span>
+                <p class="addon-description">Cut your delivery time in half with our priority design queue</p>
+                <button class="addon-cta">Add to Plan</button>
+            </div>
+            
+            <div class="addon-card">
+                <div class="addon-header">
+                    <h3 class="addon-name">Source Files</h3>
+                    <div class="addon-price">+$149</div>
                 </div>
-                <div class="calculator-result">
-                    <h3>Estimated Investment</h3>
-                    <div class="calculated-price">$0</div>
-                    <button type="button" class="calculator-cta">Get Exact Quote</button>
+                <p class="addon-description">Get all editable source files for future modifications</p>
+                <button class="addon-cta">Add to Plan</button>
+            </div>
+            
+            <div class="addon-card">
+                <div class="addon-header">
+                    <h3 class="addon-name">Brand Strategy</h3>
+                    <div class="addon-price">+$199</div>
                 </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- 6. Animated SVG Dividers -->
-    <div class="svg-divider">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
-            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"></path>
-            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
-        </svg>
-    </div>
-
-    <!-- 7. Floating Price Info Tooltip -->
-    <section class="tooltip-section">
-        <div class="container">
-            <h2>What's Included</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <h3>Dedicated Designer <span class="tooltip-icon" data-tooltip="Your personal designer available during business hours">i</span></h3>
+                <p class="addon-description">2-hour consultation with our branding experts</p>
+                <button class="addon-cta">Add to Plan</button>
+            </div>
+            
+            <div class="addon-card">
+                <div class="addon-header">
+                    <h3 class="addon-name">3D Mockups</h3>
+                    <div class="addon-price">+$79</div>
                 </div>
-                <div class="feature-item">
-                    <h3>Unlimited Revisions <span class="tooltip-icon" data-tooltip="Refine until perfect with no additional charges">i</span></h3>
+                <p class="addon-description">Professional 3D renderings of your designs</p>
+                <button class="addon-cta">Add to Plan</button>
+            </div>
+            
+            <div class="addon-card">
+                <div class="addon-header">
+                    <h3 class="addon-name">Social Media Setup</h3>
+                    <div class="addon-price">+$45</div>
                 </div>
-                <div class="feature-item">
-                    <h3>Priority Support <span class="tooltip-icon" data-tooltip="Guaranteed 2-hour response time">i</span></h3>
+                <p class="addon-description">Complete setup of your social media profiles</p>
+                <button class="addon-cta">Add to Plan</button>
+            </div>
+            
+            <div class="addon-card">
+                <div class="addon-header">
+                    <h3 class="addon-name">Print Coordination</h3>
+                    <div class="addon-price">+$65</div>
                 </div>
+                <p class="addon-description">We handle communication with printers</p>
+                <button class="addon-cta">Add to Plan</button>
+            </div>
+            
+            <div class="addon-card">
+                <div class="addon-header">
+                    <h3 class="addon-name">Copywriting</h3>
+                    <div class="addon-price">+$25</div>
+                </div>
+                <p class="addon-description">Professional copy for your designs</p>
+                <button class="addon-cta">Add to Plan</button>
+            </div>
+            
+            <div class="addon-card">
+                <div class="addon-header">
+                    <h3 class="addon-name">Multilingual Design</h3>
+                    <div class="addon-price">+$75</div>
+                </div>
+                <p class="addon-description">Adapt designs for multiple languages</p>
+                <button class="addon-cta">Add to Plan</button>
             </div>
         </div>
     </section>
 
-    <!-- 8. Service Value Breakdown -->
-    <section class="breakdown-section">
-        <div class="container">
-            <div class="breakdown-accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header">Essence Package Details</button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Initial brand consultation</li>
-                            <li>3 logo concepts</li>
-                            <li>2 rounds of revisions</li>
-                            <li>Basic brand guidelines</li>
-                        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Feature Comparison -->
+    <section class="feature-comparison">
+        <div class="section-header">
+            <h2>Plan <span class="gold-text">Comparison</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">See how our plans stack up against each other</p>
+        </div>
+        
+        <div class="comparison-table">
+            <div class="table-header">
+                <div class="feature-column">Features</div>
+                <div class="tier-column">Starter</div>
+                <div class="tier-column">Professional</div>
+                <div class="tier-column">Enterprise</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-column">Design Concepts</div>
+                <div class="tier-column">2</div>
+                <div class="tier-column">5</div>
+                <div class="tier-column">Unlimited</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-column">Revisions</div>
+                <div class="tier-column">3</div>
+                <div class="tier-column">Unlimited</div>
+                <div class="tier-column">Unlimited</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-column">Turnaround Time</div>
+                <div class="tier-column">48 Hours</div>
+                <div class="tier-column">24 Hours</div>
+                <div class="tier-column">12 Hours</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-column">File Formats</div>
+                <div class="tier-column">Standard</div>
+                <div class="tier-column">Premium</div>
+                <div class="tier-column">All + Source</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-column">Support</div>
+                <div class="tier-column">Email</div>
+                <div class="tier-column">Priority</div>
+                <div class="tier-column">24/7 VIP</div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-column">Brand Style Guide</div>
+                <div class="tier-column"><i class="fas fa-times"></i></div>
+                <div class="tier-column"><i class="fas fa-check"></i></div>
+                <div class="tier-column"><i class="fas fa-check"></i></div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-column">Dedicated Designer</div>
+                <div class="tier-column"><i class="fas fa-times"></i></div>
+                <div class="tier-column"><i class="fas fa-times"></i></div>
+                <div class="tier-column"><i class="fas fa-check"></i></div>
+            </div>
+            
+            <div class="table-row">
+                <div class="feature-column">Strategy Sessions</div>
+                <div class="tier-column"><i class="fas fa-times"></i></div>
+                <div class="tier-column"><i class="fas fa-times"></i></div>
+                <div class="tier-column"><i class="fas fa-check"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="client-testimonials">
+        <div class="section-header">
+            <h2>Our <span class="gold-text">Clients</span> Speak</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Hear from businesses that soared with our designs</p>
+        </div>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-card">
+                <div class="client-photo" style="background-image: url('client1.jpg')"></div>
+                <div class="testimonial-content">
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
+                    <p class="testimonial-text">"Eagle Graphics transformed our brand identity completely. The Professional plan gave us everything we needed to stand out in our market."</p>
+                    <p class="client-name">— Sarah Johnson</p>
+                    <p class="client-title">CEO, Bloom Cosmetics</p>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-header">Signature Package Details</button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Comprehensive brand strategy</li>
-                            <li>Unlimited logo concepts</li>
-                            <li>Unlimited revisions</li>
-                            <li>Complete brand guidelines</li>
-                            <li>Stationery design</li>
-                        </ul>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="client-photo" style="background-image: url('client2.jpg')"></div>
+                <div class="testimonial-content">
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
+                    <p class="testimonial-text">"The Enterprise plan was worth every penny. Having a dedicated designer and 12-hour turnaround has been a game-changer for our agency."</p>
+                    <p class="client-name">— Michael Chen</p>
+                    <p class="client-title">Creative Director, Nexus Agency</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- 9. Featured Luxury Badge (Already in pricing cards) -->
-
-    <!-- 10. Before & After ROI Section -->
-    <section class="roi-section">
-        <div class="container">
-            <h2>Client Success Stories</h2>
-            <div class="roi-cards">
-                <div class="roi-card">
-                    <div class="before">
-                        <h4>Before</h4>
-                        <div class="amount">$2,500 Investment</div>
+            
+            <div class="testimonial-card">
+                <div class="client-photo" style="background-image: url('client3.jpg')"></div>
+                <div class="testimonial-content">
+                    <div class="client-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    <div class="arrow">→</div>
-                    <div class="after">
-                        <h4>After</h4>
-                        <div class="amount">32% Revenue Increase</div>
-                    </div>
-                </div>
-                <div class="roi-card">
-                    <div class="before">
-                        <h4>Before</h4>
-                        <div class="amount">$8,000 Investment</div>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="after">
-                        <h4>After</h4>
-                        <div class="amount">Featured in Forbes</div>
-                    </div>
+                    <p class="testimonial-text">"As a startup, the Starter plan gave us professional designs without breaking the bank. We've since upgraded as we've grown!"</p>
+                    <p class="client-name">— David Rodriguez</p>
+                    <p class="client-title">Founder, TechVenture</p>
                 </div>
             </div>
+            
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        
+        <div class="client-logos">
+            <div class="logo-item"><img src="forbes-logo.png" alt="Forbes"></div>
+            <div class="logo-item"><img src="techcrunch-logo.png" alt="TechCrunch"></div>
+            <div class="logo-item"><img src="adweek-logo.png" alt="AdWeek"></div>
+            <div class="logo-item"><img src="inc-logo.png" alt="Inc."></div>
+            <div class="logo-item"><img src="fastcompany-logo.png" alt="Fast Company"></div>
         </div>
     </section>
 
-    <!-- 11. Exclusive Add-ons Carousel -->
-    <section class="addons-section">
-        <div class="container">
-            <h2>Exclusive Add-ons</h2>
-            <div class="addons-carousel">
-                <div class="addon-card">
-                    <h3>White Glove Support</h3>
-                    <div class="price">+$1,499/mo</div>
-                    <p>24/7 priority access to our creative directors</p>
-                </div>
-                <div class="addon-card">
-                    <h3>Dedicated Advisor</h3>
-                    <div class="price">+$2,999/mo</div>
-                    <p>Your personal branding strategist</p>
-                </div>
-                <div class="addon-card">
-                    <h3>Priority Booking</h3>
-                    <div class="price">+$999/mo</div>
-                    <p>Jump to the front of our project queue</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 12. Client Status Level -->
-    <section class="status-section">
-        <div class="container">
-            <h2>Client Status Levels</h2>
-            <div class="status-badges">
-                <div class="badge gold">
-                    <h3>Gold Client</h3>
-                    <p>Signature Package holders</p>
-                </div>
-                <div class="badge platinum">
-                    <h3>Platinum Concierge</h3>
-                    <p>Annual Couture clients</p>
-                </div>
-                <div class="badge black">
-                    <h3>Black Card Access</h3>
-                    <p>VIP enterprise clients</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 13. Limited Availability Note -->
-    <section class="availability-section">
-        <div class="container">
-            <div class="availability-banner">
-                <p>Only 3 VIP slots left this month</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- 14. Embedded Testimonials -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2>Client Experiences</h2>
-            <div class="package-testimonials">
-                <div class="testimonial" data-package="essence">
-                    <blockquote>"Eagle Graphix transformed our startup's identity."</blockquote>
-                    <cite>- Startup Founder</cite>
-                </div>
-                <div class="testimonial" data-package="signature">
-                    <blockquote>"The Signature package was worth every penny."</blockquote>
-                    <cite>- Fortune 500 CMO</cite>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 15. Savings Highlight (Already in toggle section) -->
 
-    <!-- 16. Schedule a Consultation CTA -->
-    <section class="consultation-section">
-        <div class="container">
-            <div class="consultation-cta">
-                <h2>Not Ready to Commit?</h2>
-                <p>Let's discuss your needs first</p>
-                <button class="consultation-button">Schedule a Consultation</button>
-            </div>
-        </div>
-    </section>
 
-    <!-- 17. Soft-Fade FAQ Section -->
+
+
+
+
+
+
+
+    <!-- FAQ Section -->
     <section class="faq-section">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-question">What payment methods do you accept?</button>
-                    <div class="faq-answer">
-                        <p>We accept all major credit cards, wire transfers, and AMEX Black.</p>
-                    </div>
+        <div class="section-header">
+            <h2>Frequently <span class="gold-text">Asked</span> Questions</h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Everything you need to know about our services</p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What's included in the monthly plans?</h4>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">Can I upgrade my package later?</button>
-                    <div class="faq-answer">
-                        <p>Yes, you can upgrade at any time with prorated adjustments.</p>
-                    </div>
+                <div class="faq-answer">
+                    <p>Our monthly plans include a set number of design requests per month, with varying levels of revisions, turnaround times, and file formats based on the plan you choose. The Professional and Enterprise plans also include additional assets like brand style guides and social media kits.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Can I switch between plans?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll get immediate access to the higher plan's benefits. Downgrades take effect at the start of your next billing cycle.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How does the annual billing discount work?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>When you choose annual billing, you pay for 12 months upfront at a 25% discount compared to the monthly rate. This saves you money and locks in your rate for a full year.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What if I need more designs than my plan allows?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>You can purchase additional design credits at a discounted rate, or upgrade your plan to accommodate your increased needs. Our Enterprise plan offers unlimited designs for high-volume clients.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do you offer custom plans for agencies?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We work with many creative agencies and can create custom plans with white-label options, team access, and specialized workflows. Contact our sales team to discuss agency solutions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What's your revision policy?</h4>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Each plan includes a set number of revisions per design (unlimited for Professional and Enterprise). Revisions must be requested within 7 days of receiving the initial design. Additional revisions can be purchased as add-ons if needed.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 18. VIP Payment Options -->
-    <section class="payment-section">
-        <div class="container">
-            <h2>VIP Payment Options</h2>
-            <div class="payment-methods">
-                <div class="payment-method">AMEX Black</div>
-                <div class="payment-method">Apple Pay</div>
-                <div class="payment-method">Bank Transfer</div>
-                <div class="payment-method">Crypto</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style> 
+
+/* Process Section Styles */
+.process-section {
+    background-color: #f9f9f7;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.process-section .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.process-section .section-subtitle {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.process-steps {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.process-step {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.process-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-visual {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(145deg, #d4af37 0%, #f9f295 50%, #d4af37 100%);
+    color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 10px rgba(197, 161, 69, 0.3);
+    z-index: 2;
+    position: relative;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #046a38;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(4, 106, 56, 0.3);
+    z-index: 2;
+}
+
+.step-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.step-connector {
+    position: absolute;
+    top: 70px;
+    height: calc(100% - 70px);
+    width: 2px;
+    background: linear-gradient(to bottom, #046a38, #c5a145);
+    z-index: 1;
+}
+
+.step-content {
+    flex: 1;
+    padding: 0 30px 30px 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-left: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.step-content::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.step-title {
+    color: #046a38;
+    font-size: 1.5rem;
+    margin: 20px 0 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.step-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #046a38, #c5a145);
+}
+
+.step-description {
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.step-features {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.step-features li {
+    background-color: rgba(4, 106, 56, 0.1);
+    color: #046a38;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Hover Effects */
+.process-step:hover .step-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.process-step:hover .step-number {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .process-step {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .step-visual {
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .step-connector {
+        display: none;
+    }
+    
+    .step-icon {
+        margin: 0 20px;
+    }
+    
+    .step-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .step-content::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-section .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .process-section .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .step-features {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+
+
+</style>
+    <!-- Process Section -->
+<section class="process-section" id="design-process">
+    <div class="section-header">
+        <h2>Our <span class="gold-text">Creative</span> Process</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">How we craft exceptional designs and websites for your business</p>
+    </div>
+    
+    <div class="process-steps">
+        <!-- Step 1 -->
+        <div class="process-step" data-step="1">
+            <div class="step-visual">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                    </svg>
+                </div>
+                <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+                <h4 class="step-title">Discovery & Strategy</h4>
+                <p class="step-description">We analyze your business goals, target audience, and competitors to create a strategic foundation for your project.</p>
+                <ul class="step-features">
+                    <li>Brand questionnaire</li>
+                    <li>Market research</li>
+                    <li>Project roadmap</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="process-step" data-step="2">
+            <div class="step-visual">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                    </svg>
+                </div>
+                <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+                <h4 class="step-title">Design Conceptualization</h4>
+                <p class="step-description">Our designers create wireframes, mockups, and prototypes tailored to your brand identity and user experience needs.</p>
+                <ul class="step-features">
+                    <li>UI/UX wireframing</li>
+                    <li>Brand style exploration</li>
+                    <li>Interactive prototypes</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="process-step" data-step="3">
+            <div class="step-visual">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/>
+                    </svg>
+                </div>
+                <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+                <h4 class="step-title">Development & Iteration</h4>
+                <p class="step-description">We build functional websites and design assets while incorporating your feedback through multiple review cycles.</p>
+                <ul class="step-features">
+                    <li>Responsive development</li>
+                    <li>Design revisions</li>
+                    <li>User testing</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="process-step" data-step="4">
+            <div class="step-visual">
+                <div class="step-number">4</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                    </svg>
+                </div>
+                <div class="step-connector"></div>
+            </div>
+            <div class="step-content">
+                <h4 class="step-title">Quality Assurance</h4>
+                <p class="step-description">We rigorously test all designs and code across devices and browsers to ensure flawless performance.</p>
+                <ul class="step-features">
+                    <li>Cross-browser testing</li>
+                    <li>Performance optimization</li>
+                    <li>Accessibility checks</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="process-step" data-step="5">
+            <div class="step-visual">
+                <div class="step-number">5</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="step-content">
+                <h4 class="step-title">Delivery & Training</h4>
+                <p class="step-description">We provide final assets, documentation, and training to ensure you can effectively manage your new designs and website.</p>
+                <ul class="step-features">
+                    <li>Final file delivery</li>
+                    <li>CMS training</li>
+                    <li>Ongoing support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate process steps on scroll
+    const processSteps = document.querySelectorAll('.process-step');
+    
+    function checkVisibility() {
+        processSteps.forEach(step => {
+            const stepTop = step.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (stepTop < windowHeight - 100) {
+                step.classList.add('visible');
+                
+                // Add sequential delay for animation
+                const stepNum = step.getAttribute('data-step');
+                step.style.transitionDelay = `${stepNum * 0.1}s`;
+            }
+        });
+    }
+    
+    // Check on load
+    checkVisibility();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkVisibility);
+    
+    // Add hover effects for desktop
+    if (window.innerWidth > 768) {
+        processSteps.forEach(step => {
+            step.addEventListener('mouseenter', function() {
+                this.querySelector('.step-number').style.transform = 'scale(1.1)';
+                this.querySelector('.step-icon').style.transform = 'scale(1.1)';
+                this.querySelector('.step-content').style.transform = 'translateY(-5px)';
+            });
+            
+            step.addEventListener('mouseleave', function() {
+                this.querySelector('.step-number').style.transform = 'scale(1)';
+                this.querySelector('.step-icon').style.transform = 'scale(1)';
+                this.querySelector('.step-content').style.transform = 'translateY(0)';
+            });
+        });
+    }
+    
+    // Add click to expand functionality for mobile
+    if (window.innerWidth <= 768) {
+        processSteps.forEach(step => {
+            const content = step.querySelector('.step-content');
+            const visual = step.querySelector('.step-visual');
+            
+            visual.addEventListener('click', function() {
+                content.classList.toggle('expanded');
+                
+                if (content.classList.contains('expanded')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+    }
+});
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- Team Section -->
+<section class="team-section">
+    <div class="section-header">
+        <h2 class="animate-header">Meet Our <span class="gold-text">Design</span> Team</h2>
+        <div class="section-divider gold-divider animate-divider"></div>
+        <p class="section-subtitle animate-subtitle">The creative minds behind your stunning visuals</p>
+    </div>
+    
+    <div class="team-grid">
+        <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-photo-wrapper">
+                <div class="member-photo" style="background-image: url('designer1.jpg')"></div>
+                <div class="gold-overlay"></div>
+            </div>
+            <div class="member-info">
+                <h4 class="member-name">FAITH NJERI</h4>
+                <p class="member-title">Creative Director</p>
+                <div class="member-divider"></div>
+                <p class="member-bio">5+ years in brand design with Fortune 500 clients</p>
+                <div class="social-links">
+                    <a href="#" class="gold-hover"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="gold-hover"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" class="gold-hover"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="gold-border"></div>
+        </div>
+        
+        <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-photo-wrapper">
+                <div class="member-photo" style="background-image: url('designer2.jpg')"></div>
+                <div class="gold-overlay"></div>
+            </div>
+            <div class="member-info">
+                <h4 class="member-name">PHILLIP KIHARA</h4>
+                <p class="member-title">UI/UX Specialist</p>
+                <div class="member-divider"></div>
+                <p class="member-bio">Expert in creating intuitive digital experiences</p>
+                <div class="social-links">
+                    <a href="#" class="gold-hover"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="gold-hover"><i class="fab fa-behance"></i></a>
+                    <a href="#" class="gold-hover"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="gold-border"></div>
+        </div>
+        
+        <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-photo-wrapper">
+                <div class="member-photo" style="background-image: url('designer3.jpg')"></div>
+                <div class="gold-overlay"></div>
+            </div>
+            <div class="member-info">
+                <h4 class="member-name">FAITH NJERI</h4>
+                <p class="member-title">Illustration Artist</p>
+                <div class="member-divider"></div>
+                <p class="member-bio">Brings concepts to life with hand-crafted artwork</p>
+                <div class="social-links">
+                    <a href="#" class="gold-hover"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="gold-hover"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="gold-hover"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="gold-border"></div>
+        </div>
+        
+        <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+            <div class="member-photo-wrapper">
+                <div class="member-photo" style="background-image: url('designer4.jpg')"></div>
+                <div class="gold-overlay"></div>
+            </div>
+            <div class="member-info">
+                <h4 class="member-name">FAITH NJERI</h4>
+                <p class="member-title">Motion Designer</p>
+                <div class="member-divider"></div>
+                <p class="member-bio">Creates captivating animations that tell stories</p>
+                <div class="social-links">
+                    <a href="#" class="gold-hover"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="gold-hover"><i class="fab fa-vimeo"></i></a>
+                    <a href="#" class="gold-hover"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="gold-border"></div>
+        </div>
+    </div>
+</section>
+
+<!-- CSS -->
+<style>
+    /* Base Styles */
+    .team-section {
+        background-color: #0a0a0a;
+        padding: 100px 0;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+        position: relative;
+    }
+    
+    .section-header h2 {
+        font-size: 3.5rem;
+        font-weight: 300;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+    
+    .section-header h2.animate-header {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .gold-text {
+        color: #D4AF37;
+        font-weight: 500;
+    }
+    
+    .section-divider {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        margin: 0 auto 25px;
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: all 0.8s ease 0.3s;
+    }
+    
+    .section-divider.animate-divider {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        color: #aaa;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease 0.6s;
+    }
+    
+    .section-subtitle.animate-subtitle {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .team-member {
+        position: relative;
+        background: rgba(20, 20, 20, 0.7);
+        border-radius: 5px;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 25px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+    
+    .team-member:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    }
+    
+    .member-photo-wrapper {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 25px;
+        border: 3px solid rgba(212, 175, 55, 0.3);
+        transition: all 0.5s ease;
+    }
+    
+    .team-member:hover .member-photo-wrapper {
+        border-color: rgba(212, 175, 55, 0.7);
+        transform: scale(1.05);
+    }
+    
+    .member-photo {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: all 0.8s ease;
+    }
+    
+    .team-member:hover .member-photo {
+        transform: scale(1.1);
+    }
+    
+    .gold-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), transparent);
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+    
+    .team-member:hover .gold-overlay {
+        opacity: 1;
+    }
+    
+    .member-info {
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .member-name {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+    }
+    
+    .member-title {
+        color: #D4AF37;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+    
+    .member-divider {
+        width: 40px;
+        height: 1px;
+        background: rgba(212, 175, 55, 0.5);
+        margin: 10px 0;
+        transition: all 0.5s ease;
+    }
+    
+    .team-member:hover .member-divider {
+        width: 60px;
+        background: rgba(212, 175, 55, 0.9);
+    }
+    
+    .member-bio {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: #bbb;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .social-links a {
+        color: #777;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .social-links a.gold-hover:hover {
+        color: #D4AF37;
+        transform: translateY(-3px);
+    }
+    
+    .gold-border {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: all 0.5s ease;
+    }
+    
+    .team-member:hover .gold-border {
+        transform: scaleX(1);
+    }
+    
+    /* Background Elements for Luxury Feel */
+    .team-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.03), transparent 50%);
+        pointer-events: none;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .section-header h2 {
+            font-size: 2.5rem;
+        }
+        
+        .team-grid {
+            grid-template-columns: 1fr;
+            max-width: 400px;
+        }
+        
+        .team-member {
+            height: auto;
+            padding: 25px 20px;
+        }
+    }
+</style>
+
+<!-- JavaScript Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Initialization Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Header animation triggers
+        setTimeout(function() {
+            document.querySelector('.section-header h2').classList.add('animate-header');
+            document.querySelector('.section-divider').classList.add('animate-divider');
+            document.querySelector('.section-subtitle').classList.add('animate-subtitle');
+        }, 300);
+        
+        // Parallax effect for team members
+        const teamMembers = document.querySelectorAll('.team-member');
+        window.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            teamMembers.forEach((member, index) => {
+                const offsetX = (x - 0.5) * 20;
+                const offsetY = (y - 0.5) * 20;
+                const delay = index * 0.1;
+                
+                setTimeout(() => {
+                    member.style.transform = `translateY(${-10 + offsetY * 0.3}px) rotateX(${offsetY * 0.5}deg) rotateY(${offsetX * 0.5}deg)`;
+                }, delay * 1000);
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Awards & Recognition -->
+    <section class="awards-section">
+        <div class="section-header">
+            <h2>Awards & <span class="gold-text">Recognition</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">Celebrating excellence in design and innovation</p>
+        </div>
+        
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h4 class="award-name">AIGA Design Excellence</h4>
+                <p class="award-year">2023 Winner</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h4 class="award-name">Webby Awards</h4>
+                <p class="award-year">2022 Honoree</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h4 class="award-name">Communication Arts</h4>
+                <p class="award-year">2024 Feature</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h4 class="award-name">D&AD Pencil</h4>
+                <p class="award-year">2024 Winner</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h4 class="award-name">One Show</h4>
+                <p class="award-year">2022 Merit</p>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h4 class="award-name">Cannes Lions</h4>
+                <p class="award-year">2023 Shortlist</p>
             </div>
         </div>
     </section>
 
-    <!-- 19. Secure & Discreet Guarantee -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="section-header">
+            <h2>Success <span class="gold-text">Stories</span></h2>
+            <div class="section-divider"></div>
+            <p class="section-subtitle">See how we've helped businesses elevate their brands</p>
+        </div>
+        
+        <div class="case-study-grid">
+            <div class="case-study-card">
+                <div class="case-study-image" style="background-image: url('case1.jpg')"></div>
+                <div class="case-study-content">
+                    <h4 class="case-study-title">Bloom Cosmetics Rebrand</h4>
+                    <p class="case-study-excerpt">How we helped a beauty startup increase sales by 300% with a fresh brand identity...</p>
+                    <a href="about.html" class="case-study-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="case-study-card">
+                <div class="case-study-image" style="background-image: url('case2.jpg')"></div>
+                <div class="case-study-content">
+                    <h4 class="case-study-title">TechVenture Website Design</h4>
+                    <p class="case-study-excerpt">Creating a cutting-edge digital experience for a fast-growing tech company...</p>
+                    <a href="about.html" class="case-study-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="case-study-card">
+                <div class="case-study-image" style="background-image: url('case3.jpg')"></div>
+                <div class="case-study-content">
+                    <h4 class="case-study-title">Nexus Agency Brand System</h4>
+                    <p class="case-study-excerpt">Developing a comprehensive visual language for a creative agency's global expansion...</p>
+                    <a href="about.html" class="case-study-link">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Guarantee Section -->
     <section class="guarantee-section">
-        <div class="container">
-            <div class="guarantee-card">
-                <div class="lock-icon">🔒</div>
-                <h3>Secure & Discreet Service</h3>
-                <p>All projects protected by strict NDAs and encrypted communications</p>
+        <div class="guarantee-content">
+            <div class="guarantee-badge">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="guarantee-text">
+                <h3>Our <span class="gold-text">100% Satisfaction</span> Guarantee</h3>
+                <p>We stand behind our work with an unconditional 30-day money-back guarantee. If you're not completely satisfied with your designs, we'll refund your payment, no questions asked.</p>
             </div>
         </div>
     </section>
 
-    <!-- 20. Luxury Client Showcase -->
-    <section class="clients-section">
-        <div class="container">
-            <h2>Brands We've Served</h2>
-            <div class="client-logos">
-                <div class="client-logo">A*****</div>
-                <div class="client-logo">B*****</div>
-                <div class="client-logo">C*****</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 21. Animated Scrolling Ticker -->
-    <section class="ticker-section">
-        <div class="ticker-container">
-            <div class="ticker-content">
-                <span>Bespoke Packages Available</span>
-                <span>World-Class Service</span>
-                <span>Handled With Care</span>
-                <span>Discretion Guaranteed</span>
-            </div>
-        </div>
-    </section>
 
-    <!-- 22. Dark Mode Toggle -->
-    <div class="dark-mode-toggle">
-        <button id="dark-mode-switch">Toggle Dark Mode</button>
-    </div>
 
-    <!-- 23. Why We Cost More Section -->
-    <section class="value-section">
-        <div class="container">
-            <h2>What Sets Eagle Graphix Apart</h2>
-            <div class="value-comparison">
-                <div class="comparison-column">
-                    <h3>Typical Agencies</h3>
-                    <ul>
-                        <li>Template-based solutions</li>
-                        <li>Junior designers</li>
-                        <li>Slow response times</li>
-                    </ul>
-                </div>
-                <div class="comparison-column">
-                    <h3>Eagle Graphix</h3>
-                    <ul>
-                        <li>Fully bespoke creations</li>
-                        <li>Senior creative directors</li>
-                        <li>24/7 concierge</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 24. Digital Brochure Download -->
-    <section class="brochure-section">
-        <div class="container">
-            <div class="brochure-cta">
-                <h2>Download Our Pricing Guide</h2>
-                <form class="brochure-form">
-                    <input type="email" placeholder="Your professional email" required>
-                    <button type="submit">Get Exclusive Access</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <!-- 25. Luxury Guarantee Statement -->
-    <section class="final-guarantee">
-        <div class="container">
-            <div class="signature-line">
-                <p>Every detail, meticulously delivered — guaranteed.</p>
-                <div class="signature">The Eagle Graphix Team</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Quote Request Modal -->
-    <div class="modal" id="quote-modal">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h2>Tailor Your Package</h2>
-            <form class="quote-form">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" id="company">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="needs">Project Needs</label>
-                    <textarea id="needs" rows="5"></textarea>
-                </div>
-                <button type="submit" class="submit-quote">Request Custom Quote</button>
-            </form>
+
+
+
+
+
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+    <div class="cta-content">
+        <h2>Ready to <span class="gold-text">Elevate</span> Your Brand?</h2>
+        <p>Choose your plan or schedule a consultation with our design experts</p>
+        <div class="cta-buttons">
+            <a href="services.html" class="cta-primary">View All Plans</a>
+            <a href="contact.html" class="cta-secondary">Book Consultation</a>
         </div>
     </div>
+</section>
 
-    <!-- Consultation Modal -->
-    <div class="modal" id="consultation-modal">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <h2>Schedule Your Consultation</h2>
-            <!-- Consultation form would go here -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="luxury-footer">
+        <!-- Premium Top Section with Diagonal Layout -->
+        <div class="luxury-footer-top">
+          <div class="branding-panel">
+            <div class="logo-container">
+              <a href="index.html" class="logo-marquee">
+                <img src="images/logo-1.png" alt="Eagle Graphix" class="luxury-logo">
+                <div class="logo-glow"></div>
+                <div class="logo-reflection"></div>
+              </a>
+            </div>
+            <p class="brand-statement">Crafting <span class="emerald-gradient">digital excellence</span> for <span class="gold-underline">premium brands</span> worldwide</p>
+            
+            <div class="awards-section">
+              <div class="award-badge">
+                <i class="fas fa-award"></i>
+                <span>Design Excellence 2024</span>
+              </div>
+              <div class="award-badge">
+                <i class="fas fa-trophy"></i>
+                <span>Top Agency</span>
+              </div>
+            </div>
+          </div>
+      
+          <div class="newsletter-panel">
+            <div class="newsletter-card">
+              <div class="corner-ornament top-left"></div>
+              <div class="corner-ornament top-right"></div>
+              <div class="corner-ornament bottom-left"></div>
+              <div class="corner-ornament bottom-right"></div>
+              
+              <div class="envelope-icon">
+                <i class="fas fa-envelope-open-text fa-2x"></i>
+                <div class="icon-pulse"></div>
+              </div>
+              <h3 class="newsletter-title">Join Our <span class="gold-text">Creative Circle</span></h3>
+              <p class="newsletter-subtitle">Receive exclusive content and early access to new features</p>
+              
+              <form class="luxury-form">
+                <div class="input-group">
+                  <i class="fas fa-at input-icon"></i>
+                  <input type="email" placeholder="Your professional email" required>
+                  <div class="input-highlight"></div>
+                </div>
+                <button type="submit" class="luxury-button">
+                  <span>Subscribe</span>
+                  <i class="fas fa-arrow-right button-icon"></i>
+                  <div class="button-shine"></div>
+                </button>
+              </form>
+              
+              <div class="privacy-note">
+                <i class="fas fa-lock"></i>
+                <span>We respect your privacy. Unsubscribe anytime.</span>
+              </div>
+            </div>
+          </div>
         </div>
+      
+        <!-- Asymmetrical Navigation Grid -->
+        <div class="luxury-nav-grid">
+          <div class="nav-column services-column">
+            <div class="nav-header">
+              <h3 class="nav-title">
+                <i class="fas fa-crown nav-icon"></i>
+                <span>Our Services</span>
+              </h3>
+              <div class="nav-divider"></div>
+            </div>
+            <ul class="staggered-links">
+              <li><a href="services.html"><i class="fas fa-chevron-right link-icon"></i> Brand Strategy</a></li>
+              <li><a href="services.html"><i class="fas fa-chevron-right link-icon"></i> Web Design</a></li>
+              <li><a href="services.html"><i class="fas fa-chevron-right link-icon"></i> UI/UX Design</a></li>
+              <li><a href="services.html"><i class="fas fa-chevron-right link-icon"></i> Motion Graphics</a></li>
+              <li><a href="services.html"><i class="fas fa-chevron-right link-icon"></i> Digital Marketing</a></li>
+            </ul>
+          </div>
+      
+          <div class="nav-column resources-column">
+            <div class="nav-header">
+              <h3 class="nav-title">
+                <i class="fas fa-gem nav-icon"></i>
+                <span>Resources</span>
+              </h3>
+              <div class="nav-divider"></div>
+            </div>
+            <ul class="staggered-links">
+              <li><a href="blog.html"><i class="fas fa-chevron-right link-icon"></i> Design Blog</a></li>
+              <li><a href="pricing.html"><i class="fas fa-chevron-right link-icon"></i> Pricing</a></li>
+              <li><a href="services.html"><i class="fas fa-chevron-right link-icon"></i> Style Guides</a></li>
+              <li><a href="about.html"><i class="fas fa-chevron-right link-icon"></i> Webinars</a></li>
+              <li><a href="about.html"><i class="fas fa-chevron-right link-icon"></i> Design Tools</a></li>
+            </ul>
+          </div>
+      
+          <div class="nav-column contact-column">
+            <div class="nav-header">
+              <h3 class="nav-title">
+                <i class="fas fa-mobile-alt nav-icon"></i>
+                <span>Connect</span>
+              </h3>
+              <div class="nav-divider"></div>
+            </div>
+            <address class="luxury-address">
+              <p><i class="fas fa-map-marker-alt"></i> <span>Zimmermann , Roysambu</span></p>
+              <p><i class="fas fa-phone"></i> <span>+254732072356</span></p>
+              <p><i class="fas fa-envelope"></i> <span>eaglegraphix24@gmai.com</span></p>
+              <p><i class="fas fa-clock"></i> <span>Mon-Fri: 9AM-6PM EAT</span></p>
+            </address>
+            <div class="social-links">
+              <a href="#" class="social-icon" aria-label="Behance"><i class="fab fa-behance"></i></a>
+              <a href="#" class="social-icon" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Luxury Footer Bottom with Ornamental Border -->
+        <div class="luxury-footer-bottom">
+          <div class="footer-bottom-content">
+            <p class="copyright">&copy; 2025 Eagle Graphix. All rights reserved.</p>
+            
+            <div class="legal-links">
+              <a href="Eagle-Graphics-documentary.html">Privacy Policy</a>
+              <a href="Eagle-Graphics-documentary.html">Terms of Service</a>
+              <a href="Eagle-Graphics-documentary.html">Cookie Policy</a>
+              <a href="Eagle-Graphics-documentary.html">Accessibility</a>
+            </div>
+            
+            <div class="payment-methods">
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-amex"></i>
+              <i class="fab fa-cc-paypal"></i>
+            </div>
+          </div>
+        </div>
+      
+        
+      </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <button class="floating-button">
+            <i class="fas fa-comment-alt"></i>
+            
+            <span class="cta-text">Need Help?</span>
+            
+        </button>
     </div>
-
-
     <script src="pricing.js"></script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>

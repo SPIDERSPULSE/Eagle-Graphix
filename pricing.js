@@ -1,178 +1,229 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Contact page URL (replace with your actual contact page URL)
-    const contactPageUrl = 'https://eaglegraphix.com/contact';
-    
-    // 3. Comparison Toggle Functionality
-    const billingToggle = document.getElementById('billing-toggle');
-    if (billingToggle) {
-      billingToggle.addEventListener('change', function() {
-        const monthlyPrices = document.querySelectorAll('.price');
-        monthlyPrices.forEach(priceElement => {
-          const currentPrice = priceElement.textContent;
-          if (currentPrice.includes('$')) {
-            const numericValue = parseFloat(currentPrice.replace(/[^0-9.]/g, ''));
-            const newValue = this.checked ? numericValue * 12 * 0.8 : numericValue / 12 / 0.8;
-            const formattedValue = this.checked ? `$${Math.round(newValue)}<span>/yr</span>` : `$${Math.round(newValue)}<span>/mo</span>`;
-            priceElement.innerHTML = formattedValue;
-          } else if (currentPrice.trim() === 'Custom') {
-            priceElement.textContent = this.checked ? 'Annual Contract' : 'Custom';
-          }
-        });
-      });
-    }
-  
-    // 5. Interactive Price Calculator
-    const priceCalculator = document.querySelector('.price-calculator');
-    if (priceCalculator) {
-      const serviceType = document.getElementById('service-type');
-      const projectDuration = document.getElementById('project-duration');
-      const durationValue = document.getElementById('duration-value');
-      const calculatedPrice = document.querySelector('.calculated-price');
-  
-      // Update duration value display
-      projectDuration.addEventListener('input', function() {
-        durationValue.textContent = `${this.value} month${this.value > 1 ? 's' : ''}`;
-        updateCalculatedPrice();
-      });
-  
-      // Update price when service type changes
-      serviceType.addEventListener('change', updateCalculatedPrice);
-  
-      // Calculate price based on inputs
-      function updateCalculatedPrice() {
-        const serviceMultiplier = {
-          'branding': 1000,
-          'web': 1500,
-          'package': 2500
-        };
-        
-        const duration = parseInt(projectDuration.value);
-        const service = serviceType.value;
-        const basePrice = serviceMultiplier[service];
-        const totalPrice = basePrice * duration;
-        
-        calculatedPrice.textContent = `$${totalPrice.toLocaleString()}`;
-      }
-  
-      // Initialize calculator
-      updateCalculatedPrice();
-  
-      // Calculator CTA button - link to contact page
-      const calculatorCta = document.querySelector('.calculator-cta');
-      if (calculatorCta) {
-        calculatorCta.addEventListener('click', function() {
-          window.location.href = contactPageUrl;
-        });
-      }
-    }
-  
-    // 7. Tooltip functionality is handled by CSS
-  
-    // 8. & 17. Accordion functionality
-    const accordionHeaders = document.querySelectorAll('.accordion-header, .faq-question');
-    accordionHeaders.forEach(header => {
-      header.addEventListener('click', function() {
-        this.classList.toggle('active');
-        const content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + 'px';
-        }
-      });
-    });
-  
-    // 4. Custom Quote Modal
-    const quoteModalTrigger = document.getElementById('quote-modal-trigger');
-    const quoteModal = document.getElementById('quote-modal');
-    const closeModalButtons = document.querySelectorAll('.close-modal');
-  
-    if (quoteModalTrigger && quoteModal) {
-      quoteModalTrigger.addEventListener('click', function() {
-        quoteModal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-      });
-    }
-  
-    // Close modals when clicking X or outside
-    closeModalButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        this.closest('.modal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-      });
-    });
-  
-    window.addEventListener('click', function(event) {
-      if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    });
-  
-    // 16. Consultation CTA - link to contact page
-    const consultationButtons = document.querySelectorAll('.consultation-button, [href="#consultation"]');
-    consultationButtons.forEach(button => {
-      button.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.location.href = contactPageUrl;
-      });
-    });
-  
-    // 22. Dark Mode Toggle
-    const darkModeSwitch = document.getElementById('dark-mode-switch');
-    if (darkModeSwitch) {
-      darkModeSwitch.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-      });
-  
-      // Check for saved dark mode preference
-      if (localStorage.getItem('darkMode') === 'true') {
-        document.body.classList.add('dark-mode');
-      }
-    }
-  
-    // 24. Brochure Form Submission
-    const brochureForm = document.querySelector('.brochure-form');
-    if (brochureForm) {
-      brochureForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = this.querySelector('input[type="email"]').value;
-        // In a real implementation, you would send this to your server
-        console.log('Brochure requested for:', email);
-        alert('Thank you! Your pricing guide will be sent to ' + email);
-        this.reset();
-      });
-    }
-  
-    // 4. Quote Form Submission
-    const quoteForm = document.querySelector('.quote-form');
-    if (quoteForm) {
-      quoteForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = {
-          name: this.querySelector('#name').value,
-          company: this.querySelector('#company').value,
-          email: this.querySelector('#email').value,
-          needs: this.querySelector('#needs').value
-        };
-        // In a real implementation, you would send this to your server
-        console.log('Quote request:', formData);
-        alert('Thank you for your request! We will contact you shortly with a custom quote.');
-        this.reset();
-        quoteModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      });
-    }
-  
-    // Add hover effects to pricing cards
-    const pricingCards = document.querySelectorAll('.pricing-card');
-    pricingCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = this.classList.contains('featured') ? 'translateY(-10px) scale(1.05)' : 'translateY(-10px)';
-      });
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = this.classList.contains('featured') ? 'scale(1.05)' : 'translateY(0)';
-      });
+  // Mobile Navigation
+  const navToggle = document.querySelector('.nav-hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const hamburgerLines = document.querySelectorAll('.hamburger-line');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburgerLines.forEach(line => line.classList.toggle('active'));
+  });
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburgerLines.forEach(line => line.classList.remove('active'));
     });
   });
+
+  // Smooth Scrolling for Navigation Links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      if (this.getAttribute('href') === '#') return;
+      
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Pricing Toggle Functionality
+  const billingToggle = document.getElementById('billingToggle');
+  const priceAmounts = document.querySelectorAll('.price-amount');
+  const pricePeriods = document.querySelectorAll('.price-period');
+  
+  billingToggle.addEventListener('change', function() {
+    priceAmounts.forEach(price => {
+      const monthlyPrice = price.getAttribute('data-monthly');
+      const yearlyPrice = price.getAttribute('data-yearly');
+      
+      if (this.checked) {
+        price.textContent = monthlyPrice;
+      } else {
+        price.textContent = yearlyPrice;
+      }
+      
+      // Add animation class
+      price.classList.add('price-change');
+      
+      // Remove animation class after animation completes
+      setTimeout(() => {
+        price.classList.remove('price-change');
+      }, 500);
+    });
+    
+    // Update billing period text
+    pricePeriods.forEach(period => {
+      period.textContent = this.checked ? '/mo' : '/mo';
+    });
+  });
+
+  // Price change animation
+  const priceChangeKeyframes = [
+    { transform: 'scale(1)', opacity: 1 },
+    { transform: 'scale(1.2)', opacity: 0.8 },
+    { transform: 'scale(1)', opacity: 1 }
+  ];
+  
+  const priceChangeTiming = {
+    duration: 500,
+    iterations: 1
+  };
+
+  // Testimonial Slider
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
+  const prevButton = document.querySelector('.testimonial-prev');
+  const nextButton = document.querySelector('.testimonial-next');
+  let currentTestimonial = 0;
+  
+  function showTestimonial(index) {
+    testimonialCards.forEach((card, i) => {
+      card.style.display = i === index ? 'flex' : 'none';
+    });
+  }
+  
+  prevButton.addEventListener('click', () => {
+    currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
+    showTestimonial(currentTestimonial);
+  });
+  
+  nextButton.addEventListener('click', () => {
+    currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+    showTestimonial(currentTestimonial);
+  });
+  
+  // Initialize first testimonial
+  showTestimonial(currentTestimonial);
+
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+
+  // Process Step Animations
+  const processSteps = document.querySelectorAll('.process-step .step-content');
+  
+  function checkProcessSteps() {
+    processSteps.forEach((step, index) => {
+      const stepPosition = step.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.2;
+      
+      if (stepPosition < screenPosition) {
+        setTimeout(() => {
+          step.classList.add('visible');
+        }, index * 200);
+      }
+    });
+  }
+  
+  // Initial check
+  checkProcessSteps();
+  
+  // Check on scroll
+  window.addEventListener('scroll', checkProcessSteps);
+
+  // Ripple Effect for Buttons
+  document.querySelectorAll('.tier-cta, .service-cta, .addon-cta, .cta-primary, .cta-secondary').forEach(button => {
+    button.addEventListener('click', function(e) {
+      const x = e.clientX - e.target.getBoundingClientRect().left;
+      const y = e.clientY - e.target.getBoundingClientRect().top;
+      
+      const ripple = document.createElement('span');
+      ripple.classList.add('ripple');
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      this.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+  });
+
+  // Card Hover Effects
+  const cards = document.querySelectorAll('.pricing-card, .service-card, .addon-card, .team-member, .award-card, .case-study-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const angleX = (y - centerY) / 20;
+      const angleY = (centerX - x) / 20;
+      
+      card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) ${card.classList.contains('featured') ? 'translateY(-20px)' : 'translateY(0)'}`;
+      card.style.boxShadow = `${-angleY * 2}px ${angleX * 2}px 30px rgba(0, 0, 0, 0.15)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = card.classList.contains('featured') ? 
+        'perspective(1000px) rotateX(0) rotateY(0) translateY(-20px)' : 
+        'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+      card.style.boxShadow = card.classList.contains('featured') ? 'var(--shadow-lg)' : 'var(--shadow-md)';
+    });
+  });
+
+  // Scroll Animations
+  const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.pricing-card, .service-card, .section-header, .testimonial-card, .faq-item, .team-member, .award-card, .case-study-card, .guarantee-content');
+    
+    elements.forEach(element => {
+      const elementPosition = element.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.2;
+      
+      if (elementPosition < screenPosition) {
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+      }
+    });
+  };
+
+  // Initial check
+  animateOnScroll();
+  
+  // Check on scroll
+  window.addEventListener('scroll', animateOnScroll);
+
+  // Price change animation
+  const priceChangeObserver = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'characterData' || mutation.attributeName === 'class') {
+        if (mutation.target.classList.contains('price-change')) {
+          mutation.target.animate(priceChangeKeyframes, priceChangeTiming);
+        }
+      }
+    });
+  });
+
+  priceAmounts.forEach(price => {
+    priceChangeObserver.observe(price, {
+      attributes: true,
+      attributeFilter: ['class'],
+      childList: false,
+      characterData: true,
+      subtree: true
+    });
+  });
+});
+
+// Initialize animations when page is fully loaded
+window.addEventListener('load', function() {
+  // Force reflow to trigger animations
+  document.body.clientWidth;
+});
